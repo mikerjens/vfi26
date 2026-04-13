@@ -285,22 +285,22 @@
     <div style="display:flex;align-items:center;gap:0;">
       <nav class="tabs-bar">
         <button class="tab-btn active" data-tab="schedule">
-          <span class="tab-icon">🎬</span><span>Optagelser</span>
+          <span class="tab-icon">🎬</span><span>Schedule</span>
         </button>
         <button class="tab-btn" data-tab="films">
           <span class="tab-icon">🎞</span><span>Film</span>
         </button>
         <button class="tab-btn" data-tab="contacts">
-          <span class="tab-icon">👤</span><span>Kontakter</span>
+          <span class="tab-icon">👤</span><span>Contacts</span>
         </button>
         <button class="tab-btn" data-tab="minplan" id="minplanTab" style="display:none;">
-          <span class="tab-icon">⭐</span><span>Min plan</span>
+          <span class="tab-icon">⭐</span><span>My Schedule</span>
         </button>
       </nav>
       <div class="name-picker-wrap" style="margin-left:16px;padding-left:16px;border-left:1px solid var(--border);">
-        <span class="np-label">Min plan</span>
+        <span class="np-label">My Schedule</span>
         <select id="personSelect" class="np-select">
-          <option value="">Vælg dit navn</option>
+          <option value="">Select your name</option>
         </select>
       </div>
     </div>
@@ -311,32 +311,32 @@
 
   <!-- MY BANNER -->
   <div class="my-banner" id="myBanner">
-    <div class="my-banner-eye">// Din plan</div>
+    <div class="my-banner-eye">// Your Schedule</div>
     <div class="my-banner-name" id="myBannerName"></div>
     <div class="my-banner-role" id="myBannerRole"></div>
     <div class="my-grid">
-      <div class="my-box"><h3>Mine optagelsesdage</h3><ul class="my-list" id="myScheduleList"></ul></div>
-      <div class="my-box"><h3>Mine kontakter</h3><ul class="my-list" id="myContactsList"></ul></div>
+      <div class="my-box"><h3>My Shoot Days</h3><ul class="my-list" id="myScheduleList"></ul></div>
+      <div class="my-box"><h3>My Contacts</h3><ul class="my-list" id="myContactsList"></ul></div>
     </div>
   </div>
 
   <!-- TAB: OPTAGELSER -->
   <div class="tab-panel active" id="tab-schedule">
     <div class="section-head">
-      <h2>OPTAGELSESPLAN</h2>
-      <p>Kronologisk oversigt over alle optagelsesdage</p>
+      <h2>SHOOT SCHEDULE</h2>
+      <p>Chronological overview of all shoot days</p>
     </div>
 
     <div class="day-group">
       <div class="day-label">
-        Mandag 27. april
+        Monday 27 April
         <span class="day-date-tag">APR 27</span>
       </div>
       <div class="shoot-row">
         <div class="shoot-time">10:00–12:00</div>
         <div class="shoot-info">
           <div class="shoot-title">"Vandrere i tæt bebyggelse"</div>
-          <div class="shoot-detail">📍 Lokation: TBD · Mødested: Sendistovan · 2–3 skuespillere</div>
+          <div class="shoot-detail">📍 Lokation: TBD · Meet at: Sendistovan · 2–3 actors</div>
         </div>
         <span class="shoot-type postcard">Postcard</span>
       </div>
@@ -344,7 +344,7 @@
         <div class="shoot-time">12:00–14:00</div>
         <div class="shoot-info">
           <div class="shoot-title">"Close the Gates"</div>
-          <div class="shoot-detail">📍 Sendistovan · Mødested: Sendistovan · Crew + Alda</div>
+          <div class="shoot-detail">📍 Sendistovan · Meet at: Sendistovan · Crew + Alda</div>
         </div>
         <span class="shoot-type postcard">Postcard</span>
       </div>
@@ -352,7 +352,7 @@
         <div class="shoot-time">14:00–16:00</div>
         <div class="shoot-info">
           <div class="shoot-title">"Græsbakke med får"</div>
-          <div class="shoot-detail">📍 Sendistovan · Mødested: Sendistovan · Crew + Alda</div>
+          <div class="shoot-detail">📍 Sendistovan · Meet at: Sendistovan · Crew + Alda</div>
         </div>
         <span class="shoot-type postcard">Postcard</span>
       </div>
@@ -360,7 +360,7 @@
         <div class="shoot-time">16:00–18:00</div>
         <div class="shoot-info">
           <div class="shoot-title">"Múlafossur"</div>
-          <div class="shoot-detail">📍 Gásadalur · Mødested: Gásadalur · Hele crew</div>
+          <div class="shoot-detail">📍 Gásadalur · Meet at: Gásadalur · Full crew</div>
         </div>
         <span class="shoot-type postcard">Postcard</span>
       </div>
@@ -368,7 +368,7 @@
         <div class="shoot-time">16:00–17:30</div>
         <div class="shoot-info">
           <div class="shoot-title">"Skrald samles op fra sti"</div>
-          <div class="shoot-detail">📍 Bøur · Mødested: Gásadalur · 1 skuespiller</div>
+          <div class="shoot-detail">📍 Bøur · Meet at: Gásadalur · 1 actor</div>
         </div>
         <span class="shoot-type postcard">Postcard</span>
       </div>
@@ -376,7 +376,7 @@
         <div class="shoot-time">16:00–17:30</div>
         <div class="shoot-info">
           <div class="shoot-title">"Somebody Actually Lives Here"</div>
-          <div class="shoot-detail">📍 Bøur · Mødested: Gásadalur · 2–3 skuespillere + Alda</div>
+          <div class="shoot-detail">📍 Bøur · Meet at: Gásadalur · 2–3 actors + Alda</div>
         </div>
         <span class="shoot-type postcard">Postcard</span>
       </div>
@@ -384,14 +384,14 @@
 
     <div class="day-group">
       <div class="day-label">
-        Fredag 1. maj
+        Friday 1 May
         <span class="day-date-tag">MAJ 01</span>
       </div>
       <div class="shoot-row">
         <div class="shoot-time">10:00–16:00</div>
         <div class="shoot-info">
           <div class="shoot-title">"Stay on the Ancient Path"</div>
-          <div class="shoot-detail">📍 Sandoy · Mødested: Sendistovan · Skuespiller: Guðrið Poulsen</div>
+          <div class="shoot-detail">📍 Sandoy · Meet at: Sendistovan · Actor: Guðrið Poulsen</div>
         </div>
         <span class="shoot-type explainer">Explainer</span>
       </div>
@@ -399,14 +399,14 @@
 
     <div class="day-group">
       <div class="day-label">
-        Lørdag 2. maj
+        Saturday 2 May
         <span class="day-date-tag">MAJ 02</span>
       </div>
       <div class="shoot-row">
         <div class="shoot-time">10:00–16:00</div>
         <div class="shoot-info">
           <div class="shoot-title">"Drones Are for Dicks"</div>
-          <div class="shoot-detail">📍 Múlafossur · Bøur · Vagar Airport · Mødested: Vagar Airport · Skuespiller: Fríði Djurhuus</div>
+          <div class="shoot-detail">📍 Múlafossur · Bøur · Vagar Airport · Meet at: Vagar Airport · Actor: Fríði Djurhuus</div>
         </div>
         <span class="shoot-type explainer">Explainer</span>
       </div>
@@ -414,14 +414,14 @@
 
     <div class="day-group">
       <div class="day-label">
-        10–16. maj (én dag vælges)
+        10–16 May (one day TBD)
         <span class="day-date-tag">MAJ 10–16</span>
       </div>
       <div class="shoot-row" style="border-color:rgba(245,158,11,.3);">
         <div class="shoot-time" style="color:var(--amber);">10:00–16:00</div>
         <div class="shoot-info">
           <div class="shoot-title">"Make It a Fokk It List"</div>
-          <div class="shoot-detail">📍 Lokation TBD · Mødested: Sendistovan · Skuespiller: Trygvi Danielsen</div>
+          <div class="shoot-detail">📍 Lokation TBD · Meet at: Sendistovan · Actor: Trygvi Danielsen</div>
         </div>
         <span class="shoot-type explainer">Explainer</span>
       </div>
@@ -431,8 +431,8 @@
   <!-- TAB: FILM -->
   <div class="tab-panel" id="tab-films">
     <div class="section-head">
-      <h2>FILM OVERSIGT</h2>
-      <p>3 explainer videos + 6 cinematic postcards</p>
+      <h2>FILM OVERVIEW</h2>
+      <p>3 explainer videos · 6 cinematic postcards</p>
     </div>
 
     <div style="margin-bottom:12px;">
@@ -446,15 +446,15 @@
             <div class="film-type-tag">// Explainer · Portræt</div>
             <div class="film-title">"Make It a Fokk It List"</div>
           </div>
-          <span class="film-status tbd"><span class="film-status-dot"></span>Dato TBD</span>
+          <span class="film-status tbd"><span class="film-status-dot"></span>Date TBD</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Dato</div><div class="fmi-value pending">10–16. maj 2026 (dato vælges)</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–16:00</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value pending">TBD</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespiller</div><div class="fmi-value">Trygvi Danielsen</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Rekvisitter</div><div class="fmi-value pending">Ikke modtaget endnu</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Date</div><div class="fmi-value pending">10–16 May 2026 (date TBD)</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">10:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value pending">TBD</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actor</div><div class="fmi-value">Trygvi Danielsen</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Props / Specs</div><div class="fmi-value pending">None received yet</div></div>
         </div>
       </div>
 
@@ -464,15 +464,15 @@
             <div class="film-type-tag">// Explainer · Portræt</div>
             <div class="film-title">"Stay on the Ancient Path"</div>
           </div>
-          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Confirmed</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Dato</div><div class="fmi-value accent">Fredag 1. maj 2026</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–16:00</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Sandoy</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespiller</div><div class="fmi-value">Guðrið Poulsen</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Rekvisitter</div><div class="fmi-value pending">Ikke modtaget endnu</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Date</div><div class="fmi-value accent">Friday 1 May 2026</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">10:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value">Sandoy</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actor</div><div class="fmi-value">Guðrið Poulsen</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Props / Specs</div><div class="fmi-value pending">None received yet</div></div>
         </div>
       </div>
 
@@ -482,22 +482,22 @@
             <div class="film-type-tag">// Explainer · Portræt</div>
             <div class="film-title">"Drones Are for Dicks"</div>
           </div>
-          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Confirmed</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Dato</div><div class="fmi-value accent">Lørdag 2. maj 2026</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–16:00</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Vagar Airport</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokationer</div><div class="fmi-value">Múlafossur · Bøur · Vagar Airport</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespiller</div><div class="fmi-value">Fríði Djurhuus</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Rekvisitter</div><div class="fmi-value pending">Ikke modtaget endnu</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Date</div><div class="fmi-value accent">Saturday 2 May 2026</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">10:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Vagar Airport</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Locations</div><div class="fmi-value">Múlafossur · Bøur · Vagar Airport</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actor</div><div class="fmi-value">Fríði Djurhuus</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Props / Specs</div><div class="fmi-value pending">None received yet</div></div>
         </div>
       </div>
 
     </div>
 
     <div style="margin-bottom:12px;">
-      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">— Cinematic Postcards · 27. april 2026</div>
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">— Cinematic Postcards · 27 April 2026</div>
     </div>
     <div class="films-grid">
 
@@ -507,13 +507,13 @@
             <div class="film-type-tag" style="color:var(--amber);">// Postcard · Portræt</div>
             <div class="film-title">"Vandrere i tæt bebyggelse"</div>
           </div>
-          <span class="film-status tbd"><span class="film-status-dot"></span>Lokation TBD</span>
+          <span class="film-status tbd"><span class="film-status-dot"></span>Location TBD</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–12:00</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value pending">TBD</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">2–3 skuespillere</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">10:00–12:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value pending">TBD</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actors</div><div class="fmi-value">2–3 actors</div></div>
         </div>
       </div>
 
@@ -523,13 +523,13 @@
             <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
             <div class="film-title">"Close the Gates"</div>
           </div>
-          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Confirmed</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">12:00–14:00</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Sendistovan</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">Ingen</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">12:00–14:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
         </div>
       </div>
 
@@ -539,13 +539,13 @@
             <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
             <div class="film-title">"Græsbakke med får"</div>
           </div>
-          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Confirmed</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">14:00–16:00</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Sendistovan</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">Ingen</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">14:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
         </div>
       </div>
 
@@ -555,13 +555,13 @@
             <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
             <div class="film-title">"Múlafossur"</div>
           </div>
-          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Confirmed</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">16:00–18:00</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Gásadalur</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Gásadalur</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">Ingen</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">16:00–18:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
         </div>
       </div>
 
@@ -571,13 +571,13 @@
             <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
             <div class="film-title">"Skrald samles op fra sti"</div>
           </div>
-          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Confirmed</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">16:00–17:30</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Gásadalur</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Bøur</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">1 skuespiller</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">16:00–17:30</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value">Bøur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actors</div><div class="fmi-value">1 actor</div></div>
         </div>
       </div>
 
@@ -587,13 +587,13 @@
             <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
             <div class="film-title">"Somebody Actually Lives Here"</div>
           </div>
-          <span class="film-status tbd"><span class="film-status-dot"></span>Detaljer TBD</span>
+          <span class="film-status tbd"><span class="film-status-dot"></span>Details TBD</span>
         </div>
         <div class="film-card-body">
-          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">16:00–17:30</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Gásadalur</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Bøur</div></div>
-          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value pending">2–3 (nærmere detaljer følger)</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Time</div><div class="fmi-value">16:00–17:30</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Location</div><div class="fmi-value">Bøur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Actors</div><div class="fmi-value pending">2–3 (further details to follow)</div></div>
         </div>
       </div>
 
@@ -604,8 +604,8 @@
   <div class="tab-panel" id="tab-contacts">
     <div class="stats-row" id="statsRow"></div>
     <div class="filters">
-      <input type="text" id="searchInput" placeholder="Søg navn, rolle…" />
-      <select id="groupFilter"><option value="all">Alle grupper</option></select>
+      <input type="text" id="searchInput" placeholder="Search name, role…" />
+      <select id="groupFilter"><option value="all">All groups</option></select>
     </div>
     <div class="contacts-grid" id="contactsGrid"></div>
   </div>
@@ -623,10 +623,10 @@
       name:"Michael Koba", role:"Producer / Director", group:"Crew",
       phone:"+298 591011", email:"michael@kovboyfilm.com",
       schedule:[
-        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan → Gásadalur",
-        "Fre 1. maj 10:00–16:00 · Stay on the Ancient Path · Sandoy",
-        "Lør 2. maj 10:00–16:00 · Drones Are for Dicks · Vagar Airport",
-        "10–16. maj (dato TBD) · Make It a Fokk It List · Sendistovan"
+        "Mon 27 April 10:00–18:00 · All postcards · Sendistovan → Gásadalur",
+        "Fri 1 May 10:00–16:00 · Stay on the Ancient Path · Sandoy",
+        "Sat 2 May 10:00–16:00 · Drones Are for Dicks · Vagar Airport",
+        "10–16 May (date TBD) · Make It a Fokk It List · Sendistovan"
       ],
       contacts:["Thomas Koba","Alda Egilstrøð","Niels Arge Gàlan"]
     },
@@ -634,10 +634,10 @@
       name:"Thomas Koba", role:"Camera / Crew", group:"Crew",
       phone:"+298 213457", email:"thomas@kovboyfilm.com",
       schedule:[
-        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan → Gásadalur",
-        "Fre 1. maj 10:00–16:00 · Stay on the Ancient Path · Sandoy",
-        "Lør 2. maj 10:00–16:00 · Drones Are for Dicks · Vagar Airport",
-        "10–16. maj (dato TBD) · Make It a Fokk It List · Sendistovan"
+        "Mon 27 April 10:00–18:00 · All postcards · Sendistovan → Gásadalur",
+        "Fri 1 May 10:00–16:00 · Stay on the Ancient Path · Sandoy",
+        "Sat 2 May 10:00–16:00 · Drones Are for Dicks · Vagar Airport",
+        "10–16 May (date TBD) · Make It a Fokk It List · Sendistovan"
       ],
       contacts:["Michael Koba","Alda Egilstrøð"]
     },
@@ -645,7 +645,7 @@
       name:"Alda Egilstrøð", role:"Client — Visit Faroe Islands", group:"Client",
       phone:"+298 556133", email:"alda@visitfaroeislands.com",
       schedule:[
-        "Man 27. april 12:00–17:30 · Close the Gates, Græsbakke med får, Somebody Actually Lives Here"
+        "Mon 27 April 12:00–17:30 · Close the Gates, Græsbakke med får, Somebody Actually Lives Here"
       ],
       contacts:["Michael Koba","Niels Arge Gàlan"]
     },
@@ -653,7 +653,7 @@
       name:"Niels Arge Gàlan", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794166", email:"nag@sendistovan.fo",
       schedule:[
-        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan"
+        "Mon 27 April 10:00–18:00 · All postcards · Sendistovan"
       ],
       contacts:["Michael Koba","Ingrið Mortensen","Alda Egilstrøð"]
     },
@@ -661,7 +661,7 @@
       name:"Ingrið Mortensen", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794189", email:"ingrid@sendistovan.fo",
       schedule:[
-        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan"
+        "Mon 27 April 10:00–18:00 · All postcards · Sendistovan"
       ],
       contacts:["Niels Arge Gàlan","Michael Koba"]
     },
@@ -669,7 +669,7 @@
       name:"Trygvi Danielsen", role:"Skuespiller — Make It a Fokk It List", group:"Actor",
       phone:"+298 213194", email:"trygvi@gmail.com",
       schedule:[
-        "10–16. maj (dato TBD) 10:00–16:00 · Make It a Fokk It List · Mødested: Sendistovan"
+        "10–16 May (date TBD) 10:00–16:00 · Make It a Fokk It List · Meet at: Sendistovan"
       ],
       contacts:["Michael Koba"]
     },
@@ -677,7 +677,7 @@
       name:"Fríði Djurhuus", role:"Skuespiller — Drones Are for Dicks", group:"Actor",
       phone:"+298 263626", email:"frididjurhuus@hotmail.com",
       schedule:[
-        "Lør 2. maj 10:00–16:00 · Drones Are for Dicks · Mødested: Vagar Airport"
+        "Sat 2 May 10:00–16:00 · Drones Are for Dicks · Meet at: Vagar Airport"
       ],
       contacts:["Michael Koba"]
     },
@@ -685,7 +685,7 @@
       name:"Guðrið Poulsen", role:"Skuespiller — Stay on the Ancient Path", group:"Actor",
       phone:"", email:"",
       schedule:[
-        "Fre 1. maj 10:00–16:00 · Stay on the Ancient Path · Mødested: Sendistovan"
+        "Fri 1 May 10:00–16:00 · Stay on the Ancient Path · Meet at: Sendistovan"
       ],
       contacts:["Michael Koba"]
     }
@@ -754,8 +754,8 @@
     const filtered=filterPeople();
     document.getElementById('contactsGrid').innerHTML=filtered.length
       ?filtered.map(p=>{
-          const callBtn=p.phone?`<a class="cc-btn call" href="${phoneHref(p.phone)}">📞 Ring op</a>`:'';
-          const mailBtn=p.email?`<a class="cc-btn mail" href="mailto:${p.email}">✉ Mail</a>`:'';
+          const callBtn=p.phone?`<a class="cc-btn call" href="${phoneHref(p.phone)}">📞 Call</a>`:'';
+          const mailBtn=p.email?`<a class="cc-btn mail" href="mailto:${p.email}">✉ Email</a>`:'';
           return`<div class="contact-card">
             <div class="cc-top">
               <div><div class="cc-name">${esc(p.name)}</div><div class="cc-role">${esc(p.role)}</div></div>
@@ -768,7 +768,7 @@
             ${callBtn||mailBtn?`<div class="cc-actions">${callBtn}${mailBtn}</div>`:''}
           </div>`;
         }).join('')
-      :`<div class="empty">Ingen resultater.</div>`;
+      :`<div class="empty">No results.</div>`;
   }
   document.getElementById('searchInput').addEventListener('input',renderContacts);
   document.getElementById('groupFilter').addEventListener('change',renderContacts);
@@ -778,16 +778,16 @@
     const contacts=(person.contacts||[]).map(n=>getPerson(n)).filter(Boolean);
     document.getElementById('tab-minplan').innerHTML=`
       <div class="my-banner visible" style="display:block;">
-        <div class="my-banner-eye">// Din plan</div>
+        <div class="my-banner-eye">// Your Schedule</div>
         <div class="my-banner-name">${esc(person.name)}</div>
         <div class="my-banner-role">${esc(person.role)} · ${esc(person.group)}</div>
         <div class="my-grid" style="margin-top:16px;">
           <div class="my-box">
-            <h3>Mine optagelsesdage</h3>
+            <h3>My Shoot Days</h3>
             <ul class="my-list">${(person.schedule||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
           </div>
           <div class="my-box">
-            <h3>Mine kontakter</h3>
+            <h3>My Contacts</h3>
             <ul class="my-list">${contacts.map(c=>`
               <li class="my-contact-item">
                 <div><div class="my-cn">${esc(c.name)}</div><div class="my-cr">${esc(c.role)}</div></div>
@@ -835,6 +835,3 @@
 </script>
 </body>
 </html>
-
-
-
