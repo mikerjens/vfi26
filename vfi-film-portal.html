@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VFI Film Production — 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:        #0a0c0f;
+      --bg2:       #111418;
+      --card:      #161b22;
+      --card2:     #1c2330;
+      --border:    #2a3441;
+      --border-hi: #3d4f63;
+      --text:      #e8edf2;
+      --text-mid:  #9aaabb;
+      --text-muted:#566779;
+      --accent:    #00b4d8;
+      --accent2:   #0077a8;
+      --accent-dim:rgba(0,180,216,.12);
+      --green:     #22c55e;
+      --amber:     #f59e0b;
+      --red:       #ef4444;
+      --shadow:    0 4px 24px rgba(0,0,0,.5);
+      --shadow-sm: 0 2px 10px rgba(0,0,0,.35);
+      --radius:    12px;
+      --radius-sm: 8px;
+      --font-display: 'Bebas Neue', 'Impact', sans-serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-mono:    'DM Mono', monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.6;}
+    a{color:inherit;text-decoration:none;}
+
+    /* ── HEADER ── */
+    .header{
+      background:var(--bg2);
+      border-bottom:1px solid var(--border);
+      padding:0 20px;
+      position:sticky;top:0;z-index:100;
+    }
+    .header-inner{
+      max-width:1100px;margin:0 auto;
+      display:flex;align-items:stretch;justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:16px 0;cursor:pointer;
+    }
+    .brand-eye{
+      font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:2px;
+    }
+    .brand-name{
+      font-family:var(--font-display);font-size:28px;letter-spacing:.06em;
+      color:var(--text);line-height:1;
+    }
+    .brand-sub{font-size:11px;color:var(--text-muted);margin-top:3px;letter-spacing:.04em;}
+
+    /* ── TABS ── */
+    .tabs-bar{
+      display:flex;gap:0;overflow-x:auto;scrollbar-width:none;
+      align-items:stretch;
+    }
+    .tabs-bar::-webkit-scrollbar{display:none;}
+    .tab-btn{
+      flex:0 0 auto;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;gap:3px;
+      padding:0 18px;min-height:60px;
+      background:transparent;border:none;border-bottom:2px solid transparent;
+      color:var(--text-muted);font-family:var(--font-body);
+      font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      cursor:pointer;transition:all .2s;white-space:nowrap;
+    }
+    .tab-btn .tab-icon{font-size:16px;}
+    .tab-btn:hover{color:var(--text);background:rgba(255,255,255,.03);}
+    .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+
+    /* ── NAME PICKER ── */
+    .name-picker-wrap{
+      display:flex;align-items:center;gap:10px;padding:12px 0;
+    }
+    .np-label{
+      font-size:10px;font-weight:600;letter-spacing:.1em;
+      text-transform:uppercase;color:var(--text-muted);white-space:nowrap;
+    }
+    .np-select{
+      border:1px solid var(--border-hi);background:var(--card);
+      color:var(--text);font-family:var(--font-body);font-size:13px;
+      padding:7px 12px;border-radius:var(--radius-sm);cursor:pointer;
+      min-width:160px;
+    }
+    .np-select:focus{outline:none;border-color:var(--accent);}
+
+    /* ── MAIN ── */
+    .main{max-width:1100px;margin:0 auto;padding:24px 20px 80px;}
+    .tab-panel{display:none;}
+    .tab-panel.active{display:block;}
+
+    /* ── MY BANNER ── */
+    .my-banner{
+      display:none;
+      background:linear-gradient(135deg,#0d1f2d,#0a1520);
+      border:1px solid var(--accent2);
+      border-radius:var(--radius);
+      padding:20px 24px;margin-bottom:24px;
+      box-shadow:0 0 40px rgba(0,180,216,.08);
+    }
+    .my-banner.visible{display:block;}
+    .my-banner-eye{font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
+    .my-banner-name{font-family:var(--font-display);font-size:30px;letter-spacing:.04em;color:var(--text);margin-bottom:2px;}
+    .my-banner-role{font-size:12px;color:var(--text-muted);margin-bottom:16px;}
+    .my-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    @media(max-width:580px){.my-grid{grid-template-columns:1fr;}}
+    .my-box{background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;}
+    .my-box h3{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    .my-list{list-style:none;display:grid;gap:6px;}
+    .my-list li{font-size:13px;padding:7px 10px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:6px;color:var(--text-mid);}
+    .my-contact-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:6px;}
+    .my-cn{font-size:13px;font-weight:500;color:var(--text);}
+    .my-cr{font-size:11px;color:var(--text-muted);}
+    .my-ca{display:flex;gap:6px;}
+    .icon-btn{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent2);font-size:13px;transition:background .15s;}
+    .icon-btn:hover{background:rgba(0,180,216,.25);}
+
+    /* ── SECTION HEAD ── */
+    .section-head{margin-bottom:20px;}
+    .section-head h2{font-family:var(--font-display);font-size:32px;letter-spacing:.06em;color:var(--text);}
+    .section-head p{font-size:13px;color:var(--text-muted);margin-top:4px;}
+
+    /* ── FILM CARDS ── */
+    .films-grid{display:grid;gap:16px;}
+
+    .film-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:var(--radius);overflow:hidden;
+      box-shadow:var(--shadow-sm);transition:border-color .2s,box-shadow .2s;
+    }
+    .film-card:hover{border-color:var(--border-hi);box-shadow:var(--shadow);}
+
+    .film-card-header{
+      background:var(--card2);
+      padding:16px 20px;
+      display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+      border-bottom:1px solid var(--border);
+    }
+    .film-type-tag{
+      font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--accent);margin-bottom:4px;
+    }
+    .film-title{font-family:var(--font-display);font-size:22px;letter-spacing:.04em;color:var(--text);}
+    .film-status{
+      display:inline-flex;align-items:center;gap:5px;
+      padding:4px 10px;border-radius:999px;
+      font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.06em;
+      white-space:nowrap;flex-shrink:0;margin-top:4px;
+    }
+    .film-status.tbd{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--amber);}
+    .film-status.confirmed{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:var(--green);}
+    .film-status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+
+    .film-card-body{padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+
+    .film-meta-item{}
+    .fmi-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
+    .fmi-value{font-size:13px;color:var(--text);font-weight:500;line-height:1.5;}
+    .fmi-value.accent{color:var(--accent);}
+    .fmi-value.pending{color:var(--amber);}
+
+    /* ── SCHEDULE TIMELINE ── */
+    .schedule-section{margin-top:4px;}
+    .day-group{margin-bottom:28px;}
+    .day-label{
+      font-family:var(--font-display);font-size:20px;letter-spacing:.06em;
+      color:var(--text);padding:10px 0 10px;
+      border-bottom:1px solid var(--border);margin-bottom:14px;
+      display:flex;align-items:center;gap:12px;
+    }
+    .day-date-tag{
+      font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;
+      color:var(--accent);background:var(--accent-dim);
+      padding:3px 10px;border-radius:999px;border:1px solid rgba(0,180,216,.2);
+    }
+
+    .shoot-row{
+      background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);
+      padding:14px 18px;margin-bottom:10px;
+      display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:16px;
+      transition:border-color .15s;
+    }
+    .shoot-row:hover{border-color:var(--border-hi);}
+    .shoot-time{font-family:var(--font-mono);font-size:13px;color:var(--accent);font-weight:500;}
+    .shoot-info{}
+    .shoot-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;}
+    .shoot-detail{font-size:12px;color:var(--text-muted);}
+    .shoot-type{
+      font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;
+      text-transform:uppercase;padding:3px 8px;border-radius:4px;
+      white-space:nowrap;
+    }
+    .shoot-type.explainer{background:rgba(0,180,216,.1);color:var(--accent);border:1px solid rgba(0,180,216,.2);}
+    .shoot-type.postcard{background:rgba(245,158,11,.1);color:var(--amber);border:1px solid rgba(245,158,11,.2);}
+
+    /* ── CONTACTS ── */
+    .contacts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;}
+    .contact-card{
+      background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:18px;box-shadow:var(--shadow-sm);transition:border-color .15s;
+    }
+    .contact-card:hover{border-color:var(--border-hi);}
+    .cc-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px;}
+    .cc-name{font-family:var(--font-display);font-size:20px;letter-spacing:.03em;color:var(--text);}
+    .cc-role{font-size:11px;color:var(--text-muted);margin-top:3px;}
+    .cc-group{
+      font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+      padding:4px 8px;border-radius:4px;white-space:nowrap;flex-shrink:0;
+    }
+    .cc-group.crew{background:rgba(0,180,216,.1);color:var(--accent);border:1px solid rgba(0,180,216,.2);}
+    .cc-group.client{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2);}
+    .cc-group.agency{background:rgba(245,158,11,.1);color:var(--amber);border:1px solid rgba(245,158,11,.2);}
+    .cc-group.actor{background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.2);}
+    .cc-contacts{display:grid;gap:6px;font-size:13px;}
+    .cc-row{display:flex;align-items:center;gap:8px;}
+    .cc-lbl{font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);min-width:40px;}
+    .cc-val a{color:var(--accent);}
+    .cc-val a:hover{text-decoration:underline;}
+    .cc-actions{display:flex;gap:8px;margin-top:12px;}
+    .cc-btn{
+      display:inline-flex;align-items:center;gap:6px;padding:8px 14px;
+      border-radius:var(--radius-sm);font-family:var(--font-body);font-size:12px;font-weight:600;
+      text-decoration:none;transition:all .15s;border:none;flex:1;justify-content:center;cursor:pointer;
+    }
+    .cc-btn.call{background:var(--accent);color:#000;}
+    .cc-btn.call:hover{background:#00c8f0;}
+    .cc-btn.mail{background:var(--card2);color:var(--text);border:1px solid var(--border);}
+    .cc-btn.mail:hover{background:var(--border);}
+
+    /* ── STATS ── */
+    .stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:24px;}
+    @media(min-width:500px){.stats-row{grid-template-columns:repeat(4,1fr);}}
+    .stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;}
+    .stat-value{font-family:var(--font-display);font-size:36px;letter-spacing:.04em;color:var(--accent);line-height:1;}
+    .stat-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
+
+    /* FILTERS */
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px;}
+    .filters input,.filters select{
+      flex:1 1 180px;padding:10px 14px;
+      border:1px solid var(--border);border-radius:var(--radius-sm);
+      background:var(--card);font-family:var(--font-body);font-size:13px;color:var(--text);
+    }
+    .filters input:focus,.filters select:focus{outline:none;border-color:var(--accent);}
+
+    .empty{padding:40px;text-align:center;color:var(--text-muted);font-style:italic;}
+    .hidden{display:none!important;}
+
+    @media(min-width:700px){
+      .header-inner{gap:24px;}
+      .brand-name{font-size:32px;}
+      .tab-btn{padding:0 22px;}
+    }
+    @media(max-width:600px){
+      .shoot-row{grid-template-columns:70px 1fr;} 
+      .shoot-type{display:none;}
+      .name-picker-wrap{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand" id="brandHome">
+      <div class="brand-eye">Production Portal</div>
+      <div class="brand-name">VFI FILM 2026</div>
+      <div class="brand-sub">Visit Faroe Islands · Kovboy Film</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:0;">
+      <nav class="tabs-bar">
+        <button class="tab-btn active" data-tab="schedule">
+          <span class="tab-icon">🎬</span><span>Optagelser</span>
+        </button>
+        <button class="tab-btn" data-tab="films">
+          <span class="tab-icon">🎞</span><span>Film</span>
+        </button>
+        <button class="tab-btn" data-tab="contacts">
+          <span class="tab-icon">👤</span><span>Kontakter</span>
+        </button>
+        <button class="tab-btn" data-tab="minplan" id="minplanTab" style="display:none;">
+          <span class="tab-icon">⭐</span><span>Min plan</span>
+        </button>
+      </nav>
+      <div class="name-picker-wrap" style="margin-left:16px;padding-left:16px;border-left:1px solid var(--border);">
+        <span class="np-label">Min plan</span>
+        <select id="personSelect" class="np-select">
+          <option value="">Vælg dit navn</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+  <!-- MY BANNER -->
+  <div class="my-banner" id="myBanner">
+    <div class="my-banner-eye">// Din plan</div>
+    <div class="my-banner-name" id="myBannerName"></div>
+    <div class="my-banner-role" id="myBannerRole"></div>
+    <div class="my-grid">
+      <div class="my-box"><h3>Mine optagelsesdage</h3><ul class="my-list" id="myScheduleList"></ul></div>
+      <div class="my-box"><h3>Mine kontakter</h3><ul class="my-list" id="myContactsList"></ul></div>
+    </div>
+  </div>
+
+  <!-- TAB: OPTAGELSER -->
+  <div class="tab-panel active" id="tab-schedule">
+    <div class="section-head">
+      <h2>OPTAGELSESPLAN</h2>
+      <p>Kronologisk oversigt over alle optagelsesdage</p>
+    </div>
+
+    <div class="day-group">
+      <div class="day-label">
+        Mandag 27. april
+        <span class="day-date-tag">APR 27</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">10:00–12:00</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Vandrere i tæt bebyggelse"</div>
+          <div class="shoot-detail">📍 Lokation: TBD · Mødested: Sendistovan · 2–3 skuespillere</div>
+        </div>
+        <span class="shoot-type postcard">Postcard</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">12:00–14:00</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Close the Gates"</div>
+          <div class="shoot-detail">📍 Sendistovan · Mødested: Sendistovan · Crew + Alda</div>
+        </div>
+        <span class="shoot-type postcard">Postcard</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">14:00–16:00</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Græsbakke med får"</div>
+          <div class="shoot-detail">📍 Sendistovan · Mødested: Sendistovan · Crew + Alda</div>
+        </div>
+        <span class="shoot-type postcard">Postcard</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">16:00–18:00</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Múlafossur"</div>
+          <div class="shoot-detail">📍 Gásadalur · Mødested: Gásadalur · Hele crew</div>
+        </div>
+        <span class="shoot-type postcard">Postcard</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">16:00–17:30</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Skrald samles op fra sti"</div>
+          <div class="shoot-detail">📍 Bøur · Mødested: Gásadalur · 1 skuespiller</div>
+        </div>
+        <span class="shoot-type postcard">Postcard</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">16:00–17:30</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Somebody Actually Lives Here"</div>
+          <div class="shoot-detail">📍 Bøur · Mødested: Gásadalur · 2–3 skuespillere + Alda</div>
+        </div>
+        <span class="shoot-type postcard">Postcard</span>
+      </div>
+    </div>
+
+    <div class="day-group">
+      <div class="day-label">
+        Fredag 1. maj
+        <span class="day-date-tag">MAJ 01</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">10:00–16:00</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Stay on the Ancient Path"</div>
+          <div class="shoot-detail">📍 Sandoy · Mødested: Sendistovan · Skuespiller: Guðrið Poulsen</div>
+        </div>
+        <span class="shoot-type explainer">Explainer</span>
+      </div>
+    </div>
+
+    <div class="day-group">
+      <div class="day-label">
+        Lørdag 2. maj
+        <span class="day-date-tag">MAJ 02</span>
+      </div>
+      <div class="shoot-row">
+        <div class="shoot-time">10:00–16:00</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Drones Are for Dicks"</div>
+          <div class="shoot-detail">📍 Múlafossur · Bøur · Vagar Airport · Mødested: Vagar Airport · Skuespiller: Fríði Djurhuus</div>
+        </div>
+        <span class="shoot-type explainer">Explainer</span>
+      </div>
+    </div>
+
+    <div class="day-group">
+      <div class="day-label">
+        10–16. maj (én dag vælges)
+        <span class="day-date-tag">MAJ 10–16</span>
+      </div>
+      <div class="shoot-row" style="border-color:rgba(245,158,11,.3);">
+        <div class="shoot-time" style="color:var(--amber);">10:00–16:00</div>
+        <div class="shoot-info">
+          <div class="shoot-title">"Make It a Fokk It List"</div>
+          <div class="shoot-detail">📍 Lokation TBD · Mødested: Sendistovan · Skuespiller: Trygvi Danielsen</div>
+        </div>
+        <span class="shoot-type explainer">Explainer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB: FILM -->
+  <div class="tab-panel" id="tab-films">
+    <div class="section-head">
+      <h2>FILM OVERSIGT</h2>
+      <p>3 explainer videos + 6 cinematic postcards</p>
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">— Explainer Videos</div>
+    </div>
+    <div class="films-grid" style="margin-bottom:32px;">
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag">// Explainer · Portræt</div>
+            <div class="film-title">"Make It a Fokk It List"</div>
+          </div>
+          <span class="film-status tbd"><span class="film-status-dot"></span>Dato TBD</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Dato</div><div class="fmi-value pending">10–16. maj 2026 (dato vælges)</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value pending">TBD</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespiller</div><div class="fmi-value">Trygvi Danielsen</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Rekvisitter</div><div class="fmi-value pending">Ikke modtaget endnu</div></div>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag">// Explainer · Portræt</div>
+            <div class="film-title">"Stay on the Ancient Path"</div>
+          </div>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Dato</div><div class="fmi-value accent">Fredag 1. maj 2026</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Sandoy</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespiller</div><div class="fmi-value">Guðrið Poulsen</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Rekvisitter</div><div class="fmi-value pending">Ikke modtaget endnu</div></div>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag">// Explainer · Portræt</div>
+            <div class="film-title">"Drones Are for Dicks"</div>
+          </div>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Dato</div><div class="fmi-value accent">Lørdag 2. maj 2026</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Vagar Airport</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokationer</div><div class="fmi-value">Múlafossur · Bøur · Vagar Airport</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespiller</div><div class="fmi-value">Fríði Djurhuus</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Rekvisitter</div><div class="fmi-value pending">Ikke modtaget endnu</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border);">— Cinematic Postcards · 27. april 2026</div>
+    </div>
+    <div class="films-grid">
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag" style="color:var(--amber);">// Postcard · Portræt</div>
+            <div class="film-title">"Vandrere i tæt bebyggelse"</div>
+          </div>
+          <span class="film-status tbd"><span class="film-status-dot"></span>Lokation TBD</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">10:00–12:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value pending">TBD</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">2–3 skuespillere</div></div>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
+            <div class="film-title">"Close the Gates"</div>
+          </div>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">12:00–14:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">Ingen</div></div>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
+            <div class="film-title">"Græsbakke med får"</div>
+          </div>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">14:00–16:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Sendistovan</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">Ingen</div></div>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
+            <div class="film-title">"Múlafossur"</div>
+          </div>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">16:00–18:00</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">Ingen</div></div>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
+            <div class="film-title">"Skrald samles op fra sti"</div>
+          </div>
+          <span class="film-status confirmed"><span class="film-status-dot"></span>Bekræftet</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">16:00–17:30</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Bøur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value">1 skuespiller</div></div>
+        </div>
+      </div>
+
+      <div class="film-card">
+        <div class="film-card-header">
+          <div>
+            <div class="film-type-tag" style="color:var(--amber);">// Postcard</div>
+            <div class="film-title">"Somebody Actually Lives Here"</div>
+          </div>
+          <span class="film-status tbd"><span class="film-status-dot"></span>Detaljer TBD</span>
+        </div>
+        <div class="film-card-body">
+          <div class="film-meta-item"><div class="fmi-label">Tid</div><div class="fmi-value">16:00–17:30</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Mødested</div><div class="fmi-value">Gásadalur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Lokation</div><div class="fmi-value">Bøur</div></div>
+          <div class="film-meta-item"><div class="fmi-label">Skuespillere</div><div class="fmi-value pending">2–3 (nærmere detaljer følger)</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB: KONTAKTER -->
+  <div class="tab-panel" id="tab-contacts">
+    <div class="stats-row" id="statsRow"></div>
+    <div class="filters">
+      <input type="text" id="searchInput" placeholder="Søg navn, rolle…" />
+      <select id="groupFilter"><option value="all">Alle grupper</option></select>
+    </div>
+    <div class="contacts-grid" id="contactsGrid"></div>
+  </div>
+
+  <!-- TAB: MIN PLAN -->
+  <div class="tab-panel" id="tab-minplan">
+    <!-- content injected by JS -->
+  </div>
+
+</main>
+
+<script>
+  const people = [
+    {
+      name:"Michael Koba", role:"Producer / Director", group:"Crew",
+      phone:"+298 591011", email:"michael@kovboyfilm.com",
+      schedule:[
+        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan → Gásadalur",
+        "Fre 1. maj 10:00–16:00 · Stay on the Ancient Path · Sandoy",
+        "Lør 2. maj 10:00–16:00 · Drones Are for Dicks · Vagar Airport",
+        "10–16. maj (dato TBD) · Make It a Fokk It List · Sendistovan"
+      ],
+      contacts:["Thomas Koba","Alda Egilstrøð","Niels Arge Gàlan"]
+    },
+    {
+      name:"Thomas Koba", role:"Camera / Crew", group:"Crew",
+      phone:"+298 213457", email:"thomas@kovboyfilm.com",
+      schedule:[
+        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan → Gásadalur",
+        "Fre 1. maj 10:00–16:00 · Stay on the Ancient Path · Sandoy",
+        "Lør 2. maj 10:00–16:00 · Drones Are for Dicks · Vagar Airport",
+        "10–16. maj (dato TBD) · Make It a Fokk It List · Sendistovan"
+      ],
+      contacts:["Michael Koba","Alda Egilstrøð"]
+    },
+    {
+      name:"Alda Egilstrøð", role:"Client — Visit Faroe Islands", group:"Client",
+      phone:"+298 556133", email:"alda@visitfaroeislands.com",
+      schedule:[
+        "Man 27. april 12:00–17:30 · Close the Gates, Græsbakke med får, Somebody Actually Lives Here"
+      ],
+      contacts:["Michael Koba","Niels Arge Gàlan"]
+    },
+    {
+      name:"Niels Arge Gàlan", role:"Agency — Sendistovan", group:"Agency",
+      phone:"+298 794166", email:"nag@sendistovan.fo",
+      schedule:[
+        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan"
+      ],
+      contacts:["Michael Koba","Ingrið Mortensen","Alda Egilstrøð"]
+    },
+    {
+      name:"Ingrið Mortensen", role:"Agency — Sendistovan", group:"Agency",
+      phone:"+298 794189", email:"ingrid@sendistovan.fo",
+      schedule:[
+        "Man 27. april 10:00–18:00 · Alle postcards · Sendistovan"
+      ],
+      contacts:["Niels Arge Gàlan","Michael Koba"]
+    },
+    {
+      name:"Trygvi Danielsen", role:"Skuespiller — Make It a Fokk It List", group:"Actor",
+      phone:"+298 213194", email:"trygvi@gmail.com",
+      schedule:[
+        "10–16. maj (dato TBD) 10:00–16:00 · Make It a Fokk It List · Mødested: Sendistovan"
+      ],
+      contacts:["Michael Koba"]
+    },
+    {
+      name:"Fríði Djurhuus", role:"Skuespiller — Drones Are for Dicks", group:"Actor",
+      phone:"+298 263626", email:"frididjurhuus@hotmail.com",
+      schedule:[
+        "Lør 2. maj 10:00–16:00 · Drones Are for Dicks · Mødested: Vagar Airport"
+      ],
+      contacts:["Michael Koba"]
+    },
+    {
+      name:"Guðrið Poulsen", role:"Skuespiller — Stay on the Ancient Path", group:"Actor",
+      phone:"", email:"",
+      schedule:[
+        "Fre 1. maj 10:00–16:00 · Stay on the Ancient Path · Mødested: Sendistovan"
+      ],
+      contacts:["Michael Koba"]
+    }
+  ];
+
+  // ── UTILS ──
+  function esc(v){return(v||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function phoneHref(p){return p?'tel:'+p.replace(/\s+/g,''):'';}
+  function getPerson(n){return people.find(p=>p.name===n);}
+
+  // ── TABS ──
+  const tabBtns=document.querySelectorAll('.tab-btn');
+  const tabPanels=document.querySelectorAll('.tab-panel');
+  function switchTab(name){
+    tabBtns.forEach(b=>b.classList.remove('active'));
+    tabPanels.forEach(p=>p.classList.remove('active'));
+    const btn=document.querySelector(`[data-tab="${name}"]`);
+    const panel=document.getElementById(`tab-${name}`);
+    if(btn)btn.classList.add('active');
+    if(panel)panel.classList.add('active');
+  }
+  tabBtns.forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
+
+  // ── STATS ──
+  function renderStats(){
+    const crew=people.filter(p=>p.group==='Crew').length;
+    const actors=people.filter(p=>p.group==='Actor').length;
+    const agency=people.filter(p=>p.group==='Agency').length;
+    document.getElementById('statsRow').innerHTML=[
+      [people.length,'Total'],
+      [crew,'Crew'],
+      [actors,'Skuespillere'],
+      [agency,'Agency / Client']
+    ].map(([v,l])=>`<div class="stat-card"><div class="stat-value">${v}</div><div class="stat-label">${l}</div></div>`).join('');
+  }
+
+  // ── GROUPS ──
+  function populateGroups(){
+    const sel=document.getElementById('groupFilter');
+    [...new Set(people.map(p=>p.group))].sort().forEach(g=>{
+      const o=document.createElement('option');o.value=g;o.textContent=g;sel.appendChild(o);
+    });
+  }
+
+  // ── NAMES ──
+  function populateNames(){
+    const sel=document.getElementById('personSelect');
+    [...people].sort((a,b)=>a.name.localeCompare(b.name)).forEach(p=>{
+      const o=document.createElement('option');o.value=p.name;o.textContent=`${p.name} · ${p.role}`;sel.appendChild(o);
+    });
+  }
+
+  // ── CONTACTS ──
+  function groupColor(g){
+    return{Crew:'crew',Client:'client',Agency:'agency',Actor:'actor'}[g]||'crew';
+  }
+  function filterPeople(){
+    const q=document.getElementById('searchInput').value.trim().toLowerCase();
+    const g=document.getElementById('groupFilter').value;
+    return people.filter(p=>{
+      const hay=[p.name,p.role,p.group,p.email,p.phone].join(' ').toLowerCase();
+      return(q===''||hay.includes(q))&&(g==='all'||p.group===g);
+    });
+  }
+  function renderContacts(){
+    const filtered=filterPeople();
+    document.getElementById('contactsGrid').innerHTML=filtered.length
+      ?filtered.map(p=>{
+          const callBtn=p.phone?`<a class="cc-btn call" href="${phoneHref(p.phone)}">📞 Ring op</a>`:'';
+          const mailBtn=p.email?`<a class="cc-btn mail" href="mailto:${p.email}">✉ Mail</a>`:'';
+          return`<div class="contact-card">
+            <div class="cc-top">
+              <div><div class="cc-name">${esc(p.name)}</div><div class="cc-role">${esc(p.role)}</div></div>
+              <span class="cc-group ${groupColor(p.group)}">${esc(p.group)}</span>
+            </div>
+            <div class="cc-contacts">
+              <div class="cc-row"><span class="cc-lbl">Tlf</span><span class="cc-val">${p.phone?`<a href="${phoneHref(p.phone)}">${esc(p.phone)}</a>`:'<span style="color:var(--text-muted)">—</span>'}</span></div>
+              <div class="cc-row"><span class="cc-lbl">Mail</span><span class="cc-val">${p.email?`<a href="mailto:${p.email}">${esc(p.email)}</a>`:'<span style="color:var(--text-muted)">—</span>'}</span></div>
+            </div>
+            ${callBtn||mailBtn?`<div class="cc-actions">${callBtn}${mailBtn}</div>`:''}
+          </div>`;
+        }).join('')
+      :`<div class="empty">Ingen resultater.</div>`;
+  }
+  document.getElementById('searchInput').addEventListener('input',renderContacts);
+  document.getElementById('groupFilter').addEventListener('change',renderContacts);
+
+  // ── MIN PLAN ──
+  function renderMinPlan(person){
+    const contacts=(person.contacts||[]).map(n=>getPerson(n)).filter(Boolean);
+    document.getElementById('tab-minplan').innerHTML=`
+      <div class="my-banner visible" style="display:block;">
+        <div class="my-banner-eye">// Din plan</div>
+        <div class="my-banner-name">${esc(person.name)}</div>
+        <div class="my-banner-role">${esc(person.role)} · ${esc(person.group)}</div>
+        <div class="my-grid" style="margin-top:16px;">
+          <div class="my-box">
+            <h3>Mine optagelsesdage</h3>
+            <ul class="my-list">${(person.schedule||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+          </div>
+          <div class="my-box">
+            <h3>Mine kontakter</h3>
+            <ul class="my-list">${contacts.map(c=>`
+              <li class="my-contact-item">
+                <div><div class="my-cn">${esc(c.name)}</div><div class="my-cr">${esc(c.role)}</div></div>
+                <div class="my-ca">
+                  ${c.phone?`<a class="icon-btn" href="${phoneHref(c.phone)}">📞</a>`:''}
+                  ${c.email?`<a class="icon-btn" href="mailto:${c.email}">✉️</a>`:''}
+                </div>
+              </li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  document.getElementById('personSelect').addEventListener('change',function(){
+    const person=this.value?getPerson(this.value):null;
+    const tab=document.getElementById('minplanTab');
+    if(person){
+      tab.style.display='flex';
+      renderMinPlan(person);
+      switchTab('minplan');
+    }else{
+      tab.style.display='none';
+      switchTab('schedule');
+    }
+  });
+
+  // ── RESET ──
+  function resetHome(){
+    document.getElementById('personSelect').value='';
+    document.getElementById('minplanTab').style.display='none';
+    document.getElementById('searchInput').value='';
+    document.getElementById('groupFilter').value='all';
+    renderContacts();
+    switchTab('schedule');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.getElementById('brandHome').addEventListener('click',resetHome);
+
+  // ── INIT ──
+  renderStats();
+  populateGroups();
+  populateNames();
+  renderContacts();
+</script>
+</body>
+</html>
