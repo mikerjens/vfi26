@@ -266,10 +266,31 @@
       .tab-btn{padding:0 22px;}
     }
     @media(max-width:600px){
-      .shoot-row{grid-template-columns:70px 1fr;} 
+      .shoot-row{grid-template-columns:70px 1fr;}
       .shoot-type{display:none;}
-      .name-picker-wrap{display:none;}
+      .header-inner{flex-wrap:wrap;}
+      .header-nav-row{width:100%;order:3;}
+      .name-bar{display:flex!important;}
     }
+    /* Mobile name bar — always shown */
+    .name-bar{
+      background:rgba(0,180,216,.08);
+      border-top:1px solid var(--border);
+      padding:10px 16px;
+      display:none; /* shown on mobile via media query, always shown on desktop via inline */
+      align-items:center;
+      gap:10px;
+    }
+    .name-bar-label{
+      font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;
+      text-transform:uppercase;color:var(--accent);white-space:nowrap;flex-shrink:0;
+    }
+    .name-bar-select{
+      flex:1;border:1px solid var(--accent2);background:var(--bg);
+      color:var(--text);font-family:var(--font-body);font-size:13px;
+      padding:8px 12px;border-radius:var(--radius-sm);cursor:pointer;
+    }
+    .name-bar-select:focus{outline:none;border-color:var(--accent);}
   </style>
 </head>
 <body>
@@ -281,9 +302,8 @@
       <div class="brand-name">VFI FILM 2026</div>
       <div class="brand-sub">Visit Faroe Islands · Kovboy Film</div>
     </div>
-
-    <div style="display:flex;align-items:center;gap:0;">
-      <nav class="tabs-bar">
+    <div style="display:flex;align-items:center;gap:0;flex:1;min-width:0;">
+      <nav class="tabs-bar" style="flex:1;">
         <button class="tab-btn active" data-tab="schedule">
           <span class="tab-icon">🎬</span><span>Schedule</span>
         </button>
@@ -297,13 +317,21 @@
           <span class="tab-icon">⭐</span><span>My Schedule</span>
         </button>
       </nav>
-      <div class="name-picker-wrap" style="margin-left:16px;padding-left:16px;border-left:1px solid var(--border);">
+      <!-- Desktop name picker -->
+      <div class="name-picker-wrap" style="margin-left:16px;padding-left:16px;border-left:1px solid var(--border);display:flex;" id="desktopPicker">
         <span class="np-label">My Schedule</span>
         <select id="personSelect" class="np-select">
           <option value="">Select your name</option>
         </select>
       </div>
     </div>
+  </div>
+  <!-- Mobile name picker — always visible on small screens -->
+  <div class="name-bar" id="mobilePicker">
+    <span class="name-bar-label">⭐ My Schedule</span>
+    <select id="personSelectMobile" class="name-bar-select">
+      <option value="">— Select your name to see your shoot days —</option>
+    </select>
   </div>
 </header>
 
@@ -322,6 +350,12 @@
 
   <!-- TAB: OPTAGELSER -->
   <div class="tab-panel active" id="tab-schedule">
+    <div style="background:var(--card);border:1px solid var(--accent2);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);flex-shrink:0;">⭐ Your personal schedule</div>
+      <select id="personSelectInline" style="flex:1;min-width:200px;border:1px solid var(--accent2);background:var(--bg2);color:var(--text);font-family:var(--font-body);font-size:13px;padding:8px 14px;border-radius:var(--radius-sm);cursor:pointer;">
+        <option value="">— Select your name to see your shoot days —</option>
+      </select>
+    </div>
     <div class="section-head">
       <h2>SHOOT SCHEDULE</h2>
       <p>Chronological overview of all shoot days</p>
@@ -777,52 +811,49 @@
   function renderMinPlan(person){
     const contacts=(person.contacts||[]).map(n=>getPerson(n)).filter(Boolean);
     document.getElementById('tab-minplan').innerHTML=`
-      <div class="my-banner visible" style="display:block;">
-        <div class="my-banner-eye">// Your Schedule</div>
-        <div class="my-banner-name">${esc(person.name)}</div>
-        <div class="my-banner-role">${esc(person.role)} · ${esc(person.group)}</div>
-        <div class="my-grid" style="margin-top:16px;">
-          <div class="my-box">
-            <h3>My Shoot Days</h3>
-            <ul class="my-list">${(person.schedule||[]).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
-          </div>
-          <div class="my-box">
-            <h3>My Contacts</h3>
-            <ul class="my-list">${contacts.map(c=>`
-              <li class="my-contact-item">
-                <div><div class="my-cn">${esc(c.name)}</div><div class="my-cr">${esc(c.role)}</div></div>
-                <div class="my-ca">
-                  ${c.phone?`<a class="icon-btn" href="${phoneHref(c.phone)}">📞</a>`:''}
-                  ${c.email?`<a class="icon-btn" href="mailto:${c.email}">✉️</a>`:''}
-                </div>
-              </li>`).join('')}
-            </ul>
-          </div>
+      <div style="margin-bottom:24px;">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">// Your Schedule</div>
+        <div style="font-family:var(--font-display);font-size:38px;letter-spacing:.04em;color:var(--text);line-height:1;">${esc(person.name)}</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">${esc(person.role)} · ${esc(person.group)}</div>
+      </div>
+
+      <div style="margin-bottom:28px;">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);">— Shoot Days</div>
+        <div style="display:grid;gap:10px;">
+          ${(person.schedule||[]).map(s=>{
+            const parts=s.split('·').map(p=>p.trim());
+            const time=parts[0]||'';
+            const rest=parts.slice(1).join(' · ');
+            return`<div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:14px 18px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;">
+              <div style="font-family:var(--font-mono);font-size:11px;color:var(--accent);font-weight:500;white-space:nowrap;padding-top:1px;">${esc(time)}</div>
+              <div style="font-size:13px;color:var(--text-mid);line-height:1.5;">${esc(rest)}</div>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);">— My Contacts</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;">
+          ${contacts.map(c=>`
+            <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;">
+              <div style="font-family:var(--font-display);font-size:18px;letter-spacing:.03em;color:var(--text);margin-bottom:2px;">${esc(c.name)}</div>
+              <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">${esc(c.role)}</div>
+              <div style="display:flex;gap:8px;">
+                ${c.phone?`<a href="${phoneHref(c.phone)}" style="display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--accent);color:#000;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;">📞 ${esc(c.phone)}</a>`:''}
+                ${c.email?`<a href="mailto:${c.email}" style="display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--card2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;">✉ Email</a>`:''}
+              </div>
+            </div>`).join('')}
         </div>
       </div>`;
   }
 
-  document.getElementById('personSelect').addEventListener('change',function(){
-    const person=this.value?getPerson(this.value):null;
-    const tab=document.getElementById('minplanTab');
-    if(person){
-      tab.style.display='flex';
-      renderMinPlan(person);
-      switchTab('minplan');
-    }else{
-      tab.style.display='none';
-      switchTab('schedule');
-    }
-  });
-
   // ── RESET ──
   function resetHome(){
-    document.getElementById('personSelect').value='';
-    document.getElementById('minplanTab').style.display='none';
+    triggerPersonChange('');
     document.getElementById('searchInput').value='';
     document.getElementById('groupFilter').value='all';
     renderContacts();
-    switchTab('schedule');
     window.scrollTo({top:0,behavior:'smooth'});
   }
   document.getElementById('brandHome').addEventListener('click',resetHome);
@@ -832,6 +863,61 @@
   populateGroups();
   populateNames();
   renderContacts();
+
+  // Populate mobile select
+  const mobileSel = document.getElementById('personSelectMobile');
+  [...people].sort((a,b)=>a.name.localeCompare(b.name)).forEach(p=>{
+    const o=document.createElement('option');
+    o.value=p.name; o.textContent=`${p.name} · ${p.role}`;
+    mobileSel.appendChild(o);
+  });
+
+  // Show mobile name bar on small screens
+  function checkMobile(){
+    const bar=document.getElementById('mobilePicker');
+    const desk=document.getElementById('desktopPicker');
+    if(window.innerWidth<=600){
+      bar.style.display='flex';
+      desk.style.display='none';
+    }else{
+      bar.style.display='none';
+      desk.style.display='flex';
+    }
+  }
+  checkMobile();
+  window.addEventListener('resize',checkMobile);
+
+  // Sync selects
+  function triggerPersonChange(name){
+    const person=name?getPerson(name):null;
+    const tab=document.getElementById('minplanTab');
+    // sync both selects
+    document.getElementById('personSelect').value=name||'';
+    document.getElementById('personSelectMobile').value=name||'';
+    if(document.getElementById('personSelectInline'))
+      document.getElementById('personSelectInline').value=name||'';
+    if(person){
+      tab.style.display='flex';
+      renderMinPlan(person);
+      switchTab('minplan');
+    }else{
+      tab.style.display='none';
+      switchTab('schedule');
+    }
+  }
+
+  document.getElementById('personSelect').addEventListener('change',function(){triggerPersonChange(this.value);});
+  document.getElementById('personSelectMobile').addEventListener('change',function(){triggerPersonChange(this.value);});
+
+  // Populate inline select on schedule tab
+  const inlineSel = document.getElementById('personSelectInline');
+  if(inlineSel){
+    [...people].sort((a,b)=>a.name.localeCompare(b.name)).forEach(p=>{
+      const o=document.createElement('option');
+      o.value=p.name; o.textContent=`${p.name} · ${p.role}`; inlineSel.appendChild(o);
+    });
+    inlineSel.addEventListener('change',function(){triggerPersonChange(this.value);});
+  }
 </script>
 </body>
 </html>
