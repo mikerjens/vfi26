@@ -350,7 +350,7 @@
 
   <!-- TAB: OPTAGELSER -->
   <div class="tab-panel active" id="tab-schedule">
-    <div style="background:var(--card);border:1px solid var(--accent2);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+    <div style="background:var(--card);border:1px solid var(--accent2);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px;display:none;align-items:center;gap:14px;flex-wrap:wrap;" id="inlinePickerBox">
       <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);flex-shrink:0;">⭐ Your personal schedule</div>
       <select id="personSelectInline" style="flex:1;min-width:200px;border:1px solid var(--accent2);background:var(--bg2);color:var(--text);font-family:var(--font-body);font-size:13px;padding:8px 14px;border-radius:var(--radius-sm);cursor:pointer;">
         <option value="">— Select your name to see your shoot days —</option>
@@ -876,12 +876,15 @@
   function checkMobile(){
     const bar=document.getElementById('mobilePicker');
     const desk=document.getElementById('desktopPicker');
+    const inlineBox=document.getElementById('inlinePickerBox');
     if(window.innerWidth<=600){
       bar.style.display='flex';
       desk.style.display='none';
+      if(inlineBox) inlineBox.style.display='none';
     }else{
       bar.style.display='none';
       desk.style.display='flex';
+      if(inlineBox) inlineBox.style.display='none';
     }
   }
   checkMobile();
