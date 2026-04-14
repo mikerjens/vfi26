@@ -41,62 +41,47 @@
     .header{
       background:var(--bg2);
       border-bottom:1px solid var(--border);
-      padding:0 20px;
-      position:sticky;top:0;z-index:100;
     }
-    .header-inner{
-      max-width:1100px;margin:0 auto;
-      display:flex;align-items:stretch;justify-content:space-between;
-      gap:16px;
+    .header-top{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 16px;gap:12px;
     }
-    .brand{
-      display:flex;flex-direction:column;justify-content:center;
-      padding:16px 0;cursor:pointer;
-    }
-    .brand-eye{
-      font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;
-      text-transform:uppercase;color:var(--accent);margin-bottom:2px;
-    }
-    .brand-name{
-      font-family:var(--font-display);font-size:28px;letter-spacing:.06em;
-      color:var(--text);line-height:1;
-    }
-    .brand-sub{font-size:11px;color:var(--text-muted);margin-top:3px;letter-spacing:.04em;}
+    .brand{cursor:pointer;}
+    .brand-eye{font-family:var(--font-mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:2px;}
+    .brand-name{font-family:var(--font-display);font-size:26px;letter-spacing:.06em;color:var(--text);line-height:1;}
+    .brand-sub{font-size:11px;color:var(--text-muted);margin-top:2px;letter-spacing:.03em;}
 
-    /* ── TABS ── */
-    .tabs-bar{
-      display:flex;gap:0;overflow-x:auto;scrollbar-width:none;
-      align-items:stretch;
-    }
+    /* desktop name picker */
+    .name-picker-wrap{display:flex;align-items:center;gap:10px;}
+    .np-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap;}
+    .np-select{border:1px solid var(--border-hi);background:var(--card);color:var(--text);font-family:var(--font-body);font-size:13px;padding:7px 12px;border-radius:var(--radius-sm);cursor:pointer;min-width:160px;}
+    .np-select:focus{outline:none;border-color:var(--accent);}
+
+    /* tabs */
+    .tabs-bar{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;border-top:1px solid var(--border);}
     .tabs-bar::-webkit-scrollbar{display:none;}
     .tab-btn{
-      flex:0 0 auto;display:flex;flex-direction:column;align-items:center;
-      justify-content:center;gap:3px;
-      padding:0 18px;min-height:60px;
+      flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+      padding:10px 8px;min-height:52px;
       background:transparent;border:none;border-bottom:2px solid transparent;
       color:var(--text-muted);font-family:var(--font-body);
-      font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
       cursor:pointer;transition:all .2s;white-space:nowrap;
     }
-    .tab-btn .tab-icon{font-size:16px;}
+    .tab-btn .tab-icon{font-size:15px;}
     .tab-btn:hover{color:var(--text);background:rgba(255,255,255,.03);}
     .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
 
-    /* ── NAME PICKER ── */
-    .name-picker-wrap{
-      display:flex;align-items:center;gap:10px;padding:12px 0;
+    /* mobile name bar */
+    .name-bar{
+      background:rgba(0,180,216,.07);
+      border-top:1px solid rgba(0,180,216,.2);
+      padding:10px 16px;
+      align-items:center;gap:10px;
     }
-    .np-label{
-      font-size:10px;font-weight:600;letter-spacing:.1em;
-      text-transform:uppercase;color:var(--text-muted);white-space:nowrap;
-    }
-    .np-select{
-      border:1px solid var(--border-hi);background:var(--card);
-      color:var(--text);font-family:var(--font-body);font-size:13px;
-      padding:7px 12px;border-radius:var(--radius-sm);cursor:pointer;
-      min-width:160px;
-    }
-    .np-select:focus{outline:none;border-color:var(--accent);}
+    .name-bar-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);white-space:nowrap;flex-shrink:0;}
+    .name-bar-select{flex:1;border:1px solid var(--accent2);background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:14px;padding:9px 12px;border-radius:var(--radius-sm);cursor:pointer;width:100%;}
+    .name-bar-select:focus{outline:none;border-color:var(--accent);}
 
     /* ── MAIN ── */
     .main{max-width:1100px;margin:0 auto;padding:24px 20px 80px;}
@@ -261,73 +246,45 @@
     .hidden{display:none!important;}
 
     @media(min-width:700px){
-      .header-inner{gap:24px;}
       .brand-name{font-size:32px;}
-      .tab-btn{padding:0 22px;}
+      .tab-btn{padding:0 22px;font-size:10px;}
     }
-    @media(max-width:600px){
+    @media(max-width:699px){
       .shoot-row{grid-template-columns:70px 1fr;}
       .shoot-type{display:none;}
-      .header-inner{flex-wrap:wrap;}
-      .header-nav-row{width:100%;order:3;}
-      .name-bar{display:flex!important;}
+      .main{padding:16px 12px 80px;}
     }
-    /* Mobile name bar — always shown */
-    .name-bar{
-      background:rgba(0,180,216,.08);
-      border-top:1px solid var(--border);
-      padding:10px 16px;
-      display:none; /* shown on mobile via media query, always shown on desktop via inline */
-      align-items:center;
-      gap:10px;
-    }
-    .name-bar-label{
-      font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;
-      text-transform:uppercase;color:var(--accent);white-space:nowrap;flex-shrink:0;
-    }
-    .name-bar-select{
-      flex:1;border:1px solid var(--accent2);background:var(--bg);
-      color:var(--text);font-family:var(--font-body);font-size:13px;
-      padding:8px 12px;border-radius:var(--radius-sm);cursor:pointer;
-    }
-    .name-bar-select:focus{outline:none;border-color:var(--accent);}
   </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-inner">
+<header class="header" style="position:sticky;top:0;z-index:100;">
+  <!-- Top row: brand + desktop name picker -->
+  <div class="header-top">
     <div class="brand" id="brandHome">
       <div class="brand-eye">Production Portal</div>
       <div class="brand-name">VFI FILM 2026</div>
       <div class="brand-sub">Visit Faroe Islands · Kovboy Film</div>
     </div>
-    <div style="display:flex;align-items:center;gap:0;flex:1;min-width:0;">
-      <nav class="tabs-bar" style="flex:1;">
-        <button class="tab-btn active" data-tab="schedule">
-          <span class="tab-icon">🎬</span><span>Schedule</span>
-        </button>
-        <button class="tab-btn" data-tab="films">
-          <span class="tab-icon">🎞</span><span>Film</span>
-        </button>
-        <button class="tab-btn" data-tab="contacts">
-          <span class="tab-icon">👤</span><span>Contacts</span>
-        </button>
-        <button class="tab-btn" data-tab="minplan" id="minplanTab" style="display:none;">
-          <span class="tab-icon">⭐</span><span>My Schedule</span>
-        </button>
-      </nav>
-      <!-- Desktop name picker -->
-      <div class="name-picker-wrap" style="margin-left:16px;padding-left:16px;border-left:1px solid var(--border);display:flex;" id="desktopPicker">
-        <span class="np-label">My Schedule</span>
-        <select id="personSelect" class="np-select">
-          <option value="">Select your name</option>
-        </select>
-      </div>
+    <!-- Desktop only name picker -->
+    <div class="name-picker-wrap" id="desktopPicker">
+      <span class="np-label">My Schedule</span>
+      <select id="personSelect" class="np-select">
+        <option value="">Select your name</option>
+      </select>
     </div>
   </div>
-  <!-- Mobile name picker — always visible on small screens -->
-  <div class="name-bar" id="mobilePicker">
+
+  <!-- Tabs row -->
+  <nav class="tabs-bar">
+    <button class="tab-btn active" data-tab="schedule"><span class="tab-icon">🎬</span><span>Schedule</span></button>
+    <button class="tab-btn" data-tab="films"><span class="tab-icon">🎞</span><span>Film</span></button>
+    <button class="tab-btn" data-tab="contacts"><span class="tab-icon">👤</span><span>Contacts</span></button>
+    <button class="tab-btn" data-tab="minplan" id="minplanTab" style="display:none;"><span class="tab-icon">⭐</span><span>My Schedule</span></button>
+  </nav>
+
+  <!-- Mobile name bar -->
+  <div class="name-bar" id="mobilePicker" style="display:none;">
     <span class="name-bar-label">⭐ My Schedule</span>
     <select id="personSelectMobile" class="name-bar-select">
       <option value="">— Select your name to see your shoot days —</option>
@@ -877,15 +834,10 @@
     const bar=document.getElementById('mobilePicker');
     const desk=document.getElementById('desktopPicker');
     const inlineBox=document.getElementById('inlinePickerBox');
-    if(window.innerWidth<=600){
-      bar.style.display='flex';
-      desk.style.display='none';
-      if(inlineBox) inlineBox.style.display='none';
-    }else{
-      bar.style.display='none';
-      desk.style.display='flex';
-      if(inlineBox) inlineBox.style.display='none';
-    }
+    const isMobile=window.innerWidth<700;
+    bar.style.display=isMobile?'flex':'none';
+    desk.style.display=isMobile?'none':'flex';
+    if(inlineBox) inlineBox.style.display='none';
   }
   checkMobile();
   window.addEventListener('resize',checkMobile);
