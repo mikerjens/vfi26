@@ -92,6 +92,28 @@
       text-decoration:none;font-weight:500;transition:all .2s;
     }
     .prod-doc-btn:hover{background:rgba(0,180,216,.18);border-color:var(--accent);}
+    .details-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 18px;margin:0 20px 18px;
+      background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.25);
+      border-radius:var(--radius-sm);color:var(--amber);
+      font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+      cursor:pointer;transition:all .2s;width:calc(100% - 40px);justify-content:space-between;
+    }
+    .details-btn:hover{background:rgba(245,158,11,.14);border-color:var(--amber);}
+    .details-btn .arrow{transition:transform .2s;font-size:10px;}
+    .details-btn.open .arrow{transform:rotate(180deg);}
+    .details-panel{
+      display:none;margin:0 20px 18px;
+      background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.15);
+      border-radius:var(--radius-sm);padding:16px 18px;
+      font-size:13px;color:var(--text-mid);line-height:1.75;
+    }
+    .details-panel.open{display:block;}
+    .details-panel .dp-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
+    .details-panel p{margin-bottom:8px;}
+    .details-panel p:last-child{margin-bottom:0;}
+    .details-panel .copy-line{font-style:italic;color:var(--text);margin-left:8px;}
     .fmi-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;}
     .fmi-value{font-size:13px;color:var(--text);font-weight:500;line-height:1.5;}
     .fmi-value.hi{color:var(--accent);}
@@ -209,7 +231,7 @@
       </div>
       <div class="shoot-row">
         <div class="shoot-time">14:00–16:00</div>
-        <div><div class="shoot-title">"Græsbakke med får"</div><div class="shoot-detail">📍 Sendistovan · Meet at: Sendistovan · Crew + Alda</div></div>
+        <div><div class="shoot-title">"Græsbakke med får"</div><div class="shoot-detail">📍 Vágar, Vestmanna or Kvívík · Meet at: Leynar · Crew + Alda</div></div>
         <span class="stype pc">Postcard</span>
       </div>
       <div class="shoot-row">
@@ -273,9 +295,10 @@
           <div><div class="fmi-label">Date</div><div class="fmi-value tbd">14–16 May 2026 (date TBD)</div></div>
           <div><div class="fmi-label">Time</div><div class="fmi-value">10:00–16:00</div></div>
           <div><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value tbd">TBD</div></div>
+          <div><div class="fmi-label">Location</div><div class="fmi-value">Can be all over the Faroe Islands</div></div>
           <div><div class="fmi-label">Actor</div><div class="fmi-value">Trygvi Danielsen</div></div>
-          <div><div class="fmi-label">Props / Specs</div><div class="fmi-value tbd">None received yet</div></div>
+          <div><div class="fmi-label">⚠ Actor note</div><div class="fmi-value tbd">Must know script before arrival</div></div>
+          <div><div class="fmi-label">Props / Specs</div><div class="fmi-value tbd">To be confirmed with Ingrið and Niels 2–3 days before shoot</div></div>
         </div>
         <a class="prod-doc-btn" href="https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing" target="_blank">📄 Production Document</a>
       </div>
@@ -288,10 +311,11 @@
         <div class="fc-body">
           <div><div class="fmi-label">Date</div><div class="fmi-value hi">Friday 1 May 2026</div></div>
           <div><div class="fmi-label">Time</div><div class="fmi-value">10:00–16:00</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
+          <div><div class="fmi-label">Meet at</div><div class="fmi-value hi">Eldhús á Sandi</div></div>
           <div><div class="fmi-label">Location</div><div class="fmi-value">Sandoy</div></div>
           <div><div class="fmi-label">Actor</div><div class="fmi-value">Jórunn Gudmundsen</div></div>
-          <div><div class="fmi-label">Props / Specs</div><div class="fmi-value tbd">None received yet</div></div>
+          <div><div class="fmi-label">⚠ Actor note</div><div class="fmi-value tbd">Must know script before arrival</div></div>
+          <div><div class="fmi-label">Props / Specs</div><div class="fmi-value tbd">To be confirmed with Ingrið and Niels 2–3 days before shoot</div></div>
         </div>
         <a class="prod-doc-btn" href="https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing" target="_blank">📄 Production Document</a>
       </div>
@@ -307,7 +331,8 @@
           <div><div class="fmi-label">Meet at</div><div class="fmi-value">Vagar Airport</div></div>
           <div><div class="fmi-label">Locations</div><div class="fmi-value">Múlafossur · Bøur · Vagar Airport</div></div>
           <div><div class="fmi-label">Actor</div><div class="fmi-value">Fríði Djurhuus</div></div>
-          <div><div class="fmi-label">Props / Specs</div><div class="fmi-value tbd">None received yet</div></div>
+          <div><div class="fmi-label">⚠ Actor note</div><div class="fmi-value tbd">Must know script before arrival</div></div>
+          <div><div class="fmi-label">Props / Specs</div><div class="fmi-value tbd">To be confirmed with Ingrið and Niels 2–3 days before shoot</div></div>
         </div>
         <a class="prod-doc-btn" href="https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing" target="_blank">📄 Production Document</a>
       </div>
@@ -315,19 +340,33 @@
     </div>
 
     <div class="divider-label" style="color:var(--amber);">— Cinematic Postcards · 27 April 2026</div>
+
+    <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:20px;font-size:13px;color:var(--text-muted);line-height:1.7;">
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">General shoot guidelines</div>
+      All shots as one-takes, min. 15 sec &middot; Tripod only &middot; Loose framing for copy/logo in post &middot; Record in both 9:16 and 16:9 &middot; Shoot stills of all setups (portrait + landscape) &middot; Few strong compositions, no cutting &middot; Extras only in "Vandrere i tæt bebyggelse"
+    </div>
+
     <div class="films-grid">
 
       <div class="film-card">
         <div class="fc-head">
-          <div><div class="fc-type" style="color:var(--amber);">// Postcard · Portrait</div><div class="fc-title">"Vandrere i tæt bebyggelse"</div></div>
-          <span class="fc-status tbd"><span class="fc-dot"></span>Location TBD</span>
+          <div><div class="fc-type" style="color:var(--amber);">// Postcard</div><div class="fc-title">"Vandrere i tæt bebyggelse"</div></div>
+          <span class="fc-status ok"><span class="fc-dot"></span>Confirmed</span>
         </div>
         <div class="fc-body">
           <div><div class="fmi-label">Time</div><div class="fmi-value">10:00–12:00</div></div>
           <div><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value tbd">TBD</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">2–3 actors</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">All crew + Alda + Jóhan Pauli</div></div>
+          <div><div class="fmi-label">Location</div><div class="fmi-value">Tórshavn, Reyni</div></div>
+          <div><div class="fmi-label">Actors</div><div class="fmi-value">2 extras (Michael arranges)</div></div>
+          <div><div class="fmi-label">Meet at</div><div class="fmi-value hi">Katrin Christiansen, Tórshavn</div></div>
+          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
+        </div>
+        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
+        <div class="details-panel">
+          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
+          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"Two more people and we'll need traffic lights"</span></p>
+          <p><strong>Notes:</strong> Must clearly be Tórshavn. Only walkers in frame. May enter empty frame, stop and interact briefly (e.g. point), then continue.</p>
+          <p><strong>Casting:</strong> Michael arranges 2 extras in agreement with Jóhan Pauli Helgason. Payment between Visit Faroe Islands and extras.</p>
         </div>
       </div>
 
@@ -341,7 +380,15 @@
           <div><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
           <div><div class="fmi-label">Location</div><div class="fmi-value">Sendistovan</div></div>
           <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">All crew + Alda + Jóhan Pauli</div></div>
+          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
+        </div>
+        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
+        <div class="details-panel">
+          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
+          <p><strong>Shot:</strong> Total &middot; Record 3 variations: closed, open, half-open/swinging. Sheep in background preferred.</p>
+          <p><strong>Copy — closed:</strong> <span class="copy-line">"A simple thing, doing its job." / "Nothing gets in, nothing gets out." / "Closed. Like it was meant to be."</span></p>
+          <p><strong>Copy — open:</strong> <span class="copy-line">"You had one job." / "Freedom. Not ideal for sheep." / "Works best when closed."</span></p>
+          <p><strong>Copy — half-open:</strong> <span class="copy-line">"Almost there." / "One step from perfect."</span></p>
         </div>
       </div>
 
@@ -352,10 +399,16 @@
         </div>
         <div class="fc-body">
           <div><div class="fmi-label">Time</div><div class="fmi-value">14:00–16:00</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Sendistovan</div></div>
+          <div><div class="fmi-label">Meet at</div><div class="fmi-value hi">Leynar</div></div>
+          <div><div class="fmi-label">Location</div><div class="fmi-value">Vágar, Vestmanna or Kvívík</div></div>
           <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">All crew + Alda + Jóhan Pauli</div></div>
+          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
+        </div>
+        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
+        <div class="details-panel">
+          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
+          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"You're standing in a sheep restaurant"</span></p>
+          <p><strong>Notes:</strong> Larger flock grazing on a hillside.</p>
         </div>
       </div>
 
@@ -369,7 +422,13 @@
           <div><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
           <div><div class="fmi-label">Location</div><div class="fmi-value">Gásadalur</div></div>
           <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">All crew + Alda + Jóhan Pauli</div></div>
+          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
+        </div>
+        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
+        <div class="details-panel">
+          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
+          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"Already internet famous"</span></p>
+          <p><strong>Notes:</strong> Classic hero shot of the waterfall — from opposite side or with drone over the water.</p>
         </div>
       </div>
 
@@ -382,22 +441,34 @@
           <div><div class="fmi-label">Time</div><div class="fmi-value">16:00–17:30</div></div>
           <div><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
           <div><div class="fmi-label">Location</div><div class="fmi-value">Bøur</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">1 actor</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">All crew + Alda + Jóhan Pauli</div></div>
+          <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
+          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
+        </div>
+        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
+        <div class="details-panel">
+          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
+          <p><strong>Shot:</strong> Total + close-up (assess on location) &middot; <strong>Copy:</strong> <span class="copy-line">"One thing is out of place"</span></p>
+          <p><strong>Notes:</strong> A piece of litter in otherwise beautiful nature.</p>
         </div>
       </div>
 
       <div class="film-card">
         <div class="fc-head">
           <div><div class="fc-type" style="color:var(--amber);">// Postcard</div><div class="fc-title">"Somebody Actually Lives Here"</div></div>
-          <span class="fc-status tbd"><span class="fc-dot"></span>Details TBD</span>
+          <span class="fc-status ok"><span class="fc-dot"></span>Confirmed</span>
         </div>
         <div class="fc-body">
           <div><div class="fmi-label">Time</div><div class="fmi-value">16:00–17:30</div></div>
           <div><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
           <div><div class="fmi-label">Location</div><div class="fmi-value">Bøur</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value tbd">2–3 (further details to follow)</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">All crew + Alda + Jóhan Pauli</div></div>
+          <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
+          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
+        </div>
+        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
+        <div class="details-panel">
+          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
+          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"Someone actually lives here"</span></p>
+          <p><strong>Notes:</strong> House spectacularly located — ideally with mountains, sea and animals in same frame.</p>
         </div>
       </div>
 
@@ -426,7 +497,7 @@
       phone:"+298 591011", email:"michael@kovboyfilm.com",
       schedule:[
         "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan → Gásadalur",
-        "Fri 1 May · 10:00–16:00 · Stay on the Ancient Path · Sandoy · Meet at: Sendistovan",
+        "Fri 1 May · 10:00–16:00 · Stay on the Ancient Path · Sandoy · Meet at: Eldhús á Sandi",
         "Sat 2 May · 10:00–16:00 · Drones Are for Dicks · Meet at: Vagar Airport",
         "14–16 May (date TBD) · 10:00–16:00 · Make It a Fokk It List · Meet at: Sendistovan"
       ],
@@ -437,7 +508,7 @@
       phone:"+298 213457", email:"thomas@kovboyfilm.com",
       schedule:[
         "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan → Gásadalur",
-        "Fri 1 May · 10:00–16:00 · Stay on the Ancient Path · Sandoy · Meet at: Sendistovan",
+        "Fri 1 May · 10:00–16:00 · Stay on the Ancient Path · Sandoy · Meet at: Eldhús á Sandi",
         "Sat 2 May · 10:00–16:00 · Drones Are for Dicks · Meet at: Vagar Airport",
         "14–16 May (date TBD) · 10:00–16:00 · Make It a Fokk It List · Meet at: Sendistovan"
       ],
@@ -511,11 +582,19 @@
       name:"Jórunn Gudmundsen", role:"Actor — Stay on the Ancient Path", group:"Actor",
       phone:"+298 259986", email:"jorunn.gudmundsen@hotmail.com",
       schedule:[
-        "Fri 1 May · 10:00–16:00 · Stay on the Ancient Path · Sandoy · Meet at: Sendistovan"
+        "Fri 1 May · 10:00–16:00 · Stay on the Ancient Path · Sandoy · Meet at: Eldhús á Sandi"
       ],
       contacts:["Michael Koba"]
     }
   ];
+
+  // ── TOGGLE DETAILS ──
+  function toggleDetails(btn){
+    const panel=btn.nextElementSibling;
+    const isOpen=panel.classList.contains('open');
+    panel.classList.toggle('open',!isOpen);
+    btn.classList.toggle('open',!isOpen);
+  }
 
   // ── UTILS ──
   const PROD_DOC = "https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing";
