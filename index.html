@@ -718,26 +718,61 @@
   document.getElementById('groupFilter').addEventListener('change',renderContacts);
 
   // ── MY SCHEDULE ──
+  // Completed shoot dates (matched against schedule entries)
+  const COMPLETED_DATES = [
+    "Fri 25 April", "Sat 25 April", "Mon 27 April"
+  ];
+  function isCompleted(scheduleEntry){
+    return COMPLETED_DATES.some(d => scheduleEntry.startsWith(d));
+  }
+
   function renderMyPlan(person){
     const contacts=(person.contacts||[]).map(n=>getPerson(n)).filter(Boolean);
+    const upcoming = (person.schedule||[]).filter(s=>!isCompleted(s) && !s.startsWith('⚠'));
+    const done = (person.schedule||[]).filter(s=>isCompleted(s));
+
+    const renderDay = (s, completed=false) => {
+      const parts=s.split('·').map(x=>x.trim());
+      const time=parts[0]||'';
+      const rest=parts.slice(1).join(' · ');
+      if(completed) return `
+        <div class="my-day" style="background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.25);border-left-color:var(--green);opacity:.7;position:relative;">
+          <div class="my-day-time" style="color:var(--green);text-decoration:line-through;">${esc(time)}</div>
+          <div class="my-day-info" style="text-decoration:line-through;color:var(--text-muted);">${esc(rest)}</div>
+          <div style="position:absolute;top:10px;right:12px;font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--green);">✓ DONE</div>
+        </div>`;
+      return `
+        <div class="my-day">
+          <div class="my-day-time">${esc(time)}</div>
+          <div class="my-day-info">${esc(rest)}</div>
+        </div>`;
+    };
+
     document.getElementById('tab-myplan').innerHTML=`
       <div class="my-head">
         <div class="my-eye">// Your Schedule</div>
         <div class="my-name">${esc(person.name)}</div>
         <div class="my-role">${esc(person.role)} · ${esc(person.group)}</div>
       </div>
-      <div class="my-section-label">— Shoot Days</div>
-      <div class="my-days">
-        ${(person.schedule||[]).map(s=>{
-          const parts=s.split('·').map(x=>x.trim());
-          const time=parts[0]||'';
-          const rest=parts.slice(1).join(' · ');
-          return`<div class="my-day">
-            <div class="my-day-time">${esc(time)}</div>
-            <div class="my-day-info">${esc(rest)}</div>
-          </div>`;
-        }).join('')}
-      </div>
+
+      ${upcoming.length ? `
+        <div class="my-section-label">— Upcoming Shoot Days</div>
+        <div class="my-days">${upcoming.map(s=>renderDay(s,false)).join('')}</div>
+      ` : `
+        <div style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:24px;">✅</span>
+          <div>
+            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:2px;">All shoots completed</div>
+            <div style="font-size:13px;color:var(--text-muted);">You have no upcoming shoot days on this production.</div>
+          </div>
+        </div>
+      `}
+
+      ${done.length ? `
+        <div class="my-section-label" style="color:var(--green);">— Completed</div>
+        <div class="my-days">${done.map(s=>renderDay(s,true)).join('')}</div>
+      ` : ''}
+
       <div class="my-section-label">— My Contacts</div>
       <div class="my-contacts">
         ${contacts.map(c=>`
