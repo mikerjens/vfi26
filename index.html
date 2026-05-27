@@ -42,87 +42,65 @@
     .tab-btn .ti{font-size:15px;}
     .tab-btn:hover{color:var(--text);}
     .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
-    /* Mobile name bar */
     .mob-bar{background:rgba(0,180,216,.07);border-top:1px solid rgba(0,180,216,.2);padding:10px 16px;align-items:center;gap:10px;display:none;}
     .mob-bar-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);white-space:nowrap;flex-shrink:0;}
     .mob-select{flex:1;border:1px solid var(--accent2);background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:14px;padding:9px 12px;border-radius:var(--radius-sm);cursor:pointer;width:100%;}
     .mob-select:focus{outline:none;border-color:var(--accent);}
 
     /* ── MAIN ── */
-    .main{max-width:1100px;margin:0 auto;padding:24px 20px 80px;}
+    .main{max-width:900px;margin:0 auto;padding:28px 20px 80px;}
     .tab-panel{display:none;}
     .tab-panel.active{display:block;}
 
-    /* ── SECTION HEAD ── */
-    .sh{margin-bottom:20px;}
-    .sh h2{font-family:var(--font-display);font-size:32px;letter-spacing:.06em;color:var(--text);}
-    .sh p{font-size:13px;color:var(--text-muted);margin-top:4px;}
-
-    /* ── SCHEDULE ── */
-    .day-group{margin-bottom:28px;}
-    .day-label{font-family:var(--font-display);font-size:20px;letter-spacing:.06em;color:var(--text);padding:10px 0;border-bottom:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
-    .day-tag{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--accent);background:var(--accent-dim);padding:3px 10px;border-radius:999px;border:1px solid rgba(0,180,216,.2);}
-    .shoot-row{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:10px;display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:16px;transition:border-color .15s;}
-    .shoot-row:hover{border-color:var(--border-hi);}
-    .shoot-time{font-family:var(--font-mono);font-size:13px;color:var(--accent);font-weight:500;}
-    .shoot-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px;}
-    .shoot-detail{font-size:12px;color:var(--text-muted);}
-    .stype{font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;}
-    .stype.exp{background:rgba(0,180,216,.1);color:var(--accent);border:1px solid rgba(0,180,216,.2);}
-    .stype.pc{background:rgba(245,158,11,.1);color:var(--amber);border:1px solid rgba(245,158,11,.2);}
-
-    /* ── FILM CARDS ── */
-    .films-grid{display:grid;gap:14px;margin-bottom:28px;}
-    .film-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:border-color .2s;}
-    .film-card:hover{border-color:var(--border-hi);}
-    .fc-head{background:var(--card2);padding:16px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;border-bottom:1px solid var(--border);}
-    .fc-type{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
-    .fc-title{font-family:var(--font-display);font-size:22px;letter-spacing:.04em;color:var(--text);}
-    .fc-status{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;white-space:nowrap;flex-shrink:0;margin-top:4px;}
-    .fc-status.tbd{background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);color:var(--amber);}
-    .fc-status.ok{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:var(--green);}
-    .fc-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
-    .fc-body{padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;}
-    .prod-doc-btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 18px;margin:0 20px 18px;
-      background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.25);
-      border-radius:var(--radius-sm);color:var(--accent);
-      font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-      text-decoration:none;font-weight:500;transition:all .2s;
+    /* THANK YOU CARD */
+    .thankyou-card{
+      background:linear-gradient(135deg,#0d1f2d 0%,#091520 100%);
+      border:1px solid rgba(0,180,216,.3);
+      border-radius:var(--radius);
+      padding:32px;
+      margin-bottom:24px;
+      box-shadow:0 0 60px rgba(0,180,216,.06);
+      text-align:center;
     }
-    .prod-doc-btn:hover{background:rgba(0,180,216,.18);border-color:var(--accent);}
-    .details-btn{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 18px;margin:0 20px 18px;
-      background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.25);
-      border-radius:var(--radius-sm);color:var(--amber);
-      font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-      cursor:pointer;transition:all .2s;width:calc(100% - 40px);justify-content:space-between;
-    }
-    .details-btn:hover{background:rgba(245,158,11,.14);border-color:var(--amber);}
-    .details-btn .arrow{transition:transform .2s;font-size:10px;}
-    .details-btn.open .arrow{transform:rotate(180deg);}
-    .details-panel{
-      display:none;margin:0 20px 18px;
-      background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.15);
-      border-radius:var(--radius-sm);padding:16px 18px;
-      font-size:13px;color:var(--text-mid);line-height:1.75;
-    }
-    .details-panel.open{display:block;}
-    .details-panel .dp-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:6px;}
-    .details-panel p{margin-bottom:8px;}
-    .details-panel p:last-child{margin-bottom:0;}
-    .details-panel .copy-line{font-style:italic;color:var(--text);margin-left:8px;}
-    .fmi-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;}
-    .fmi-value{font-size:13px;color:var(--text);font-weight:500;line-height:1.5;}
-    .fmi-value.hi{color:var(--accent);}
-    .fmi-value.tbd{color:var(--amber);}
-    .divider-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:14px;}
+    .ty-icon{font-size:48px;margin-bottom:16px;}
+    .ty-eye{font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+    .ty-title{font-family:var(--font-display);font-size:42px;letter-spacing:.04em;color:var(--text);margin-bottom:16px;line-height:1;}
+    .ty-body{font-size:15px;color:var(--text-mid);line-height:1.85;max-width:600px;margin:0 auto;white-space:pre-line;}
+    .ty-sig{margin-top:20px;font-size:13px;color:var(--text-muted);font-style:italic;}
 
-    /* ── CONTACTS ── */
+    /* NOTICE CARD */
+    .notice-card{
+      background:rgba(245,158,11,.06);
+      border:1px solid rgba(245,158,11,.3);
+      border-left:4px solid var(--amber);
+      border-radius:var(--radius);
+      padding:20px 24px;
+      margin-bottom:24px;
+      display:flex;align-items:flex-start;gap:16px;
+    }
+    .notice-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+    .notice-label{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;}
+    .notice-body{font-size:14px;color:var(--text-mid);line-height:1.7;}
+
+    /* STATUS GRID */
+    .status-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:24px;}
+    .status-card{background:var(--card);border:1px solid rgba(34,197,94,.25);border-radius:var(--radius);padding:16px;text-align:center;}
+    .status-val{font-family:var(--font-display);font-size:34px;letter-spacing:.04em;color:var(--green);line-height:1;}
+    .status-lbl{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
+
+    /* COMPLETED LIST */
+    .completed-section{background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.2);border-radius:var(--radius);padding:20px;margin-bottom:24px;}
+    .completed-header{font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+    .completed-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(34,197,94,.1);}
+    .completed-item:last-child{border-bottom:none;}
+    .completed-check{color:var(--green);font-weight:700;font-size:14px;flex-shrink:0;}
+    .completed-title{font-size:14px;color:var(--text-muted);text-decoration:line-through;flex:1;}
+    .completed-date{font-family:var(--font-mono);font-size:10px;color:var(--green);white-space:nowrap;}
+    .editing-tag{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.3);border-radius:4px;font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#c084fc;margin-left:8px;white-space:nowrap;}
+
+    /* CONTACTS */
     .stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:20px;}
-    @media(min-width:500px){.stats-row{grid-template-columns:repeat(4,1fr);}}
+    @media(min-width:500px){.stats-row{grid-template-columns:repeat(3,1fr);}}
     .stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;}
     .stat-val{font-family:var(--font-display);font-size:36px;letter-spacing:.04em;color:var(--accent);line-height:1;}
     .stat-lbl{font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
@@ -139,7 +117,6 @@
     .cc-badge.Crew{background:rgba(0,180,216,.1);color:var(--accent);border:1px solid rgba(0,180,216,.2);}
     .cc-badge.Client{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2);}
     .cc-badge.Agency{background:rgba(245,158,11,.1);color:var(--amber);border:1px solid rgba(245,158,11,.2);}
-    .cc-badge.Actor{background:rgba(168,85,247,.1);color:#a855f7;border:1px solid rgba(168,85,247,.2);}
     .cc-info{display:grid;gap:6px;font-size:13px;margin-bottom:12px;}
     .cc-row{display:flex;align-items:center;gap:8px;}
     .cc-lbl{font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);min-width:38px;}
@@ -152,33 +129,8 @@
     .cc-btn.mail{background:var(--card2);color:var(--text);border:1px solid var(--border);}
     .cc-btn.mail:hover{background:var(--border);}
 
-    /* ── MY SCHEDULE ── */
-    .my-head{margin-bottom:24px;}
-    .my-eye{font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
-    .my-name{font-family:var(--font-display);font-size:38px;letter-spacing:.04em;color:var(--text);line-height:1;}
-    .my-role{font-size:13px;color:var(--text-muted);margin-top:4px;}
-    .my-section-label{font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
-    .my-days{display:grid;gap:10px;margin-bottom:28px;}
-    .my-day{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:14px 18px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;}
-    .my-day-time{font-family:var(--font-mono);font-size:11px;color:var(--accent);font-weight:500;white-space:nowrap;padding-top:1px;}
-    .my-day-info{font-size:13px;color:var(--text-mid);line-height:1.5;}
-    .my-contacts{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
-    .my-contact{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;}
-    .my-contact-name{font-family:var(--font-display);font-size:18px;letter-spacing:.03em;color:var(--text);margin-bottom:2px;}
-    .my-contact-role{font-size:11px;color:var(--text-muted);margin-bottom:10px;}
-    .my-contact-btns{display:flex;gap:8px;}
-
-    .empty{padding:40px;text-align:center;color:var(--text-muted);font-style:italic;}
-
-    @media(min-width:700px){
-      .brand-name{font-size:32px;}
-      .tab-btn{padding:0 22px;font-size:10px;}
-    }
-    @media(max-width:699px){
-      .shoot-row{grid-template-columns:70px 1fr;}
-      .stype{display:none;}
-      .main{padding:16px 12px 80px;}
-    }
+    @media(min-width:700px){.brand-name{font-size:32px;}.tab-btn{padding:0 22px;font-size:10px;}}
+    @media(max-width:699px){.main{padding:16px 12px 80px;}.np-wrap{display:none;}.mob-bar{display:flex;}}
   </style>
 </head>
 <body>
@@ -198,356 +150,114 @@
     </div>
   </div>
   <nav class="tabs-bar">
-    <button class="tab-btn active" data-tab="schedule"><span class="ti">🎬</span><span>Schedule</span></button>
-    <button class="tab-btn" data-tab="films"><span class="ti">🎞</span><span>Film</span></button>
+    <button class="tab-btn active" data-tab="home"><span class="ti">🎬</span><span>Home</span></button>
     <button class="tab-btn" data-tab="contacts"><span class="ti">👤</span><span>Contacts</span></button>
     <button class="tab-btn" data-tab="myplan" id="myplanTab" style="display:none;"><span class="ti">⭐</span><span>My Schedule</span></button>
   </nav>
   <div class="mob-bar" id="mobilePicker">
     <span class="mob-bar-label">⭐ My Schedule</span>
     <select id="personSelectMobile" class="mob-select">
-      <option value="">— Select your name to see your shoot days —</option>
+      <option value="">— Select your name —</option>
     </select>
   </div>
 </header>
 
-
 <main class="main">
 
-  <!-- TAB: SCHEDULE -->
-  <div class="tab-panel active" id="tab-schedule">
-    <div class="sh"><h2>SHOOT SCHEDULE</h2><p>Upcoming shoots first · Completed at bottom</p></div>
+  <!-- TAB: HOME -->
+  <div class="tab-panel active" id="tab-home">
 
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);">— Upcoming</div>
+    <!-- Thank you -->
+    <div class="thankyou-card">
+      <div class="ty-icon">🎥</div>
+      <div class="ty-eye">// Wrap</div>
+      <div class="ty-title">That's a Wrap!</div>
+      <div class="ty-body">Thank you to everyone who was part of the Visit Faroe Islands film production. Your effort, patience and professionalism made this possible.
 
-    <div class="day-group">
-      <div class="day-label">Thursday 14 May<span class="day-tag">MAY 14</span></div>
-      <div class="shoot-row">
-        <div class="shoot-time">10:00–16:00</div>
-        <div>
-          <div class="shoot-title">"Make It a Fokk It List"</div>
-          <div class="shoot-detail">📍 Tórshavn area · Meet at: Sendistovan · Actor: Trygvi Danielsen</div>
-          <div style="margin-top:6px;font-size:12px;color:var(--text-muted);">Locations: Kirkjubømúrurin · Skansin · Tinganes · Vágsbotn · Norðadalsskarð · Sornfelli · Mjørkadal · Útstappaðan lunda</div>
-          <a href="https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing" target="_blank" style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:4px 10px;background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.25);border-radius:4px;color:var(--accent);font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;">📄 Production Doc</a>
-        </div>
-        <span class="stype exp">Explainer</span>
+It has been a pleasure working with each and every one of you — from crew and agency to clients and actors. The Faroe Islands looked stunning, and that's because you helped us capture it at its best.</div>
+      <div class="ty-sig">— Michael Koba & Thomas Koba · Kovboy Film</div>
+    </div>
+
+    <!-- Notice: more shoots possible -->
+    <div class="notice-card">
+      <div class="notice-icon">📢</div>
+      <div>
+        <div class="notice-label">Heads up</div>
+        <div class="notice-body">There may be additional shoots in a few weeks. If so, we will update this portal and reach out directly. Stay tuned — we'll be in touch.</div>
       </div>
     </div>
 
-    <div style="display:flex;align-items:center;gap:12px;margin-top:32px;margin-bottom:16px;">
-      <div style="flex:1;height:1px;background:rgba(34,197,94,.3);"></div>
-      <div style="display:flex;align-items:center;gap:8px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);border-radius:999px;padding:6px 16px;">
-        <span style="font-size:15px;">✅</span>
-        <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);font-weight:600;">Completed — 2 explainers + 6 postcards done</span>
+    <!-- Production stats -->
+    <div class="status-grid">
+      <div class="status-card">
+        <div class="status-val">9</div>
+        <div class="status-lbl">Scenes completed</div>
       </div>
-      <div style="flex:1;height:1px;background:rgba(34,197,94,.3);"></div>
-    </div>
-
-    <div style="background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.2);border-radius:var(--radius);padding:4px;margin-bottom:4px;">
-
-    <div class="day-group" style="margin-bottom:4px;">
-      <div class="day-label" style="color:var(--text-muted);border-bottom-color:rgba(34,197,94,.15);">Friday 1 May<span class="day-tag" style="background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.25);">MAY 01</span></div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(168,85,247,.25);border-left:3px solid #a855f7;">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">09:00–14:00</div>
-        <div>
-          <div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Stay on the Ancient Path"</div>
-          <div class="shoot-detail" style="opacity:.5;">📍 Eysturoy, Funningur · Jórunn Gudmundsen</div>
-          <div style="display:flex;align-items:center;gap:8px;margin-top:8px;padding:7px 12px;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.5);border-radius:6px;max-width:420px;">
-            <span style="font-size:14px;">✂️</span>
-            <div>
-              <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c084fc;font-weight:700;">In Editing</div>
-              <div style="font-size:12px;color:#e9d5ff;margin-top:1px;">Finished film expected <strong>Tuesday 5 May 2026</strong></div>
-            </div>
-          </div>
-        </div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
+      <div class="status-card">
+        <div class="status-val">3</div>
+        <div class="status-lbl">Explainer films</div>
+      </div>
+      <div class="status-card">
+        <div class="status-val">6</div>
+        <div class="status-lbl">Cinematic postcards</div>
       </div>
     </div>
 
-    <div class="day-group" style="margin-bottom:4px;">
-      <div class="day-label" style="color:var(--text-muted);border-bottom-color:rgba(34,197,94,.15);">Saturday 2 May<span class="day-tag" style="background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.25);">MAY 02</span></div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(168,85,247,.25);border-left:3px solid #a855f7;">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">10:00–16:00</div>
-        <div>
-          <div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Drones Are for Dicks"</div>
-          <div class="shoot-detail" style="opacity:.5;">📍 Múlafossur · Bøur · Vagar Airport · Fríði Djurhuus</div>
-          <div style="display:flex;align-items:center;gap:8px;margin-top:8px;padding:7px 12px;background:rgba(168,85,247,.15);border:1px solid rgba(168,85,247,.5);border-radius:6px;max-width:420px;">
-            <span style="font-size:14px;">✂️</span>
-            <div>
-              <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c084fc;font-weight:700;">In Editing</div>
-              <div style="font-size:12px;color:#e9d5ff;margin-top:1px;">Finished film expected <strong>Tuesday 5 May 2026</strong></div>
-            </div>
-          </div>
-        </div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
+    <!-- Completed list -->
+    <div class="completed-section">
+      <div class="completed-header">✅ All shoots completed</div>
+
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;margin-top:4px;">Explainer Videos</div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Make It a Fokk It List"</span>
+        <span class="completed-date">Thu 14 May</span>
+      </div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Stay on the Ancient Path"</span>
+        <span class="completed-date">Fri 1 May</span>
+      </div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Drones Are for Dicks"</span>
+        <span class="completed-date">Sat 2 May</span>
+      </div>
+
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;margin-top:16px;">Cinematic Postcards</div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Vandrere i tæt bebyggelse"</span>
+        <span class="completed-date">Sat 25 Apr</span>
+      </div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Close the Gates"</span>
+        <span class="completed-date">Mon 27 Apr</span>
+      </div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Græsbakke med får"</span>
+        <span class="completed-date">Mon 27 Apr</span>
+      </div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Múlafossur"</span>
+        <span class="completed-date">Mon 27 Apr</span>
+      </div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Skrald samles op fra sti"</span>
+        <span class="completed-date">Mon 27 Apr</span>
+      </div>
+      <div class="completed-item">
+        <span class="completed-check">✓</span>
+        <span class="completed-title">"Somebody Actually Lives Here"</span>
+        <span class="completed-date">Mon 27 Apr</span>
       </div>
     </div>
 
-    <div class="day-group" style="margin-bottom:4px;">
-      <div class="day-label" style="color:var(--text-muted);border-bottom-color:rgba(34,197,94,.15);">Saturday 25 April<span class="day-tag" style="background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.25);">APR 25</span></div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(34,197,94,.15);border-left:3px solid rgba(34,197,94,.5);">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">10:00–11:00</div>
-        <div><div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Vandrere i tæt bebyggelse"</div><div class="shoot-detail" style="opacity:.5;">📍 Tórshavn, Reyni · Brim Hoydal &amp; Michael Anthony</div></div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
-      </div>
-    </div>
-
-    <div class="day-group" style="margin-bottom:0;">
-      <div class="day-label" style="color:var(--text-muted);border-bottom-color:rgba(34,197,94,.15);">Monday 27 April<span class="day-tag" style="background:rgba(34,197,94,.1);color:var(--green);border-color:rgba(34,197,94,.25);">APR 27</span></div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(34,197,94,.15);border-left:3px solid rgba(34,197,94,.5);">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">12:00–14:00</div>
-        <div><div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Close the Gates"</div><div class="shoot-detail" style="opacity:.5;">📍 Kvívík</div></div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
-      </div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(34,197,94,.15);border-left:3px solid rgba(34,197,94,.5);">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">14:00–16:00</div>
-        <div><div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Græsbakke med får"</div><div class="shoot-detail" style="opacity:.5;">📍 Vágar, Vestmanna or Kvívík</div></div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
-      </div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(34,197,94,.15);border-left:3px solid rgba(34,197,94,.5);">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">16:00–18:00</div>
-        <div><div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Múlafossur"</div><div class="shoot-detail" style="opacity:.5;">📍 Gásadalur</div></div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
-      </div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(34,197,94,.15);border-left:3px solid rgba(34,197,94,.5);">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">16:00–17:30</div>
-        <div><div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Skrald samles op fra sti"</div><div class="shoot-detail" style="opacity:.5;">📍 Bøur</div></div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
-      </div>
-      <div class="shoot-row" style="background:transparent;border-color:rgba(34,197,94,.15);border-left:3px solid rgba(34,197,94,.5);">
-        <div class="shoot-time" style="color:var(--green);opacity:.7;">16:00–17:30</div>
-        <div><div class="shoot-title" style="text-decoration:line-through;color:var(--text-muted);font-size:13px;">"Somebody Actually Lives Here"</div><div class="shoot-detail" style="opacity:.5;">📍 Bøur</div></div>
-        <span style="font-family:var(--font-mono);font-size:10px;color:var(--green);font-weight:700;white-space:nowrap;">✓ DONE</span>
-      </div>
-    </div>
-
-    </div>
   </div>
-
-  <!-- TAB: FILMS -->
-  <div class="tab-panel" id="tab-films">
-    <div class="sh"><h2>FILM OVERVIEW</h2><p>3 explainer videos · 6 cinematic postcards</p></div>
-
-    <div class="divider-label" style="color:var(--accent);">— Explainer Videos</div>
-
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">— Upcoming</div>
-    <div class="films-grid" style="margin-bottom:28px;">
-
-      <div class="film-card">
-        <div class="fc-head">
-          <div><div class="fc-type">// Explainer · Portrait</div><div class="fc-title">"Make It a Fokk It List"</div></div>
-          <span class="fc-status tbd"><span class="fc-dot"></span>Date TBD</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Date</div><div class="fmi-value hi">Thursday 14 May 2026</div></div>
-          <div><div class="fmi-label">Time</div><div class="fmi-value">10:00–16:00</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value">Sendistovan</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Tórshavn area (see suggestions)</div></div>
-          <div><div class="fmi-label">Actor</div><div class="fmi-value">Trygvi Danielsen</div></div>
-          <div><div class="fmi-label">⚠ Actor note</div><div class="fmi-value tbd">Must know script before arrival</div></div>
-          <div><div class="fmi-label">Props / Specs</div><div class="fmi-value tbd">To be confirmed with Ingrið and Niels 2–3 days before shoot</div></div>
-          <div style="grid-column:1/-1;background:rgba(0,180,216,.05);border:1px solid rgba(0,180,216,.2);border-radius:6px;padding:14px 16px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">📍 Location suggestions from agency</div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;">
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Kirkjubømúrurin</div>
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Skansin</div>
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Tinganes</div>
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Vágsbotn</div>
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Norðadalsskarð</div>
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Sornfelli</div>
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Mjørkadal</div>
-              <div style="background:rgba(0,180,216,.08);border:1px solid rgba(0,180,216,.15);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text);">Útstappaðan lunda</div>
-              <div style="background:rgba(0,180,216,.04);border:1px solid rgba(0,180,216,.1);border-radius:6px;padding:6px 10px;font-size:13px;color:var(--text-muted);">Listasavnið (evt.)</div>
-            </div>
-          </div>
-        </div>
-        <a class="prod-doc-btn" href="https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing" target="_blank">📄 Production Document</a>
-      </div>
-
-    </div>
-
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">— Completed</div>
-    <div class="films-grid" style="margin-bottom:28px;">
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Explainer · Completed</div><div class="fc-title">"Stay on the Ancient Path"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Recorded</div><div class="fmi-value" style="color:var(--green);">Friday 1 May 2026</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Eysturoy, Funningur</div></div>
-          <div><div class="fmi-label">Actor</div><div class="fmi-value">Jórunn Gudmundsen</div></div>
-          <div style="grid-column:1/-1;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-left:3px solid var(--green);border-radius:6px;padding:8px 12px;">
-            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);">🎬 Finished film expected</span>
-            <span style="font-size:13px;color:var(--text-mid);margin-left:8px;text-decoration:line-through;">5. maj 2026</span>
-          </div>
-        </div>
-        <a class="prod-doc-btn" href="https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing" target="_blank">📄 Production Document</a>
-      </div>
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Explainer · Completed</div><div class="fc-title">"Drones Are for Dicks"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Recorded</div><div class="fmi-value" style="color:var(--green);">Saturday 2 May 2026</div></div>
-          <div><div class="fmi-label">Locations</div><div class="fmi-value">Múlafossur · Bøur · Vagar Airport</div></div>
-          <div><div class="fmi-label">Actor</div><div class="fmi-value">Fríði Djurhuus</div></div>
-          <div style="grid-column:1/-1;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-left:3px solid var(--green);border-radius:6px;padding:8px 12px;">
-            <span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);">🎬 Finished film expected</span>
-            <span style="font-size:13px;color:var(--text-mid);margin-left:8px;text-decoration:line-through;">5. maj 2026</span>
-          </div>
-        </div>
-        <a class="prod-doc-btn" href="https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing" target="_blank">📄 Production Document</a>
-      </div>
-
-    </div>
-
-    <div class="divider-label" style="color:var(--amber);">— Cinematic Postcards · 27 April 2026</div>
-
-    <div style="background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:20px;font-size:13px;color:var(--text-muted);line-height:1.7;">
-      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:8px;">General shoot guidelines</div>
-      All shots as one-takes, min. 15 sec &middot; Tripod only &middot; Loose framing for copy/logo in post &middot; Record in both 9:16 and 16:9 &middot; Shoot stills of all setups (portrait + landscape) &middot; Few strong compositions, no cutting &middot; Extras only in "Vandrere i tæt bebyggelse"
-    </div>
-
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">— All Completed</div>
-    <div class="films-grid" style="margin-bottom:32px;">
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Postcard · Completed</div><div class="fc-title">"Vandrere i tæt bebyggelse"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Date</div><div class="fmi-value hi">Saturday 25 April</div></div>
-          <div><div class="fmi-label">Time</div><div class="fmi-value">10:00–11:00</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value hi">Katrina Christiansen, Tórshavn</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Tórshavn, Reyni</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">Brim Hoydal &amp; Michael Anthony</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
-          <div style="grid-column:1/-1;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.3);border-left:3px solid var(--amber);border-radius:6px;padding:10px 14px;"><div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:4px;">⚠ Special remark</div><div style="font-size:13px;color:var(--text-mid);">At 08:30 on the day a decision will be made whether to proceed with the shoot.</div>
-          <div style="margin-top:8px;font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);">Props / Clothing</div>
-          <div style="font-size:13px;color:var(--text-mid);margin-top:3px;">Brim arranges own clothing. Michael's jacket can be borrowed from Jógvan Weihe.</div></div>
-        </div>
-        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
-        <div class="details-panel">
-          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
-          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"Two more people and we'll need traffic lights"</span></p>
-          <p><strong>Notes:</strong> Must clearly be Tórshavn. Only walkers in frame. May enter empty frame, stop and interact briefly (e.g. point), then continue.</p>
-          <p><strong>Casting:</strong> Michael arranges 2 extras in agreement with Jóhan Pauli Helgason. Payment between Visit Faroe Islands and extras.</p>
-        </div>
-      </div>
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Postcard · Completed</div><div class="fc-title">"Close the Gates"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Time</div><div class="fmi-value">12:00–14:00</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value hi">Kvívík</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Kvívík</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
-        </div>
-        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
-        <div class="details-panel">
-          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
-          <p><strong>Shot:</strong> Total &middot; Record 3 variations: closed, open, half-open/swinging. Sheep in background preferred.</p>
-          <p><strong>Copy — closed:</strong> <span class="copy-line">"A simple thing, doing its job." / "Nothing gets in, nothing gets out." / "Closed. Like it was meant to be."</span></p>
-          <p><strong>Copy — open:</strong> <span class="copy-line">"You had one job." / "Freedom. Not ideal for sheep." / "Works best when closed."</span></p>
-          <p><strong>Copy — half-open:</strong> <span class="copy-line">"Almost there." / "One step from perfect."</span></p>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">— Completed</div>
-    <div class="films-grid">
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Postcard · Completed</div><div class="fc-title">"Græsbakke med får"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Time</div><div class="fmi-value">14:00–16:00</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value">Leynar</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Vágar, Vestmanna or Kvívík</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
-        </div>
-        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
-        <div class="details-panel">
-          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
-          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"You're standing in a sheep restaurant"</span></p>
-          <p><strong>Notes:</strong> Larger flock grazing on a hillside.</p>
-        </div>
-      </div>
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Postcard · Completed</div><div class="fc-title">"Múlafossur"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Time</div><div class="fmi-value">16:00–18:00</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Gásadalur</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
-        </div>
-        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
-        <div class="details-panel">
-          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
-          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"Already internet famous"</span></p>
-          <p><strong>Notes:</strong> Classic hero shot of the waterfall — from opposite side or with drone over the water.</p>
-        </div>
-      </div>
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Postcard · Completed</div><div class="fc-title">"Skrald samles op fra sti"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Time</div><div class="fmi-value">16:00–17:30</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Bøur</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
-        </div>
-        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
-        <div class="details-panel">
-          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
-          <p><strong>Shot:</strong> Total + close-up (assess on location) &middot; <strong>Copy:</strong> <span class="copy-line">"One thing is out of place"</span></p>
-          <p><strong>Notes:</strong> A piece of litter in otherwise beautiful nature.</p>
-        </div>
-      </div>
-
-      <div class="film-card" style="opacity:.7;border-color:rgba(34,197,94,.25);">
-        <div class="fc-head" style="background:rgba(34,197,94,.05);">
-          <div><div class="fc-type" style="color:var(--green);">// Postcard · Completed</div><div class="fc-title">"Somebody Actually Lives Here"</div></div>
-          <span class="fc-status ok" style="background:rgba(34,197,94,.15);border-color:rgba(34,197,94,.4);"><span class="fc-dot"></span>✓ Done</span>
-        </div>
-        <div class="fc-body">
-          <div><div class="fmi-label">Time</div><div class="fmi-value">16:00–17:30</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value">Gásadalur</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">Bøur</div></div>
-          <div><div class="fmi-label">Actors</div><div class="fmi-value">None</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">Michael Koba, Thomas Koba</div></div>
-        </div>
-        <button class="details-btn" onclick="toggleDetails(this)"><span>📋 Shot details &amp; copy</span><span class="arrow">▼</span></button>
-        <div class="details-panel">
-          <div class="dp-label">Frame &amp; Work / Emil Spangenberg</div>
-          <p><strong>Shot:</strong> Total &middot; <strong>Copy:</strong> <span class="copy-line">"Someone actually lives here"</span></p>
-          <p><strong>Notes:</strong> House spectacularly located — ideally with mountains, sea and animals in same frame.</p>
-        </div>
-      </div>
-
-    </div>
 
   <!-- TAB: CONTACTS -->
   <div class="tab-panel" id="tab-contacts">
@@ -559,207 +269,64 @@
     <div class="contacts-grid" id="contactsGrid"></div>
   </div>
 
-  <!-- TAB: MY SCHEDULE -->
+  <!-- TAB: MY PLAN -->
   <div class="tab-panel" id="tab-myplan"></div>
 
 </main>
 
 <script>
+  // Actors removed from people list
   const people = [
     {
       name:"Michael Koba", role:"Producer / Director", group:"Crew",
       phone:"+298 591011", email:"michael@kovboyfilm.com",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan → Gásadalur",
-        "Fri 1 May · 09:00–14:00 · Stay on the Ancient Path · Eysturoy, Funningur · Meet at: Niðri í bygdini í Funningi",
-        "Sat 2 May · 10:00–16:00 · Drones Are for Dicks · Meet at: Vagar Airport",
-        "Thu 14 May · 10:00–16:00 · Make It a Fokk It List · Meet at: Sendistovan"
-      ],
-      contacts:["Thomas Koba","Alda Egilstrøð","Jóhan Pauli Helgason","Niels Arge Gàlan","Emil Spangenberg"]
+      schedule:["All shoots completed ✅","Thu 14 May · Make It a Fokk It List","Fri 1 May · Stay on the Ancient Path","Sat 2 May · Drones Are for Dicks","Mon 27 Apr · All postcards"],
+      contacts:["Thomas Koba","Alda Egilstrøð","Jóhan Pauli Helgason","Niels Arge Gàlan"]
     },
     {
       name:"Thomas Koba", role:"Camera / Crew", group:"Crew",
       phone:"+298 213457", email:"thomas@kovboyfilm.com",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan → Gásadalur",
-        "Fri 1 May · 09:00–14:00 · Stay on the Ancient Path · Eysturoy, Funningur · Meet at: Niðri í bygdini í Funningi",
-        "Sat 2 May · 10:00–16:00 · Drones Are for Dicks · Meet at: Vagar Airport",
-        "Thu 14 May · 10:00–16:00 · Make It a Fokk It List · Meet at: Sendistovan"
-      ],
+      schedule:["All shoots completed ✅","Thu 14 May · Make It a Fokk It List","Fri 1 May · Stay on the Ancient Path","Sat 2 May · Drones Are for Dicks","Mon 27 Apr · All postcards"],
       contacts:["Michael Koba","Alda Egilstrøð"]
     },
     {
       name:"Alda Egilstrøð", role:"Client — Visit Faroe Islands", group:"Client",
       phone:"+298 556133", email:"alda@visitfaroeislands.com",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards (Vandrere, Close the Gates, Græsbakke, Múlafossur, Skrald, Somebody Actually Lives Here)"
-      ],
+      schedule:["All shoots completed ✅"],
       contacts:["Michael Koba","Jóhan Pauli Helgason","Niels Arge Gàlan"]
     },
     {
       name:"Jóhan Pauli Helgason", role:"Client — Visit Faroe Islands", group:"Client",
       phone:"+298 556131", email:"johanp@visitfaroeislands.com",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards (Vandrere, Close the Gates, Græsbakke, Múlafossur, Skrald, Somebody Actually Lives Here)"
-      ],
-      contacts:["Alda Egilstrøð","Michael Koba","Niels Arge Gàlan"]
+      schedule:["All shoots completed ✅"],
+      contacts:["Alda Egilstrøð","Michael Koba"]
     },
     {
       name:"Niels Arge Gàlan", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794166", email:"nag@sendistovan.fo",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan"
-      ],
-      contacts:["Michael Koba","Ingrið Mortensen","Búgvi Dalsgarð","Alda Egilstrøð"]
+      schedule:["All shoots completed ✅"],
+      contacts:["Michael Koba","Ingrið Mortensen","Búgvi Dalsgarð"]
     },
     {
       name:"Ingrið Mortensen", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794189", email:"ingrid@sendistovan.fo",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan"
-      ],
+      schedule:["All shoots completed ✅"],
       contacts:["Niels Arge Gàlan","Michael Koba"]
     },
     {
       name:"Emil Spangenberg", role:"Agency — Frame & Work", group:"Agency",
       phone:"+45 51287181", email:"emil@frameandwork.com",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan"
-      ],
+      schedule:["All shoots completed ✅"],
       contacts:["Michael Koba","Niels Arge Gàlan"]
     },
     {
       name:"Búgvi Dalsgarð", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794155", email:"buda@sendistovan.fo",
-      schedule:[
-        "Mon 27 April · 10:00–18:00 · All postcards · Sendistovan"
-      ],
+      schedule:["All shoots completed ✅"],
       contacts:["Niels Arge Gàlan","Michael Koba"]
-    },
-    {
-      name:"Hans Petur Hansen", role:"Gaffer — Reyni Service", group:"Crew",
-      phone:"+298 296652", email:"hph@kringvarp.fo",
-      schedule:["Production date TBD · Reyni Service / Toyota C-HR+"],
-      contacts:["Michael Koba","Thomas Koba"]
-    },
-    {
-      name:"Fríðrikur Jakobsen", role:"Client — Reyni Service", group:"Client",
-      phone:"+298 793047", email:"fj@rs.fo",
-      schedule:["Production date TBD · Reyni Service / Toyota C-HR+"],
-      contacts:["Michael Koba","Sámal av Reyni"]
-    },
-    {
-      name:"Sámal av Reyni", role:"Client — Reyni Service", group:"Client",
-      phone:"+298 222500", email:"sr@rs.fo",
-      schedule:["Production date TBD · Reyni Service / Toyota C-HR+"],
-      contacts:["Michael Koba","Fríðrikur Jakobsen"]
-    },
-      phone:"+298 213194", email:"trygvi@gmail.com",
-      schedule:[
-        "Thu 14 May · 10:00–16:00 · Make It a Fokk It List · Meet at: Sendistovan"
-      ],
-      contacts:["Michael Koba"],
-      filmInfo:{
-        title:"Make It a Fokk It List",
-        date:"Thursday 14 May 2026",
-        time:"10:00–16:00",
-        meetAt:"Sendistovan",
-        location:"Can be all over the Faroe Islands",
-        actorNote:"Must know script before arrival",
-        specs:"To be confirmed with Ingrið and Niels 2–3 days before shoot",
-        doc:"https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing"
-      }
-    },
-    {
-      name:"Fríði Djurhuus", role:"Actor — Drones Are for Dicks", group:"Actor",
-      phone:"+298 263626", email:"frididjurhuus@hotmail.com",
-      schedule:[
-        "Sat 2 May · 10:00–16:00 · Drones Are for Dicks · Meet at: Vagar Airport"
-      ],
-      contacts:["Michael Koba"],
-      filmInfo:{
-        title:"Drones Are for Dicks",
-        completed:true,
-        date:"Saturday 2 May 2026 (✓ Completed)",
-        time:"10:00–16:00",
-        meetAt:"Vagar Airport",
-        location:"Múlafossur (Gásadalur) · Bøur · Vagar Airport",
-        actorNote:"Must know script before arrival",
-        specs:"To be confirmed with Ingrið and Niels 2–3 days before shoot",
-        doc:"https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing"
-      }
-    },
-    {
-      name:"Jórunn Gudmundsen", role:"Actor — Stay on the Ancient Path", group:"Actor",
-      phone:"+298 259986", email:"jorunn.gudmundsen@hotmail.com",
-      schedule:[
-        "Fri 1 May · 09:00–14:00 · Stay on the Ancient Path · Eysturoy, Funningur · Meet at: Niðri í bygdini í Funningi"
-      ],
-      contacts:["Michael Koba"],
-      filmInfo:{
-        title:"Stay on the Ancient Path",
-        completed:true,
-        date:"Friday 1 May 2026 (✓ Completed)",
-        time:"09:00–14:00",
-        meetAt:"Niðri í bygdini í Funningi",
-        location:"Eysturoy, Funningur",
-        actorNote:"Must know script before arrival",
-        specs:"To be confirmed with Ingrið and Niels 2–3 days before shoot",
-        doc:"https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing"
-      }
-    },
-    {
-      name:"Brim Hoydal", role:"Actor — Vandrere i tæt bebyggelse", group:"Actor",
-      phone:"+298 264092", email:"brim@visitfaroeislands.com",
-      schedule:[
-        "Sat 25 April · 10:00–11:00 · Vandrere i tæt bebyggelse · Meet at: Katrina Christiansen, Tórshavn",
-        "⚠ Go/No-go decision at 08:30 on the day"
-      ],
-      contacts:["Michael Koba"],
-      filmInfo:{
-        title:"Vandrere i tæt bebyggelse",
-        date:"Saturday 25 April (✓ Completed)",
-        time:"10:00–11:00",
-        meetAt:"Katrina Christiansen, Tórshavn",
-        location:"Tórshavn, Reyni",
-        actorNote:"Brim arranges own clothing",
-        specs:"Props: Michael's jacket can be borrowed from Jógvan Weihe",
-        doc:null,
-        completed:true
-      }
-    },
-    {
-      name:"Michael Anthony", role:"Actor — Vandrere i tæt bebyggelse", group:"Actor",
-      phone:"+298 214745", email:"macjohannesen@gmail.com",
-      schedule:[
-        "Sat 25 April · 10:00–11:00 · Vandrere i tæt bebyggelse · Meet at: Katrina Christiansen, Tórshavn",
-        "⚠ Go/No-go decision at 08:30 on the day"
-      ],
-      contacts:["Michael Koba"],
-      filmInfo:{
-        title:"Vandrere i tæt bebyggelse",
-        date:"Saturday 25 April (✓ Completed)",
-        time:"10:00–11:00",
-        meetAt:"Katrina Christiansen, Tórshavn",
-        location:"Tórshavn, Reyni",
-        actorNote:"Brim arranges own clothing. Michael's jacket can be borrowed from Jógvan Weihe",
-        specs:null,
-        doc:null,
-        completed:true
-      }
     }
   ];
 
-  // ── TOGGLE DETAILS ──
-  function toggleDetails(btn){
-    const panel=btn.nextElementSibling;
-    const isOpen=panel.classList.contains('open');
-    panel.classList.toggle('open',!isOpen);
-    btn.classList.toggle('open',!isOpen);
-  }
-
-  // ── UTILS ──
-  const PROD_DOC = "https://drive.google.com/file/d/1pxTBGUQv72ZerFuXS_Z3wWww9SDqIuhQ/view?usp=sharing";
   function esc(v){return(v||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function tel(p){return p?'tel:'+p.replace(/\s+/g,''):'';}
   function getPerson(n){return people.find(p=>p.name===n);}
@@ -770,38 +337,28 @@
   function switchTab(name){
     tabBtns.forEach(b=>b.classList.remove('active'));
     tabPanels.forEach(p=>p.classList.remove('active'));
-    const btn=document.querySelector(`[data-tab="${name}"]`);
-    const panel=document.getElementById(`tab-${name}`);
-    if(btn)btn.classList.add('active');
-    if(panel)panel.classList.add('active');
+    document.querySelector(`[data-tab="${name}"]`)?.classList.add('active');
+    document.getElementById(`tab-${name}`)?.classList.add('active');
   }
   tabBtns.forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
 
   // ── STATS ──
   function renderStats(){
-    const g=(grp)=>people.filter(p=>p.group===grp).length;
+    const g=grp=>people.filter(p=>p.group===grp).length;
     document.getElementById('statsRow').innerHTML=[
       [people.length,'Total'],
       [g('Crew'),'Crew'],
-      [g('Actor'),'Actors'],
       [g('Agency')+g('Client'),'Agency / Client']
     ].map(([v,l])=>`<div class="stat-card"><div class="stat-val">${v}</div><div class="stat-lbl">${l}</div></div>`).join('');
   }
 
-  // ── GROUPS + NAMES ──
+  // ── CONTACTS ──
   function populateGroups(){
     const sel=document.getElementById('groupFilter');
     [...new Set(people.map(p=>p.group))].sort().forEach(g=>{
       const o=document.createElement('option');o.value=g;o.textContent=g;sel.appendChild(o);
     });
   }
-  function populateSelect(sel){
-    [...people].sort((a,b)=>a.name.localeCompare(b.name)).forEach(p=>{
-      const o=document.createElement('option');o.value=p.name;o.textContent=`${p.name} · ${p.role}`;sel.appendChild(o);
-    });
-  }
-
-  // ── CONTACTS ──
   function filterPeople(){
     const q=document.getElementById('searchInput').value.trim().toLowerCase();
     const g=document.getElementById('groupFilter').value;
@@ -811,149 +368,68 @@
     });
   }
   function renderContacts(){
-    const filtered=filterPeople();
-    document.getElementById('contactsGrid').innerHTML=filtered.length
-      ?filtered.map(p=>`
-        <div class="cc">
-          <div class="cc-top">
-            <div><div class="cc-name">${esc(p.name)}</div><div class="cc-role">${esc(p.role)}</div></div>
-            <span class="cc-badge ${p.group}">${esc(p.group)}</span>
-          </div>
-          <div class="cc-info">
-            <div class="cc-row"><span class="cc-lbl">Tel</span><span>${p.phone?`<a href="${tel(p.phone)}">${esc(p.phone)}</a>`:'<span style="color:var(--text-muted)">—</span>'}</span></div>
-            <div class="cc-row"><span class="cc-lbl">Mail</span><span>${p.email?`<a href="mailto:${p.email}">${esc(p.email)}</a>`:'<span style="color:var(--text-muted)">—</span>'}</span></div>
-          </div>
-          <div class="cc-btns">
-            ${p.phone?`<a class="cc-btn call" href="${tel(p.phone)}">📞 Call</a>`:''}
-            ${p.email?`<a class="cc-btn mail" href="mailto:${p.email}">✉ Email</a>`:''}
-          </div>
-        </div>`).join('')
-      :`<div class="empty">No results.</div>`;
+    document.getElementById('contactsGrid').innerHTML=filterPeople().map(p=>`
+      <div class="cc">
+        <div class="cc-top">
+          <div><div class="cc-name">${esc(p.name)}</div><div class="cc-role">${esc(p.role)}</div></div>
+          <span class="cc-badge ${p.group}">${esc(p.group)}</span>
+        </div>
+        <div class="cc-info">
+          <div class="cc-row"><span class="cc-lbl">Tel</span><span>${p.phone?`<a href="${tel(p.phone)}">${esc(p.phone)}</a>`:'—'}</span></div>
+          <div class="cc-row"><span class="cc-lbl">Mail</span><span>${p.email?`<a href="mailto:${p.email}">${esc(p.email)}</a>`:'—'}</span></div>
+        </div>
+        <div class="cc-btns">
+          ${p.phone?`<a class="cc-btn call" href="${tel(p.phone)}">📞 Call</a>`:''}
+          ${p.email?`<a class="cc-btn mail" href="mailto:${p.email}">✉ Email</a>`:''}
+        </div>
+      </div>`).join('');
   }
   document.getElementById('searchInput').addEventListener('input',renderContacts);
   document.getElementById('groupFilter').addEventListener('change',renderContacts);
 
-  // ── MY SCHEDULE ──
-  // Completed shoot dates (matched against schedule entries)
-  const COMPLETED_DATES = [
-    "Fri 25 April", "Sat 25 April", "Mon 27 April", "Fri 1 May", "Sat 2 May"
-  ];
-  function isCompleted(scheduleEntry){
-    return COMPLETED_DATES.some(d => scheduleEntry.startsWith(d));
-  }
-
-  function renderFilmInfoCard(fi){
-    if(!fi) return '';
-    const completed = fi.completed || false;
-    return `
-      <div style="background:${completed ? 'rgba(34,197,94,.06)' : 'rgba(0,180,216,.06)'};border:1px solid ${completed ? 'rgba(34,197,94,.3)' : 'rgba(0,180,216,.25)'};border-radius:var(--radius);padding:20px;margin-bottom:20px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
-          <div>
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:${completed ? 'var(--green)' : 'var(--accent)'};margin-bottom:4px;">${completed ? '✅ Completed shoot' : '🎬 Your film'}</div>
-            <div style="font-family:var(--font-display);font-size:24px;letter-spacing:.03em;color:var(--text);">${esc(fi.title)}</div>
-          </div>
-          ${fi.doc ? `<a href="${fi.doc}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.3);border-radius:var(--radius-sm);color:var(--accent);font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap;">📄 Production Doc</a>` : ''}
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:${fi.actorNote ? '14px' : '0'};">
-          <div style="background:rgba(0,0,0,.2);border-radius:6px;padding:10px 12px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;">Date</div>
-            <div style="font-size:13px;color:${completed ? 'var(--green)' : 'var(--text)'};">${esc(fi.date)}</div>
-          </div>
-          <div style="background:rgba(0,0,0,.2);border-radius:6px;padding:10px 12px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;">Time</div>
-            <div style="font-size:13px;color:var(--text);">${esc(fi.time)}</div>
-          </div>
-          <div style="background:rgba(0,0,0,.2);border-radius:6px;padding:10px 12px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;">Meet at</div>
-            <div style="font-size:13px;color:var(--accent);">${esc(fi.meetAt)}</div>
-          </div>
-          <div style="background:rgba(0,0,0,.2);border-radius:6px;padding:10px 12px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;">Location</div>
-            <div style="font-size:13px;color:var(--text);">${esc(fi.location)}</div>
-          </div>
-        </div>
-        ${fi.actorNote ? `<div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-left:3px solid var(--amber);border-radius:6px;padding:10px 14px;margin-top:10px;font-size:13px;color:var(--text-mid);"><span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-right:8px;">⚠ Actor note</span>${esc(fi.actorNote)}</div>` : ''}
-        ${fi.specs ? `<div style="background:rgba(0,0,0,.15);border-radius:6px;padding:10px 14px;margin-top:8px;font-size:13px;color:var(--text-muted);"><span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-right:8px;">Props / Specs</span>${esc(fi.specs)}</div>` : ''}
-      </div>`;
-  }
-
+  // ── MY PLAN ──
   function renderMyPlan(person){
     const contacts=(person.contacts||[]).map(n=>getPerson(n)).filter(Boolean);
-    const upcoming = (person.schedule||[]).filter(s=>!isCompleted(s) && !s.startsWith('⚠'));
-    const done = (person.schedule||[]).filter(s=>isCompleted(s));
-
-    const renderDay = (s, completed=false) => {
-      const parts=s.split('·').map(x=>x.trim());
-      const time=parts[0]||'';
-      const rest=parts.slice(1).join(' · ');
-      if(completed) return `
-        <div class="my-day" style="background:rgba(34,197,94,.06);border-color:rgba(34,197,94,.25);border-left-color:var(--green);opacity:.7;position:relative;">
-          <div class="my-day-time" style="color:var(--green);text-decoration:line-through;">${esc(time)}</div>
-          <div class="my-day-info" style="text-decoration:line-through;color:var(--text-muted);">${esc(rest)}</div>
-          <div style="position:absolute;top:10px;right:12px;font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--green);">✓ DONE</div>
-        </div>`;
-      return `
-        <div class="my-day">
-          <div class="my-day-time">${esc(time)}</div>
-          <div class="my-day-info">${esc(rest)}</div>
-        </div>`;
-    };
-
     document.getElementById('tab-myplan').innerHTML=`
-      <div class="my-head">
-        <div class="my-eye">// Your Schedule</div>
-        <div class="my-name">${esc(person.name)}</div>
-        <div class="my-role">${esc(person.role)} · ${esc(person.group)}</div>
+      <div style="margin-bottom:24px;">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;">// Your Schedule</div>
+        <div style="font-family:var(--font-display);font-size:36px;letter-spacing:.04em;color:var(--text);line-height:1;">${esc(person.name)}</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">${esc(person.role)}</div>
       </div>
-
-      ${person.filmInfo ? renderFilmInfoCard(person.filmInfo) : ''}
-
-      ${upcoming.length ? `
-        <div class="my-section-label">— Upcoming Shoot Days</div>
-        <div class="my-days">${upcoming.map(s=>renderDay(s,false)).join('')}</div>
-      ` : `
-        <div style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.35);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
-          <span style="font-size:24px;">✅</span>
-          <div>
-            <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:2px;">All shoots completed</div>
-            <div style="font-size:13px;color:var(--text-muted);">You have no upcoming shoot days on this production.</div>
-          </div>
+      <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:var(--radius);padding:16px 20px;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
+        <span style="font-size:24px;">✅</span>
+        <div>
+          <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:2px;">All shoots completed</div>
+          <div style="font-size:13px;color:var(--text-muted);">Thank you for your contribution to this production. There may be additional shoots in a few weeks — we'll be in touch.</div>
         </div>
-      `}
-
-      ${done.length ? `
-        <div class="my-section-label" style="color:var(--green);">— Completed</div>
-        <div class="my-days">${done.map(s=>renderDay(s,true)).join('')}</div>
-      ` : ''}
-
-      <div class="my-section-label">— My Contacts</div>
-      <div class="my-contacts">
+      </div>
+      <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);">— My Contacts</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;">
         ${contacts.map(c=>`
-          <div class="my-contact">
-            <div class="my-contact-name">${esc(c.name)}</div>
-            <div class="my-contact-role">${esc(c.role)}</div>
-            <div class="my-contact-btns">
-              ${c.phone?`<a class="cc-btn call" href="${tel(c.phone)}" style="font-size:12px;">📞 ${esc(c.phone)}</a>`:''}
-              ${c.email?`<a class="cc-btn mail" href="mailto:${c.email}" style="font-size:12px;">✉ Email</a>`:''}
+          <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;">
+            <div style="font-family:var(--font-display);font-size:18px;letter-spacing:.03em;color:var(--text);margin-bottom:2px;">${esc(c.name)}</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">${esc(c.role)}</div>
+            <div style="display:flex;gap:8px;">
+              ${c.phone?`<a href="${tel(c.phone)}" style="display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--accent);color:#000;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;">📞 ${esc(c.phone)}</a>`:''}
+              ${c.email?`<a href="mailto:${c.email}" style="display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--card2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;">✉ Email</a>`:''}
             </div>
           </div>`).join('')}
       </div>`;
   }
 
   // ── NAME SELECT ──
+  function populateSelect(sel){
+    [...people].sort((a,b)=>a.name.localeCompare(b.name)).forEach(p=>{
+      const o=document.createElement('option');o.value=p.name;o.textContent=`${p.name} · ${p.role}`;sel.appendChild(o);
+    });
+  }
   function triggerSelect(name){
     const person=name?getPerson(name):null;
     const tab=document.getElementById('myplanTab');
     document.getElementById('personSelect').value=name||'';
     document.getElementById('personSelectMobile').value=name||'';
-    if(person){
-      tab.style.display='flex';
-      renderMyPlan(person);
-      switchTab('myplan');
-    }else{
-      tab.style.display='none';
-      switchTab('schedule');
-    }
+    if(person){tab.style.display='flex';renderMyPlan(person);switchTab('myplan');}
+    else{tab.style.display='none';switchTab('home');}
   }
   document.getElementById('personSelect').addEventListener('change',function(){triggerSelect(this.value);});
   document.getElementById('personSelectMobile').addEventListener('change',function(){triggerSelect(this.value);});
