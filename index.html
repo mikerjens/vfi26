@@ -611,7 +611,15 @@
     const tab=document.getElementById('myplanTab');
     document.getElementById('personSelect').value=name||'';
     document.getElementById('personSelectMobile').value=name||'';
-    if(person){tab.style.display='flex';renderMyPlan(person);switchTab('myplan');}
+    if(person){
+      tab.style.display='flex';
+      try{
+        renderMyPlan(person);
+      } catch(err){
+        document.getElementById('tab-myplan').innerHTML = '<div style="color:red;padding:20px;font-family:monospace;">JS Error: '+err.message+'</div>';
+      }
+      switchTab('myplan');
+    }
     else{tab.style.display='none';switchTab('schedule');}
   }
   document.getElementById('personSelect').addEventListener('change',function(){triggerSelect(this.value);});
