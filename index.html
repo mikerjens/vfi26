@@ -185,26 +185,21 @@
     <!-- Upcoming films -->
     <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">— Upcoming · Awaiting dry weather</div>
 
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px;">
-      <div style="background:var(--card2);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
-        <div>
-          <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;">// Explainer · Film 4</div>
-          <div style="font-family:var(--font-display);font-size:20px;letter-spacing:.04em;color:var(--text);">"Livin' on the Edge"</div>
+      <div style="background:var(--card);border:1px solid rgba(0,180,216,.2);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:14px 20px;margin-bottom:12px;">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:3px;">// Explainer · Film 4</div>
+        <div style="font-family:var(--font-display);font-size:20px;letter-spacing:.04em;color:var(--text);margin-bottom:10px;">Livin on the Edge</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:12px;">
+          <div><div class="fmi-label">Date</div><div class="fmi-value" style="color:var(--accent);">Thursday 18 June 2026</div></div>
+          <div><div class="fmi-label">Location</div><div class="fmi-value">Lírabergshálsur</div></div>
+          <div><div class="fmi-label">Meet at</div><div class="fmi-value" style="color:var(--accent);font-weight:600;">Skopun, havnøki</div></div>
+          <div><div class="fmi-label">Actor</div><div class="fmi-value">Archibald Black</div></div>
+          <div><div class="fmi-label">Crew</div><div class="fmi-value">Thomas Koba · Michael Koba</div></div>
         </div>
-        <span class="fc-badge pending">⛅ Awaiting dry weather</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <a class="fc-link script" href="https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link" target="_blank">📝 Script</a>
+          <a class="fc-link location" href="https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en" target="_blank">📍 Location</a>
+        </div>
       </div>
-      <div style="padding:14px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;">
-        <div><div class="fmi-label">Date</div><div class="fmi-value tbd">TBD — dry weather needed</div></div>
-        <div><div class="fmi-label">Location</div><div class="fmi-value">Lírabergshálsur</div></div>
-        <div><div class="fmi-label">Meet at</div><div class="fmi-value">Skopun, havnøki</div></div>
-        <div><div class="fmi-label">Actor</div><div class="fmi-value">Archibald Black</div></div>
-        <div><div class="fmi-label">Crew</div><div class="fmi-value">Thomas Koba · Michael Koba</div></div>
-      </div>
-      <div style="padding:0 20px 14px;display:flex;gap:8px;flex-wrap:wrap;">
-        <a class="fc-link script" href="https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link" target="_blank">📝 Script</a>
-        <a class="fc-link location" href="https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en" target="_blank">📍 Location</a>
-      </div>
-    </div>
 
     <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:12px;">
       <div style="background:var(--card2);padding:14px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
@@ -327,402 +322,436 @@
 </main>
 
 <script>
-  // Only upcoming actors + crew/agency/client (no completed-only actors)
+  const films = [
+    {
+      num: "Film 4",
+      title: "Livin on the Edge",
+      date: "Thursday 18 June 2026",
+      time: "TBD",
+      location: "Lírabergshálsur",
+      meetAt: "Skopun, havnøki",
+      actor: "Archibald Black",
+      script: "https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link",
+      locationLink: "https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en"
+    },
+    {
+      num: "Film 5",
+      title: "This IS Someones Home",
+      date: "TBD — awaiting dry weather",
+      time: "TBD",
+      location: "Tinganes",
+      meetAt: "Katrina Christiansen",
+      actor: "Mariann Hansen",
+      script: "https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing",
+      locationLink: null
+    },
+    {
+      num: "Film 6",
+      title: "This IS Someones Home",
+      date: "TBD — awaiting dry weather",
+      time: "TBD",
+      location: "TBD",
+      meetAt: "TBD",
+      actor: "Anna Hofgaard",
+      script: "https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing",
+      locationLink: null
+    }
+  ];
+
   const people = [
     {
       name:"Michael Koba", role:"Producer / Director", group:"Crew",
       phone:"+298 591011", email:"michael@kovboyfilm.com",
-      schedule:[
-        "TBD (dry weather) · Film 4 · Livin' on the Edge · Lírabergshálsur · Meet at: Skopun, havnøki",
-        "TBD (dry weather) · Film 5 · This IS Someone's Home · Tinganes · Meet at: Katrina Christiansen",
-        "TBD (dry weather) · Film 6 · This IS Someone's Home · Location TBD"
-      ],
+      films: [0,1,2],
       contacts:["Thomas Koba","Alda Egilstrøð","Niels Arge Gàlan","Archibald Black","Mariann Hansen","Anna Hofgaard"]
     },
     {
       name:"Thomas Koba", role:"Camera / Crew", group:"Crew",
       phone:"+298 213457", email:"thomas@kovboyfilm.com",
-      schedule:[
-        "TBD (dry weather) · Film 4 · Livin' on the Edge · Lírabergshálsur · Meet at: Skopun, havnøki",
-        "TBD (dry weather) · Film 5 · This IS Someone's Home · Tinganes · Meet at: Katrina Christiansen",
-        "TBD (dry weather) · Film 6 · This IS Someone's Home · Location TBD"
-      ],
+      films: [0,1,2],
       contacts:["Michael Koba","Alda Egilstrøð"]
-    },
-    {
-      name:"Brim Hoydal", role:"Client — Visit Faroe Islands", group:"Client",
-      phone:"+298 264092", email:"brim@visitfaroeislands.com",
-      schedule:["TBD — dates to be confirmed once weather is suitable"],
-      contacts:["Michael Koba","Jóhan Pauli Helgason"]
     },
     {
       name:"Alda Egilstrøð", role:"Client — Visit Faroe Islands", group:"Client",
       phone:"+298 556133", email:"alda@visitfaroeislands.com",
-      schedule:["TBD — dates to be confirmed once weather is suitable"],
+      films: [],
       contacts:["Michael Koba","Jóhan Pauli Helgason"]
     },
     {
       name:"Jóhan Pauli Helgason", role:"Client — Visit Faroe Islands", group:"Client",
       phone:"+298 556131", email:"johanp@visitfaroeislands.com",
-      schedule:["TBD — dates to be confirmed once weather is suitable"],
+      films: [],
       contacts:["Alda Egilstrøð","Michael Koba"]
+    },
+    {
+      name:"Brim Hoydal", role:"Client — Visit Faroe Islands", group:"Client",
+      phone:"+298 264092", email:"brim@visitfaroeislands.com",
+      films: [],
+      contacts:["Michael Koba","Jóhan Pauli Helgason"]
     },
     {
       name:"Niels Arge Gàlan", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794166", email:"nag@sendistovan.fo",
-      schedule:["TBD — dates to be confirmed once weather is suitable"],
-      contacts:["Michael Koba","Ingrið Mortensen","Búgvi Dalsgarð"]
+      films: [],
+      contacts:["Michael Koba","Ingrið Mortensen"]
     },
     {
       name:"Ingrið Mortensen", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794189", email:"ingrid@sendistovan.fo",
-      schedule:["TBD — dates to be confirmed once weather is suitable"],
+      films: [],
       contacts:["Niels Arge Gàlan","Michael Koba"]
     },
     {
       name:"Búgvi Dalsgarð", role:"Agency — Sendistovan", group:"Agency",
       phone:"+298 794155", email:"buda@sendistovan.fo",
-      schedule:["TBD — dates to be confirmed once weather is suitable"],
+      films: [],
       contacts:["Niels Arge Gàlan","Michael Koba"]
     },
     {
-      name:"Archibald Black", role:"Actor — Film 4 · Livin' on the Edge", group:"Actor",
+      name:"Archibald Black", role:"Actor — Film 4", group:"Actor",
       phone:"+298 264707", email:"archibaldblack56@gmail.com",
-      schedule:[
-        "TBD (dry weather) · Film 4 · Livin' on the Edge · Lírabergshálsur · Meet at: Skopun, havnøki"
-      ],
-      filmInfo:{
-        title:"Livin' on the Edge",
-        film:"Film 4",
-        location:"Lírabergshálsur",
-        meetAt:"Skopun, havnøki",
-        script:"https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link",
-        locationLink:"https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en"
-      },
+      films: [0],
       contacts:["Michael Koba"]
     },
     {
-      name:"Mariann Hansen", role:"Actor — Film 5 · This IS Someone's Home", group:"Actor",
+      name:"Mariann Hansen", role:"Actor — Film 5", group:"Actor",
       phone:"+298 722161", email:"mariann460@gmail.com",
-      schedule:[
-        "TBD (dry weather) · Film 5 · This IS Someone's Home · Tinganes · Meet at: Katrina Christiansen"
-      ],
-      filmInfo:{
-        title:"This IS Someone's Home",
-        film:"Film 5",
-        location:"Tinganes",
-        meetAt:"Katrina Christiansen",
-        script:"https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing"
-      },
+      films: [1],
       contacts:["Michael Koba"]
     },
     {
-      name:"Anna Hofgaard", role:"Actor — Film 6 · This IS Someone's Home", group:"Actor",
+      name:"Anna Hofgaard", role:"Actor — Film 6", group:"Actor",
       phone:"+298 548251", email:"anho@betri.fo",
-      schedule:[
-        "TBD (dry weather) · Film 6 · This IS Someone's Home · Location TBD"
-      ],
-      filmInfo:{
-        title:"This IS Someone's Home",
-        film:"Film 6",
-        location:"TBD",
-        meetAt:"TBD",
-        script:"https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing"
-      },
+      films: [2],
       contacts:["Michael Koba"]
     }
   ];
 
-  function esc(v){return(v||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-  function tel(p){return p?'tel:'+p.replace(/\s+/g,''):'';}
-  function getPerson(n){return people.find(p=>p.name===n);}
+  function getPerson(n){ return people.find(function(p){ return p.name===n; }); }
 
-  // ── TABS ──
-  const tabBtns=document.querySelectorAll('.tab-btn');
-  function switchTab(name){
-    tabBtns.forEach(b=>b.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-    document.querySelector(`[data-tab="${name}"]`)?.classList.add('active');
-    document.getElementById(`tab-${name}`)?.classList.add('active');
-  }
-  tabBtns.forEach(b=>b.addEventListener('click',()=>switchTab(b.dataset.tab)));
-
-  // ── STATS ──
-  function renderStats(){
-    const g=grp=>people.filter(p=>p.group===grp).length;
-    document.getElementById('statsRow').innerHTML=[
-      [people.length,'Total'],
-      [g('Crew'),'Crew'],
-      [g('Actor'),'Actors'],
-      [g('Agency')+g('Client'),'Agency / Client']
-    ].map(([v,l])=>`<div class="stat-card"><div class="stat-val">${v}</div><div class="stat-lbl">${l}</div></div>`).join('');
-  }
-
-  // ── CONTACTS ──
-  function populateGroups(){
-    const sel=document.getElementById('groupFilter');
-    [...new Set(people.map(p=>p.group))].sort().forEach(g=>{
-      const o=document.createElement('option');o.value=g;o.textContent=g;sel.appendChild(o);
+  function el(tag, attrs, children) {
+    var e = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function(k){
+      if (k === 'style') e.style.cssText = attrs[k];
+      else if (k === 'href') { e.href = attrs[k]; }
+      else if (k === 'target') { e.target = attrs[k]; }
+      else e.setAttribute(k, attrs[k]);
     });
-  }
-  function filterPeople(){
-    const q=document.getElementById('searchInput').value.trim().toLowerCase();
-    const g=document.getElementById('groupFilter').value;
-    return people.filter(p=>{
-      const hay=[p.name,p.role,p.group,p.email,p.phone].join(' ').toLowerCase();
-      return(q===''||hay.includes(q))&&(g==='all'||p.group===g);
-    });
-  }
-  function renderContacts(){
-    document.getElementById('contactsGrid').innerHTML=filterPeople().map(p=>`
-      <div class="cc">
-        <div class="cc-top">
-          <div><div class="cc-name">${esc(p.name)}</div><div class="cc-role">${esc(p.role)}</div></div>
-          <span class="cc-badge ${p.group}">${esc(p.group)}</span>
-        </div>
-        <div class="cc-info">
-          <div class="cc-row"><span class="cc-lbl">Tel</span><span>${p.phone?`<a href="${tel(p.phone)}">${esc(p.phone)}</a>`:'—'}</span></div>
-          <div class="cc-row"><span class="cc-lbl">Mail</span><span>${p.email?`<a href="mailto:${p.email}">${esc(p.email)}</a>`:'—'}</span></div>
-        </div>
-        <div class="cc-btns">
-          ${p.phone?`<a class="cc-btn call" href="${tel(p.phone)}">📞 Call</a>`:''}
-          ${p.email?`<a class="cc-btn mail" href="mailto:${p.email}">✉ Email</a>`:''}
-        </div>
-      </div>`).join('');
-  }
-  document.getElementById('searchInput').addEventListener('input',renderContacts);
-  document.getElementById('groupFilter').addEventListener('change',renderContacts);
-
-  // ── MY PLAN ──
-  function renderMyPlan(person){
-    const contacts=(person.contacts||[]).map(n=>getPerson(n)).filter(Boolean);
-    const fi = person.filmInfo;
-
-    // Date notice — always shown
-    const dateNotice = `
-      <div style="background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.3);border-left:4px solid var(--amber);border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:20px;display:flex;align-items:center;gap:12px;">
-        <span style="font-size:22px;flex-shrink:0;">⛅</span>
-        <div>
-          <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:3px;">Shoot date</div>
-          <div style="font-size:14px;color:var(--text);font-weight:600;">Date not yet confirmed — awaiting dry weather in the Faroe Islands.</div>
-          <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">You will be notified as soon as a date is set. All other scene details are below.</div>
-        </div>
-      </div>`;
-
-    // Film info card for actors
-    const filmCard = fi ? `
-      <div style="background:rgba(0,180,216,.06);border:1px solid rgba(0,180,216,.25);border-radius:var(--radius);overflow:hidden;margin-bottom:20px;">
-        <div style="background:rgba(0,180,216,.08);padding:14px 20px;border-bottom:1px solid rgba(0,180,216,.2);">
-          <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">${esc(fi.film)} · Your Film</div>
-          <div style="font-family:var(--font-display);font-size:28px;letter-spacing:.03em;color:var(--text);">"${esc(fi.title)}"</div>
-        </div>
-        <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:4px;">
-          <div><div class="fmi-label">Date</div><div class="fmi-value tbd">TBD — dry weather needed</div></div>
-          <div><div class="fmi-label">Time</div><div class="fmi-value tbd">TBD</div></div>
-          <div><div class="fmi-label">Location</div><div class="fmi-value">${esc(fi.location)}</div></div>
-          <div><div class="fmi-label">Meet at</div><div class="fmi-value" style="color:var(--accent);font-weight:600;">${esc(fi.meetAt)}</div></div>
-          <div><div class="fmi-label">Crew</div><div class="fmi-value">Thomas Koba · Michael Koba</div></div>
-        </div>
-        <div style="padding:0 20px 16px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="${fi.script}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(0,180,216,.12);border:1px solid rgba(0,180,216,.35);border-radius:6px;color:var(--accent);font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-weight:700;">📝 Script</a>
-          ${fi.locationLink?`<a href="${fi.locationLink}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:6px;color:var(--green);font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-weight:700;">📍 Location info</a>`:''}
-        </div>
-      </div>` : '';
-
-    // Crew: overview of all 3 films
-    const crewFilms = !fi && person.group === 'Crew' ? `
-      <div style="margin-bottom:20px;">
-        <div class="my-section" style="margin-bottom:14px;">— Upcoming Films</div>
-        <div style="display:grid;gap:12px;">
-          <div style="background:var(--card);border:1px solid rgba(0,180,216,.2);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:16px 18px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">Film 4</div>
-            <div style="font-family:var(--font-display);font-size:18px;color:var(--text);margin-bottom:10px;">"Livin&#39; on the Edge"</div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:12px;font-size:13px;">
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Date </span><span style="color:var(--amber);">TBD</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Location </span><span style="color:var(--text);">Lírabergshálsur</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Meet at </span><span style="color:var(--accent);">Skopun, havnøki</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Actor </span><span style="color:var(--text);">Archibald Black</span></div>
-            </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
-              <a href="https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link" target="_blank" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.25);border-radius:5px;color:var(--accent);font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;font-weight:600;">📝 Script</a>
-              <a href="https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en" target="_blank" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);border-radius:5px;color:var(--green);font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;font-weight:600;">📍 Location</a>
-            </div>
-          </div>
-          <div style="background:var(--card);border:1px solid rgba(0,180,216,.2);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:16px 18px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">Film 5</div>
-            <div style="font-family:var(--font-display);font-size:18px;color:var(--text);margin-bottom:10px;">"This IS Someone&#39;s Home"</div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:12px;font-size:13px;">
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Date </span><span style="color:var(--amber);">TBD</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Location </span><span style="color:var(--text);">Tinganes</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Meet at </span><span style="color:var(--accent);">Katrina Christiansen</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Actor </span><span style="color:var(--text);">Mariann Hansen</span></div>
-            </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
-              <a href="https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing" target="_blank" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.25);border-radius:5px;color:var(--accent);font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;font-weight:600;">📝 Script</a>
-            </div>
-          </div>
-          <div style="background:var(--card);border:1px solid rgba(0,180,216,.2);border-left:3px solid var(--accent);border-radius:var(--radius-sm);padding:16px 18px;">
-            <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">Film 6</div>
-            <div style="font-family:var(--font-display);font-size:18px;color:var(--text);margin-bottom:10px;">"This IS Someone&#39;s Home"</div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:12px;font-size:13px;">
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Date </span><span style="color:var(--amber);">TBD</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Location </span><span style="color:var(--amber);">TBD</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Meet at </span><span style="color:var(--amber);">TBD</span></div>
-              <div><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;color:var(--text-muted);">Actor </span><span style="color:var(--text);">Anna Hofgaard</span></div>
-            </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
-              <a href="https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing" target="_blank" style="display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:rgba(0,180,216,.1);border:1px solid rgba(0,180,216,.25);border-radius:5px;color:var(--accent);font-family:var(--font-mono);font-size:9px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;font-weight:600;">📝 Script</a>
-            </div>
-          </div>
-        </div>
-      </div>` : '';
-
-    document.getElementById('tab-myplan').innerHTML=`
-      <div class="my-head">
-        <div class="my-eye">// Your Schedule</div>
-        <div class="my-name">${esc(person.name)}</div>
-        <div class="my-role">${esc(person.role)} · ${esc(person.group)}</div>
-      </div>
-      ${dateNotice}
-      ${filmCard}
-      ${crewFilms}
-      <div class="my-section">— My Contacts</div>
-      <div class="my-contacts">
-        ${contacts.length ? contacts.map(c=>`
-          <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;">
-            <div style="font-family:var(--font-display);font-size:18px;letter-spacing:.03em;color:var(--text);margin-bottom:2px;">${esc(c.name)}</div>
-            <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">${esc(c.role)}</div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;">
-              ${c.phone?`<a href="${tel(c.phone)}" style="display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--accent);color:#000;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;min-width:100px;">📞 ${esc(c.phone)}</a>`:''}
-              ${c.email?`<a href="mailto:${c.email}" style="display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--card2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;min-width:80px;">✉ Email</a>`:''}
-            </div>
-          </div>`).join('') : '<div style="color:var(--text-muted);font-size:13px;">No contacts listed.</div>'}
-      </div>`;
-  }
-
-  // ── NAME SELECT ──
-  function populateSelect(sel){
-    [...people].sort((a,b)=>a.name.localeCompare(b.name)).forEach(p=>{
-      const o=document.createElement('option');o.value=p.name;o.textContent=`${p.name} · ${p.role}`;sel.appendChild(o);
-    });
-  }
-  function triggerSelect(name){
-    const person=name?getPerson(name):null;
-    const tab=document.getElementById('myplanTab');
-    document.getElementById('personSelect').value=name||'';
-    document.getElementById('personSelectMobile').value=name||'';
-    if(person){
-      tab.style.display='flex';
-      try{
-        renderMyPlan(person);
-      } catch(err){
-        document.getElementById('tab-myplan').innerHTML = '<div style="color:red;padding:20px;font-family:monospace;">JS Error: '+err.message+'</div>';
-      }
-      switchTab('myplan');
+    if (children) {
+      if (typeof children === 'string') e.textContent = children;
+      else children.forEach(function(c){ if(c) e.appendChild(c); });
     }
-    else{tab.style.display='none';switchTab('schedule');}
+    return e;
   }
-  document.getElementById('personSelect').addEventListener('change',function(){triggerSelect(this.value);});
-  document.getElementById('personSelectMobile').addEventListener('change',function(){triggerSelect(this.value);});
 
-  // ── RESPONSIVE ──
-  function checkLayout(){
-    const mob=window.innerWidth<700;
-    document.getElementById('mobilePicker').style.display=mob?'flex':'none';
-    document.getElementById('desktopPicker').style.display=mob?'none':'flex';
+  function mono(text) {
+    var s = el('span', {style:'font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);'});
+    s.textContent = text + ' ';
+    return s;
+  }
+
+  function filmCard(f) {
+    var hasDate = f.date && !f.date.startsWith('TBD');
+    var card = el('div', {style:'background:rgba(0,180,216,.06);border:1px solid rgba(0,180,216,.25);border-radius:12px;overflow:hidden;margin-bottom:20px;'});
+
+    // Header
+    var head = el('div', {style:'background:rgba(0,180,216,.1);padding:14px 20px;border-bottom:1px solid rgba(0,180,216,.2);'});
+    var numLabel = el('div', {style:'font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;'}, f.num + ' — Your Film');
+    var titleLabel = el('div', {style:'font-family:var(--font-display);font-size:26px;letter-spacing:.03em;color:var(--text);'});
+    titleLabel.textContent = f.title;
+    head.appendChild(numLabel);
+    head.appendChild(titleLabel);
+    card.appendChild(head);
+
+    // Body grid
+    var body = el('div', {style:'padding:16px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;'});
+
+    function row(label, value, color) {
+      var wrap = el('div');
+      var lbl = el('div', {style:'font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:3px;'}, label);
+      var val = el('div', {style:'font-size:13px;font-weight:500;color:' + (color||'var(--text)') + ';'});
+      val.textContent = value;
+      wrap.appendChild(lbl);
+      wrap.appendChild(val);
+      return wrap;
+    }
+
+    body.appendChild(row('Date', f.date, hasDate ? 'var(--accent)' : 'var(--amber)'));
+    body.appendChild(row('Time', f.time, 'var(--amber)'));
+    body.appendChild(row('Location', f.location));
+    body.appendChild(row('Meet at', f.meetAt, 'var(--accent)'));
+    body.appendChild(row('Crew', 'Thomas Koba & Michael Koba'));
+    card.appendChild(body);
+
+    // Links
+    var links = el('div', {style:'padding:0 20px 16px;display:flex;gap:8px;flex-wrap:wrap;'});
+    var scriptBtn = el('a', {
+      href: f.script, target:'_blank',
+      style:'display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(0,180,216,.12);border:1px solid rgba(0,180,216,.35);border-radius:6px;color:var(--accent);font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-weight:700;'
+    }, '📝 Script');
+    links.appendChild(scriptBtn);
+
+    if (f.locationLink) {
+      var locBtn = el('a', {
+        href: f.locationLink, target:'_blank',
+        style:'display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);border-radius:6px;color:var(--green);font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-weight:700;'
+      }, '📍 Location info');
+      links.appendChild(locBtn);
+    }
+    card.appendChild(links);
+    return card;
+  }
+
+  function renderMyPlan(person) {
+    var tab = document.getElementById('tab-myplan');
+    tab.innerHTML = '';
+
+    // Header
+    var head = el('div', {style:'margin-bottom:20px;'});
+    var eye = el('div', {style:'font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;'}, '// Your Schedule');
+    var name = el('div', {style:'font-family:var(--font-display);font-size:36px;letter-spacing:.04em;color:var(--text);line-height:1;'});
+    name.textContent = person.name;
+    var role = el('div', {style:'font-size:13px;color:var(--text-muted);margin-top:4px;'});
+    role.textContent = person.role + ' · ' + person.group;
+    head.appendChild(eye); head.appendChild(name); head.appendChild(role);
+    tab.appendChild(head);
+
+    // Date notice
+    var notice = el('div', {style:'background:rgba(245,158,11,.07);border:1px solid rgba(245,158,11,.3);border-left:4px solid var(--amber);border-radius:8px;padding:14px 18px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px;'});
+    var icon = el('span', {style:'font-size:22px;flex-shrink:0;'}, '⛅');
+    var noticeText = el('div');
+    var noticeLabel = el('div', {style:'font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber);margin-bottom:3px;'}, 'Shoot dates');
+    var noticeBody = el('div', {style:'font-size:13px;color:var(--text-mid);'}, 'We are awaiting dry weather. Dates will be confirmed and you will be notified.');
+    noticeText.appendChild(noticeLabel); noticeText.appendChild(noticeBody);
+    notice.appendChild(icon); notice.appendChild(noticeText);
+    tab.appendChild(notice);
+
+    // Film cards
+    if (person.films && person.films.length > 0) {
+      var section = el('div', {style:'font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);'}, '— Your Film(s)');
+      tab.appendChild(section);
+      person.films.forEach(function(i) {
+        tab.appendChild(filmCard(films[i]));
+      });
+    }
+
+    // Contacts
+    var cSection = el('div', {style:'font-family:var(--font-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border);margin-top:8px;'}, '— My Contacts');
+    tab.appendChild(cSection);
+
+    var grid = el('div', {style:'display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;'});
+    var contacts = (person.contacts||[]).map(getPerson).filter(Boolean);
+    contacts.forEach(function(c) {
+      var card = el('div', {style:'background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 16px;'});
+      var cname = el('div', {style:'font-family:var(--font-display);font-size:18px;letter-spacing:.03em;color:var(--text);margin-bottom:2px;'});
+      cname.textContent = c.name;
+      var crole = el('div', {style:'font-size:11px;color:var(--text-muted);margin-bottom:10px;'});
+      crole.textContent = c.role;
+      var btns = el('div', {style:'display:flex;gap:8px;flex-wrap:wrap;'});
+      if (c.phone) {
+        var callBtn = el('a', {
+          href:'tel:'+c.phone.replace(/\s/g,''),
+          style:'display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--accent);color:#000;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;min-width:100px;'
+        });
+        callBtn.textContent = '📞 ' + c.phone;
+        btns.appendChild(callBtn);
+      }
+      if (c.email) {
+        var mailBtn = el('a', {
+          href:'mailto:'+c.email,
+          style:'display:inline-flex;align-items:center;gap:6px;padding:7px 12px;background:var(--card2);color:var(--text);border:1px solid var(--border);border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;flex:1;justify-content:center;min-width:80px;'
+        });
+        mailBtn.textContent = '✉ Email';
+        btns.appendChild(mailBtn);
+      }
+      card.appendChild(cname); card.appendChild(crole); card.appendChild(btns);
+      grid.appendChild(card);
+    });
+    tab.appendChild(grid);
+  }
+
+  // TABS
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  function switchTab(name) {
+    tabBtns.forEach(function(b){ b.classList.remove('active'); });
+    document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+    var btn = document.querySelector('[data-tab="'+name+'"]');
+    var panel = document.getElementById('tab-'+name);
+    if (btn) btn.classList.add('active');
+    if (panel) panel.classList.add('active');
+  }
+  tabBtns.forEach(function(b){ b.addEventListener('click', function(){ switchTab(b.dataset.tab); }); });
+
+  // STATS
+  function renderStats() {
+    var counts = [
+      [people.length, 'Total'],
+      [people.filter(function(p){ return p.group==='Crew'; }).length, 'Crew'],
+      [people.filter(function(p){ return p.group==='Actor'; }).length, 'Actors'],
+      [people.filter(function(p){ return p.group==='Agency'||p.group==='Client'; }).length, 'Agency / Client']
+    ];
+    document.getElementById('statsRow').innerHTML = counts.map(function(pair){
+      return '<div class="stat-card"><div class="stat-val">'+pair[0]+'</div><div class="stat-lbl">'+pair[1]+'</div></div>';
+    }).join('');
+  }
+
+  // CONTACTS
+  function populateGroups() {
+    var sel = document.getElementById('groupFilter');
+    var groups = [];
+    people.forEach(function(p){ if(groups.indexOf(p.group)===-1) groups.push(p.group); });
+    groups.sort().forEach(function(g){
+      var o = document.createElement('option');
+      o.value = g; o.textContent = g;
+      sel.appendChild(o);
+    });
+  }
+
+  function renderContacts() {
+    var q = document.getElementById('searchInput').value.trim().toLowerCase();
+    var g = document.getElementById('groupFilter').value;
+    var filtered = people.filter(function(p){
+      var hay = [p.name,p.role,p.group,p.email,p.phone].join(' ').toLowerCase();
+      return (q===''||hay.includes(q)) && (g==='all'||p.group===g);
+    });
+    var grid = document.getElementById('contactsGrid');
+    grid.innerHTML = '';
+    filtered.forEach(function(p){
+      var card = document.createElement('div');
+      card.className = 'cc';
+      var badgeColors = {Crew:'rgba(0,180,216,.1)',Client:'rgba(34,197,94,.1)',Agency:'rgba(245,158,11,.1)',Actor:'rgba(168,85,247,.1)'};
+      var textColors = {Crew:'var(--accent)',Client:'var(--green)',Agency:'var(--amber)',Actor:'#a855f7'};
+      var borderColors = {Crew:'rgba(0,180,216,.2)',Client:'rgba(34,197,94,.2)',Agency:'rgba(245,158,11,.2)',Actor:'rgba(168,85,247,.2)'};
+      card.innerHTML =
+        '<div class="cc-top"><div><div class="cc-name">'+p.name+'</div><div class="cc-role">'+p.role+'</div></div>'+
+        '<span style="font-family:var(--font-mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;padding:4px 8px;border-radius:4px;background:'+(badgeColors[p.group]||'rgba(255,255,255,.05)')+';color:'+(textColors[p.group]||'var(--text-muted)')+';border:1px solid '+(borderColors[p.group]||'var(--border)')+';">'+p.group+'</span></div>'+
+        '<div class="cc-info">'+
+        '<div class="cc-row"><span class="cc-lbl">Tel</span><span>'+(p.phone?'<a href="tel:'+p.phone.replace(/\s/g,'')+'" style="color:var(--accent);">'+p.phone+'</a>':'—')+'</span></div>'+
+        '<div class="cc-row"><span class="cc-lbl">Mail</span><span>'+(p.email?'<a href="mailto:'+p.email+'" style="color:var(--accent);">'+p.email+'</a>':'—')+'</span></div>'+
+        '</div>'+
+        '<div class="cc-btns">'+
+        (p.phone?'<a class="cc-btn call" href="tel:'+p.phone.replace(/\s/g,'')+'">📞 Call</a>':'')+
+        (p.email?'<a class="cc-btn mail" href="mailto:'+p.email+'">✉ Email</a>':'')+
+        '</div>';
+      grid.appendChild(card);
+    });
+  }
+  document.getElementById('searchInput').addEventListener('input', renderContacts);
+  document.getElementById('groupFilter').addEventListener('change', renderContacts);
+
+  // NAME SELECT
+  function populateSelect(sel) {
+    var sorted = people.slice().sort(function(a,b){ return a.name.localeCompare(b.name); });
+    sorted.forEach(function(p){
+      var o = document.createElement('option');
+      o.value = p.name;
+      o.textContent = p.name + ' · ' + p.role;
+      sel.appendChild(o);
+    });
+  }
+
+  function triggerSelect(name) {
+    var person = name ? getPerson(name) : null;
+    var tab = document.getElementById('myplanTab');
+    document.getElementById('personSelect').value = name||'';
+    document.getElementById('personSelectMobile').value = name||'';
+    if (person) {
+      tab.style.display = 'flex';
+      renderMyPlan(person);
+      switchTab('myplan');
+    } else {
+      tab.style.display = 'none';
+      switchTab('schedule');
+    }
+  }
+  document.getElementById('personSelect').addEventListener('change', function(){ triggerSelect(this.value); });
+  document.getElementById('personSelectMobile').addEventListener('change', function(){ triggerSelect(this.value); });
+
+  // RESPONSIVE
+  function checkLayout() {
+    var mob = window.innerWidth < 700;
+    document.getElementById('mobilePicker').style.display = mob ? 'flex' : 'none';
+    document.getElementById('desktopPicker').style.display = mob ? 'none' : 'flex';
   }
   checkLayout();
-  window.addEventListener('resize',checkLayout);
+  window.addEventListener('resize', checkLayout);
 
-  document.getElementById('brandHome').addEventListener('click',()=>{
+  document.getElementById('brandHome').addEventListener('click', function(){
     triggerSelect('');
-    document.getElementById('searchInput').value='';
-    document.getElementById('groupFilter').value='all';
+    document.getElementById('searchInput').value = '';
+    document.getElementById('groupFilter').value = 'all';
     renderContacts();
     window.scrollTo({top:0,behavior:'smooth'});
   });
 
-  // ── WEATHER — Tórshavn via Open-Meteo ──
+  // WEATHER
   async function loadWeather(){
-    const LAT=62.0107, LON=-6.7741;
+    var LAT=62.0107, LON=-6.7741;
     try{
-      const url=`https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_max,precipitation_sum,cloudcover_mean&timezone=Atlantic%2FFaroe&forecast_days=7`;
-      const res=await fetch(url);
-      if(!res.ok) throw new Error();
-      const data=await res.json();
-      const d=data.daily;
-      function wmoInfo(c){
-        if(c===0) return['☀️','Clear sky'];
-        if(c===1) return['🌤','Mainly clear'];
-        if(c===2) return['⛅','Partly cloudy'];
-        if(c===3) return['☁️','Overcast'];
-        if(c<=49) return['🌫','Fog'];
-        if(c<=55) return['🌦','Drizzle'];
-        if(c<=65) return['🌧','Rain'];
-        if(c<=75) return['❄️','Snow'];
-        if(c<=82) return['🌧','Showers'];
-        if(c<=99) return['⛈','Thunder'];
+      var url='https://api.open-meteo.com/v1/forecast?latitude='+LAT+'&longitude='+LON+'&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_max,precipitation_sum&timezone=Atlantic%2FFaroe&forecast_days=7';
+      var res=await fetch(url);
+      var data=await res.json();
+      var d=data.daily;
+      function wmo(c){
+        if(c===0)return['☀️','Clear sky'];
+        if(c===1)return['🌤','Mainly clear'];
+        if(c===2)return['⛅','Partly cloudy'];
+        if(c===3)return['☁️','Overcast'];
+        if(c<=49)return['🌫','Fog'];
+        if(c<=65)return['🌧','Rain'];
+        if(c<=82)return['🌧','Showers'];
+        if(c<=99)return['⛈','Thunder'];
         return['🌡','Unknown'];
       }
-      function shootScore(code,rain,wind,cloud){
-        // Bad: rain (code 51+) or fog (code 45-49)
-        if(code>=51) return 0; // rain/snow/thunder = not suitable
-        if(code>=45) return 10; // fog = not suitable
-        let score=100;
-        if(code===3) score-=15; // overcast OK
-        if(code===2) score-=5;
-        score-=Math.min(rain*15,30);
-        const wms=wind/3.6;
-        if(wms>15) score-=20;
-        else if(wms>10) score-=10;
-        return Math.max(0,Math.min(100,score));
+      function score(code,rain,wind){
+        if(code>=45&&code<=49)return 0;
+        if(code>=51)return 0;
+        var s=100;
+        if(code===3)s-=10;
+        s-=Math.min(rain*15,30);
+        if(wind/3.6>15)s-=20;
+        return Math.max(0,Math.min(100,s));
       }
-      function scoreLabel(score,code){
-        if(code>=51||code>=45&&code<=49) return['🔴','Not suitable — rain/fog','rgba(239,68,68,.08)','rgba(239,68,68,.3)','#ef4444'];
-        if(score>=80) return['🟢','Good shoot day','rgba(34,197,94,.12)','rgba(34,197,94,.4)','var(--green)'];
-        if(score>=55) return['🟡','Maybe — watch the forecast','rgba(245,158,11,.1)','rgba(245,158,11,.4)','var(--amber)'];
+      function label(s,code){
+        if(code>=45&&code<=49||code>=51)return['🔴','Not suitable','rgba(239,68,68,.08)','rgba(239,68,68,.3)','#ef4444'];
+        if(s>=80)return['🟢','Good shoot day','rgba(34,197,94,.12)','rgba(34,197,94,.4)','var(--green)'];
+        if(s>=55)return['🟡','Maybe — watch the forecast','rgba(245,158,11,.1)','rgba(245,158,11,.4)','var(--amber)'];
         return['🟠','Uncertain','rgba(249,115,22,.08)','rgba(249,115,22,.3)','#f97316'];
       }
-      const html=d.time.map((date,i)=>{
-        const [ico,desc]=wmoInfo(d.weathercode[i]);
-        const maxT=Math.round(d.temperature_2m_max[i]);
-        const minT=Math.round(d.temperature_2m_min[i]);
-        const wind=Math.round(d.windspeed_10m_max[i]/3.6);
-        const rain=d.precipitation_sum[i];
-        const cloud=d.cloudcover_mean?.[i]||0;
-        const score=shootScore(d.weathercode[i],rain,d.windspeed_10m_max[i],cloud);
-        const [dot,label,bg,borderCol,textCol]=scoreLabel(score,d.weathercode[i]);
-        const dayLabel=new Date(date).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
-        return`<div style="background:${bg};border:1px solid ${borderCol};border-radius:var(--radius-sm);padding:12px 10px;text-align:center;">
-          <div style="font-family:var(--font-mono);font-size:9px;color:var(--text-muted);margin-bottom:4px;">${dayLabel}</div>
-          <div style="font-size:24px;margin:4px 0;">${ico}</div>
-          <div style="font-family:var(--font-display);font-size:20px;letter-spacing:.03em;color:${textCol};">${maxT}° <span style="font-size:12px;color:var(--text-muted);">${minT}°</span></div>
-          <div style="font-size:10px;color:var(--text-muted);margin-top:2px;">${desc}</div>
-          <div style="font-size:10px;color:var(--text-muted);margin-top:2px;">💨 ${wind} m/s · 🌧 ${rain}mm</div>
-          <div style="margin-top:7px;padding-top:7px;border-top:1px solid ${borderCol};">
-            <span style="font-size:10px;">${dot}</span>
-            <span style="font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:${textCol};margin-left:3px;">${label}</span>
-          </div>
-          <div style="margin-top:4px;height:3px;background:var(--border);border-radius:2px;overflow:hidden;">
-            <div style="height:100%;width:${score}%;background:${textCol};border-radius:2px;"></div>
-          </div>
-        </div>`;
+      var html=d.time.map(function(date,i){
+        var ico=wmo(d.weathercode[i]);
+        var maxT=Math.round(d.temperature_2m_max[i]);
+        var minT=Math.round(d.temperature_2m_min[i]);
+        var wind=Math.round(d.windspeed_10m_max[i]/3.6);
+        var rain=d.precipitation_sum[i];
+        var s=score(d.weathercode[i],rain,d.windspeed_10m_max[i]);
+        var lbl=label(s,d.weathercode[i]);
+        var day=new Date(date).toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
+        return '<div style="background:'+lbl[2]+';border:1px solid '+lbl[3]+';border-radius:8px;padding:12px 10px;text-align:center;">'+
+          '<div style="font-family:var(--font-mono);font-size:9px;color:var(--text-muted);margin-bottom:4px;">'+day+'</div>'+
+          '<div style="font-size:24px;margin:4px 0;">'+ico[0]+'</div>'+
+          '<div style="font-family:var(--font-display);font-size:20px;color:'+lbl[4]+';">'+maxT+'° <span style="font-size:12px;color:var(--text-muted);">'+minT+'°</span></div>'+
+          '<div style="font-size:10px;color:var(--text-muted);margin-top:2px;">'+ico[1]+'</div>'+
+          '<div style="font-size:10px;color:var(--text-muted);">💨 '+wind+' m/s · 🌧 '+rain+'mm</div>'+
+          '<div style="margin-top:7px;padding-top:7px;border-top:1px solid '+lbl[3]+';font-family:var(--font-mono);font-size:8px;letter-spacing:.04em;text-transform:uppercase;color:'+lbl[4]+';">'+lbl[0]+' '+lbl[1]+'</div>'+
+          '<div style="margin-top:4px;height:3px;background:var(--border);border-radius:2px;overflow:hidden;"><div style="height:100%;width:'+s+'%;background:'+lbl[4]+';border-radius:2px;"></div></div>'+
+          '</div>';
       }).join('');
       document.getElementById('weatherDays').innerHTML=html;
       document.getElementById('weatherUpdated').textContent='Updated '+new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
-    }catch(e){
-      document.getElementById('weatherDays').innerHTML=`<div style="color:var(--text-muted);font-size:13px;">Could not load forecast.</div>`;
+    } catch(e) {
+      document.getElementById('weatherDays').innerHTML='<div style="color:var(--text-muted);font-size:13px;">Could not load forecast.</div>';
     }
   }
   loadWeather();
-  setInterval(loadWeather,30*60*1000);
+  setInterval(loadWeather, 30*60*1000);
 
-  // ── INIT ──
+  // INIT
   renderStats();
   populateGroups();
   populateSelect(document.getElementById('personSelect'));
   populateSelect(document.getElementById('personSelectMobile'));
   renderContacts();
-</script>
+</script>-e 
 </body>
 </html>
