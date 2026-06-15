@@ -128,60 +128,26 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
       <div style="margin-top:10px;font-family:var(--font-mono);font-size:9px;color:var(--text-muted);">Open-Meteo · Updates every 30 min · <span id="weatherUpdated"></span></div>
     </div>
 
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">— Upcoming Films</div>
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">— Upcoming Films · Earliest first</div>
+
+    <div class="film-card">
+      <div class="film-card-head">
+        <div><div class="film-num">Film 6</div><div class="film-title">Sheep live here, we dont</div></div>
+        <span class="badge badge-accent">📅 Mon 16 June 2026 · 17:00</span>
+      </div>
 
     <div class="film-card">
       <div class="film-card-head">
         <div><div class="film-num">Film 4</div><div class="film-title">Livin on the Edge</div></div>
         <span class="badge badge-accent">📅 Thu 18 June 2026</span>
       </div>
-      <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val accent">Thursday 18 June 2026</div></div>
-        <div><div class="fi-label">Location</div><div class="fi-val">Lírabergshálsur</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Skopun, havnøki</div></div>
-        <div><div class="fi-label">Actor</div><div class="fi-val">Archibald Black</div></div>
-        <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
-      </div>
-      <div class="film-links">
-        <a class="link-btn link-script" href="https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link" target="_blank">📝 Script</a>
-        <a class="link-btn link-loc" href="https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en" target="_blank">📍 Location info</a>
-      </div>
-    </div>
 
     <div class="film-card">
       <div class="film-card-head">
         <div><div class="film-num">Film 5</div><div class="film-title">This IS Someones Home</div></div>
         <span class="badge badge-amber">⛅ Awaiting dry weather</span>
       </div>
-      <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Location</div><div class="fi-val">Tinganes</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Katrina Christiansen</div></div>
-        <div><div class="fi-label">Actor</div><div class="fi-val">Mariann Hansen</div></div>
-        <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
-      </div>
-      <div class="film-links">
-        <a class="link-btn link-script" href="https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing" target="_blank">📝 Script</a>
-      </div>
-    </div>
 
-    <div class="film-card">
-      <div class="film-card-head">
-        <div><div class="film-num">Film 6</div><div class="film-title">This IS Someones Home</div></div>
-        <span class="badge badge-amber">⛅ Awaiting dry weather</span>
-      </div>
-      <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Location</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Actor</div><div class="fi-val">Anna Hofgaard</div></div>
-        <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
-      </div>
-      <div class="film-links">
-        <a class="link-btn link-script" href="https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing" target="_blank">📝 Script</a>
-      </div>
-    </div>
-  </div>
 
   <!-- FILMS -->
   <div class="panel" id="panel-films">
@@ -227,14 +193,16 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
 
     <div class="film-card">
       <div class="film-card-head">
-        <div><div class="film-num">Film 6</div><div class="film-title">This IS Someones Home</div></div>
-        <span class="badge badge-amber">⛅ Awaiting dry weather</span>
+        <div><div class="film-num">Film 6</div><div class="film-title">Sheep live here, we dont</div></div>
+        <span class="badge badge-accent">📅 Mon 16 June · 17:00</span>
       </div>
       <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Location</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val amber">TBD</div></div>
+        <div><div class="fi-label">Date</div><div class="fi-val accent">Monday 16 June 2026</div></div>
+        <div><div class="fi-label">Time</div><div class="fi-val accent">17:00</div></div>
+        <div><div class="fi-label">Location</div><div class="fi-val">Leynar</div></div>
+        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Leynar P-plass vid beach</div></div>
         <div><div class="fi-label">Actor</div><div class="fi-val">Anna Hofgaard</div></div>
+        <div><div class="fi-label">Stylist</div><div class="fi-val">Ingrid Mortensen</div></div>
         <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
       </div>
       <div class="film-links">
@@ -263,10 +231,10 @@ var people = [
   {name:"Michael Koba", role:"Producer / Director", group:"Crew", phone:"+298 591011", email:"michael@kovboyfilm.com", films:[0,1,2], contacts:["Thomas Koba","Alda Egilstrod","Archibald Black","Mariann Hansen","Anna Hofgaard"]},
   {name:"Thomas Koba", role:"Camera / Crew", group:"Crew", phone:"+298 213457", email:"thomas@kovboyfilm.com", films:[0,1,2], contacts:["Michael Koba","Alda Egilstrod"]},
   {name:"Alda Egilstrod", role:"Client — Visit Faroe Islands", group:"Client", phone:"+298 556133", email:"alda@visitfaroeislands.com", films:[], contacts:["Michael Koba","Johan Pauli"]},
-  {name:"Johan Pauli", role:"Client — Visit Faroe Islands", group:"Client", phone:"+298 556131", email:"johanp@visitfaroeislands.com", films:[], contacts:["Alda Egilstrod","Michael Koba"]},
+  {name:"Johan Pauli Helgason", role:"Client — Visit Faroe Islands", group:"Client", phone:"+298 556131", email:"johanp@visitfaroeislands.com", films:[], contacts:["Alda Egilstrod","Michael Koba"]},
   {name:"Brim Hoydal", role:"Client — Visit Faroe Islands", group:"Client", phone:"+298 264092", email:"brim@visitfaroeislands.com", films:[], contacts:["Michael Koba"]},
   {name:"Niels Arge Galan", role:"Agency — Sendistovan", group:"Agency", phone:"+298 794166", email:"nag@sendistovan.fo", films:[], contacts:["Michael Koba","Ingrid Mortensen"]},
-  {name:"Ingrid Mortensen", role:"Agency — Sendistovan", group:"Agency", phone:"+298 794189", email:"ingrid@sendistovan.fo", films:[], contacts:["Niels Arge Galan","Michael Koba"]},
+  {name:"Ingrid Mortensen", role:"Stylist · Agency — Sendistovan", group:"Agency", phone:"+298 794189", email:"ingrid@sendistovan.fo", films:[2], contacts:["Michael Koba","Anna Hofgaard"]},
   {name:"Bugvi Dalsgard", role:"Agency — Sendistovan", group:"Agency", phone:"+298 794155", email:"buda@sendistovan.fo", films:[], contacts:["Niels Arge Galan","Michael Koba"]},
   {name:"Archibald Black", role:"Actor — Film 4", group:"Actor", phone:"+298 264707", email:"archibaldblack56@gmail.com", films:[0], contacts:["Michael Koba"]},
   {name:"Mariann Hansen", role:"Actor — Film 5", group:"Actor", phone:"+298 722161", email:"mariann460@gmail.com", films:[1], contacts:["Michael Koba"]},
@@ -276,7 +244,7 @@ var people = [
 var films = [
   {num:"Film 4", title:"Livin on the Edge", date:"Thursday 18 June 2026", time:"TBD", location:"Lirabergshalsur", meetAt:"Skopun, havnoki", actor:"Archibald Black", script:"https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link", locLink:"https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en", confirmed:true},
   {num:"Film 5", title:"This IS Someones Home", date:"TBD", time:"TBD", location:"Tinganes", meetAt:"Katrina Christiansen", actor:"Mariann Hansen", script:"https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing", locLink:null, confirmed:false},
-  {num:"Film 6", title:"This IS Someones Home", date:"TBD", time:"TBD", location:"TBD", meetAt:"TBD", actor:"Anna Hofgaard", script:"https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing", locLink:null, confirmed:false}
+  {num:"Film 6", title:"Sheep live here, we dont", date:"Monday 16 June 2026", time:"17:00", location:"Leynar", meetAt:"Leynar P-plass vid beach", actor:"Anna Hofgaard", stylist:"Ingrid Mortensen", script:"https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing", locLink:null, confirmed:true}
 ];
 
 function getPerson(name) {
