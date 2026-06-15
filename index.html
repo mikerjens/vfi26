@@ -132,11 +132,11 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
     <div class="film-card">
       <div class="film-card-head">
         <div><div class="film-num">Film 6</div><div class="film-title">Sheep live here, we dont</div></div>
-        <span class="badge badge-accent">📅 Mon 16 June 2026 · 17:00</span>
+        <span class="badge badge-accent">📅 Thu 18 June 2026 · 13:00</span>
       </div>
       <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val accent">Monday 16 June 2026</div></div>
-        <div><div class="fi-label">Time</div><div class="fi-val accent">17:00</div></div>
+        <div><div class="fi-label">Date</div><div class="fi-val accent">Thursday 18 June 2026</div></div>
+        <div><div class="fi-label">Time</div><div class="fi-val accent">13:00</div></div>
         <div><div class="fi-label">Location</div><div class="fi-val">Leynar</div></div>
         <div><div class="fi-label">Meet at</div><div class="fi-val accent">Leynar P-plass vid beach</div></div>
         <div><div class="fi-label">Actor</div><div class="fi-val">Anna Hofgaard</div></div>
@@ -151,11 +151,11 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
     <div class="film-card">
       <div class="film-card-head">
         <div><div class="film-num">Film 4</div><div class="film-title">Livin on the Edge</div></div>
-        <span class="badge badge-accent">📅 Thu 18 June 2026</span>
+        <span class="badge badge-amber">⛅ Awaiting dry weather</span>
       </div>
       <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val accent">Thursday 18 June 2026</div></div>
-        <div><div class="fi-label">Time</div><div class="fi-val amber">TBD</div></div>
+        <div><div class="fi-label">Date</div><div class="fi-val amber">TBD — awaiting dry weather</div></div>
+        <div><div class="fi-label">Time</div><div class="fi-val amber">TBD — vi afventer vejret</div></div>
         <div><div class="fi-label">Location</div><div class="fi-val">Lírabergshálsur</div></div>
         <div><div class="fi-label">Meet at</div><div class="fi-val accent">Skopun, havnøki</div></div>
         <div><div class="fi-label">Actor</div><div class="fi-val">Archibald Black</div></div>
@@ -215,9 +215,9 @@ var people = [
 ];
 
 var films = [
-  {num:"Film 4", title:"Livin on the Edge", date:"Thursday 18 June 2026", time:"TBD", location:"Lirabergshalsur", meetAt:"Skopun, havnoki", actor:"Archibald Black", script:"https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link", locLink:"https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en", confirmed:true},
+  {num:"Film 4", title:"Livin on the Edge", date:"TBD — awaiting dry weather", time:"TBD", location:"Lirabergshalsur", meetAt:"Skopun, havnoki", actor:"Archibald Black", script:"https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link", locLink:"https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en", confirmed:true},
   {num:"Film 5", title:"This IS Someones Home", date:"TBD", time:"TBD", location:"Tinganes", meetAt:"Katrina Christiansen", actor:"Mariann Hansen", script:"https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing", locLink:null, confirmed:false},
-  {num:"Film 6", title:"Sheep live here, we dont", date:"Monday 16 June 2026", time:"17:00", location:"Leynar", meetAt:"Leynar P-plass vid beach", actor:"Anna Hofgaard", stylist:"Ingrid Mortensen", script:"https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing", locLink:null, confirmed:true}
+  {num:"Film 6", title:"Sheep live here, we dont", date:"Thursday 18 June 2026", time:"17:00", location:"Leynar", meetAt:"Leynar P-plass vid beach", actor:"Anna Hofgaard", stylist:"Ingrid Mortensen", script:"https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing", locLink:null, confirmed:true}
 ];
 
 function getPerson(name) {
@@ -337,7 +337,7 @@ function renderMyPlan(person) {
       info.appendChild(num); info.appendChild(tit);
       var bdg = document.createElement('span');
       bdg.className = 'badge ' + (f.confirmed ? 'badge-accent' : 'badge-amber');
-      bdg.textContent = f.confirmed ? 'Thu 18 June 2026' : 'Awaiting dry weather';
+      bdg.textContent = f.confirmed ? (f.date + (f.time && f.time !== 'TBD' ? ' · ' + f.time : '')) : 'Awaiting dry weather';
       head.appendChild(info); head.appendChild(bdg);
       card.appendChild(head);
 
