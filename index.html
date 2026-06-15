@@ -107,7 +107,6 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
   </div>
   <div class="tabs">
     <button class="tab-btn active" data-tab="schedule"><span class="ti">📅</span>Schedule</button>
-    <button class="tab-btn" data-tab="films"><span class="ti">🎬</span>Films</button>
     <button class="tab-btn" data-tab="contacts"><span class="ti">👤</span>Contacts</button>
     <button class="tab-btn" data-tab="myplan" id="myplanTab" style="display:none;"><span class="ti">⭐</span>My Schedule</button>
   </div>
@@ -135,30 +134,24 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
         <div><div class="film-num">Film 6</div><div class="film-title">Sheep live here, we dont</div></div>
         <span class="badge badge-accent">📅 Mon 16 June 2026 · 17:00</span>
       </div>
+      <div class="film-body">
+        <div><div class="fi-label">Date</div><div class="fi-val accent">Monday 16 June 2026</div></div>
+        <div><div class="fi-label">Time</div><div class="fi-val accent">17:00</div></div>
+        <div><div class="fi-label">Location</div><div class="fi-val">Leynar</div></div>
+        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Leynar P-plass vid beach</div></div>
+        <div><div class="fi-label">Actor</div><div class="fi-val">Anna Hofgaard</div></div>
+        <div><div class="fi-label">Stylist</div><div class="fi-val">Ingrid Mortensen</div></div>
+        <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
+      </div>
+      <div class="film-links">
+        <a class="link-btn link-script" href="https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing" target="_blank">📝 Script</a>
+      </div>
+    </div>
 
     <div class="film-card">
       <div class="film-card-head">
         <div><div class="film-num">Film 4</div><div class="film-title">Livin on the Edge</div></div>
         <span class="badge badge-accent">📅 Thu 18 June 2026</span>
-      </div>
-
-    <div class="film-card">
-      <div class="film-card-head">
-        <div><div class="film-num">Film 5</div><div class="film-title">This IS Someones Home</div></div>
-        <span class="badge badge-amber">⛅ Awaiting dry weather</span>
-      </div>
-
-
-  <!-- FILMS -->
-  <div class="panel" id="panel-films">
-    <div class="sh-title">FILMS</div>
-    <div class="sh-sub">6 explainer videos · 6 cinematic postcards</div>
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">— Upcoming · 3 films remaining</div>
-
-    <div class="film-card">
-      <div class="film-card-head">
-        <div><div class="film-num">Film 4</div><div class="film-title">Livin on the Edge</div></div>
-        <span class="badge badge-accent">📅 Thu 18 June</span>
       </div>
       <div class="film-body">
         <div><div class="fi-label">Date</div><div class="fi-val accent">Thursday 18 June 2026</div></div>
@@ -181,6 +174,7 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
       </div>
       <div class="film-body">
         <div><div class="fi-label">Date</div><div class="fi-val amber">TBD</div></div>
+        <div><div class="fi-label">Time</div><div class="fi-val amber">TBD</div></div>
         <div><div class="fi-label">Location</div><div class="fi-val">Tinganes</div></div>
         <div><div class="fi-label">Meet at</div><div class="fi-val accent">Katrina Christiansen</div></div>
         <div><div class="fi-label">Actor</div><div class="fi-val">Mariann Hansen</div></div>
@@ -190,28 +184,7 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
         <a class="link-btn link-script" href="https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing" target="_blank">📝 Script</a>
       </div>
     </div>
-
-    <div class="film-card">
-      <div class="film-card-head">
-        <div><div class="film-num">Film 6</div><div class="film-title">Sheep live here, we dont</div></div>
-        <span class="badge badge-accent">📅 Mon 16 June · 17:00</span>
-      </div>
-      <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val accent">Monday 16 June 2026</div></div>
-        <div><div class="fi-label">Time</div><div class="fi-val accent">17:00</div></div>
-        <div><div class="fi-label">Location</div><div class="fi-val">Leynar</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Leynar P-plass vid beach</div></div>
-        <div><div class="fi-label">Actor</div><div class="fi-val">Anna Hofgaard</div></div>
-        <div><div class="fi-label">Stylist</div><div class="fi-val">Ingrid Mortensen</div></div>
-        <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
-      </div>
-      <div class="film-links">
-        <a class="link-btn link-script" href="https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing" target="_blank">📝 Script</a>
-      </div>
-    </div>
   </div>
-
-  <!-- CONTACTS -->
   <div class="panel" id="panel-contacts">
     <div class="stats-row" id="statsRow"></div>
     <div class="filters">
