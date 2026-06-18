@@ -127,24 +127,23 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
       <div style="margin-top:10px;font-family:var(--font-mono);font-size:9px;color:var(--text-muted);">Open-Meteo · Updates every 30 min · <span id="weatherUpdated"></span></div>
     </div>
 
-    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">— Upcoming Films · Earliest first</div>
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;">— Upcoming</div>
 
     <div class="film-card">
       <div class="film-card-head">
-        <div><div class="film-num">Film 6</div><div class="film-title">Sheep live here, we dont</div></div>
-        <span class="badge badge-accent">📅 Thu 18 June 2026 · 16:30</span>
+        <div><div class="film-num">Film 5</div><div class="film-title">This IS Someones Home</div></div>
+        <span class="badge badge-accent">📅 Mon 22 June · 11:00</span>
       </div>
       <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val accent">Thursday 18 June 2026</div></div>
-        <div><div class="fi-label">Time</div><div class="fi-val accent">16:30</div></div>
-        <div><div class="fi-label">Location</div><div class="fi-val">Leynar</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Leynar P-plass vid beach</div></div>
-        <div><div class="fi-label">Actor</div><div class="fi-val">Anna Hofgaard</div></div>
-        <div><div class="fi-label">Stylist</div><div class="fi-val">Ingrid Mortensen</div></div>
+        <div><div class="fi-label">Date</div><div class="fi-val accent">Monday 22 June 2026</div></div>
+        <div><div class="fi-label">Time</div><div class="fi-val accent">11:00</div></div>
+        <div><div class="fi-label">Location</div><div class="fi-val">Tinganes</div></div>
+        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Katrina Christiansen</div></div>
+        <div><div class="fi-label">Actor</div><div class="fi-val">Mariann Hansen</div></div>
         <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
       </div>
       <div class="film-links">
-        <a class="link-btn link-script" href="https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing" target="_blank">📝 Script</a>
+        <a class="link-btn link-script" href="https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing" target="_blank">📝 Script</a>
       </div>
     </div>
 
@@ -167,21 +166,18 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
       </div>
     </div>
 
-    <div class="film-card">
-      <div class="film-card-head">
-        <div><div class="film-num">Film 5</div><div class="film-title">This IS Someones Home</div></div>
-        <span class="badge badge-amber">⛅ Awaiting dry weather</span>
+    <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin:24px 0 10px;">— Completed</div>
+
+    <div class="film-card" style="opacity:.55;border-color:rgba(34,197,94,.25);">
+      <div class="film-card-head" style="background:rgba(34,197,94,.05);">
+        <div><div class="film-num" style="color:var(--green);">Film 6 · Completed</div><div class="film-title" style="text-decoration:line-through;color:var(--text-muted);">Sheep live here, we dont</div></div>
+        <span class="badge" style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);color:var(--green);">✓ Done · Thu 18 June</span>
       </div>
       <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Time</div><div class="fi-val amber">TBD</div></div>
-        <div><div class="fi-label">Location</div><div class="fi-val">Tinganes</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Katrina Christiansen</div></div>
-        <div><div class="fi-label">Actor</div><div class="fi-val">Mariann Hansen</div></div>
-        <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
-      </div>
-      <div class="film-links">
-        <a class="link-btn link-script" href="https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing" target="_blank">📝 Script</a>
+        <div><div class="fi-label">Recorded</div><div class="fi-val" style="color:var(--green);">Thursday 18 June 2026 · 16:30</div></div>
+        <div><div class="fi-label">Location</div><div class="fi-val" style="color:var(--text-muted);">Leynar</div></div>
+        <div><div class="fi-label">Actor</div><div class="fi-val" style="color:var(--text-muted);">Anna Hofgaard</div></div>
+        <div><div class="fi-label">Stylist</div><div class="fi-val" style="color:var(--text-muted);">Ingrid Mortensen</div></div>
       </div>
     </div>
   </div>
@@ -216,7 +212,7 @@ var people = [
 
 var films = [
   {num:"Film 4", title:"Livin on the Edge", date:"TBD — awaiting dry weather", time:"TBD", location:"Lirabergshalsur", meetAt:"Skopun, havnoki", actor:"Archibald Black", script:"https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link", locLink:"https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en", confirmed:true},
-  {num:"Film 5", title:"This IS Someones Home", date:"TBD", time:"TBD", location:"Tinganes", meetAt:"Katrina Christiansen", actor:"Mariann Hansen", script:"https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing", locLink:null, confirmed:false},
+  {num:"Film 5", title:"This IS Someones Home", date:"Monday 22 June 2026", time:"11:00", location:"Tinganes", meetAt:"Katrina Christiansen", actor:"Mariann Hansen", script:"https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing", locLink:null, confirmed:false},
   {num:"Film 6", title:"Sheep live here, we dont", date:"Thursday 18 June 2026", time:"17:00", location:"Leynar", meetAt:"Leynar P-plass vid beach", actor:"Anna Hofgaard", stylist:"Ingrid Mortensen", script:"https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing", locLink:null, confirmed:true}
 ];
 
