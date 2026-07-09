@@ -132,19 +132,29 @@ select.np-select:focus{outline:none;border-color:var(--accent);}
     <div class="film-card">
       <div class="film-card-head">
         <div><div class="film-num">Film 4</div><div class="film-title">Livin on the Edge</div></div>
-        <span class="badge badge-amber">⛅ Mon 6 July — weather dependent</span>
+        <span class="badge badge-accent">📅 Fri 10 July · 10:15</span>
       </div>
       <div class="film-body">
-        <div><div class="fi-label">Date</div><div class="fi-val amber">Monday 6 July 2026 (tentative)</div></div>
-        <div><div class="fi-label">Time</div><div class="fi-val amber">TBD — vi afventer vejret</div></div>
+        <div><div class="fi-label">Date</div><div class="fi-val accent">Friday 10 July 2026</div></div>
+        <div><div class="fi-label">Time</div><div class="fi-val accent">10:15</div></div>
         <div><div class="fi-label">Location</div><div class="fi-val">Lírabergshálsur</div></div>
-        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Skopun, havnøki</div></div>
+        <div><div class="fi-label">Meet at</div><div class="fi-val accent">Skopun Havn (harbour)</div></div>
         <div><div class="fi-label">Actor</div><div class="fi-val">Archibald Black</div></div>
         <div><div class="fi-label">Crew</div><div class="fi-val">Thomas Koba · Michael Koba</div></div>
       </div>
-      <div style="padding:0 20px 10px;font-size:12px;color:var(--amber);">⚠ Date may change if the weather gets worse</div>
+      <div style="border-top:1px solid var(--border);padding:14px 20px;">
+        <div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">📝 Updated script text</div>
+        <div style="font-size:12px;color:var(--text-mid);line-height:1.8;">
+          <div style="margin-bottom:8px;"><span style="color:var(--text-muted);font-style:italic;">(Standup, Lírabergshálsur, Skopun)</span><br>This is a reminder to stay away from the edge. If you get too close, it may already be too late.</div>
+          <div style="margin-bottom:8px;"><span style="color:var(--text-muted);font-style:italic;">(Walking, selfie mode)</span><br>You will never see locals walking close to the edge. We learn as kids to stay far away. Because sometimes there is nothing underneath the edge.</div>
+          <div style="margin-bottom:8px;"><span style="color:var(--text-muted);font-style:italic;">(Points, Trælanípan)</span><br>Here is a dangerous situation. You can see it from this angle. I would never walk all the way out there. Also sudden gusts of wind can surprise you, especially if you are in a big puffy jacket.</div>
+          <div style="margin-bottom:8px;"><span style="color:var(--text-muted);font-style:italic;">(Standup, Lírabergshálsur 2)</span><br>Here is another tricky situation. You see that green grassy slope? When the grass is wet and slippery, and you are walking in slippery shoes, and you start sliding? There is nothing stopping you sliding all the way over the edge.</div>
+          <div style="margin-bottom:8px;"><span style="color:var(--text-muted);font-style:italic;">(Walking near Trælanípan)</span><br>"Why don't you just build a fence?" you ask. Well, because entire islands are just cliffs everywhere. We would never be finished fencing.</div>
+          <div style="background:rgba(230,51,41,.08);border:1px solid rgba(230,51,41,.2);border-radius:6px;padding:8px 12px;font-weight:600;color:var(--text);">DON'T. Get too close and risk your life.<br>No amount of puffin or pictures is worth it.<br>Thank you for visiting responsibly.</div>
+        </div>
+      </div>
       <div class="film-links">
-        <a class="link-btn link-script" href="https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link" target="_blank">📝 Script</a>
+        <a class="link-btn link-script" href="https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link" target="_blank">📝 Full Script (Drive)</a>
         <a class="link-btn link-loc" href="https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en" target="_blank">📍 Location info</a>
       </div>
     </div>
@@ -206,7 +216,7 @@ var people = [
 ];
 
 var films = [
-  {num:"Film 4", title:"Livin on the Edge", date:"Monday 6 July 2026 (tentative)", time:"TBD", location:"Lirabergshalsur", meetAt:"Skopun, havnoki", actor:"Archibald Black", script:"https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link", locLink:"https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en", confirmed:false},
+  {num:"Film 4", title:"Livin on the Edge", date:"Friday 10 July 2026", time:"10:15", location:"Lirabergshalsur", meetAt:"Skopun Havn (harbour)", actor:"Archibald Black", script:"https://drive.google.com/file/d/19C7DHElEtkEG1luFzo8ZorCW7H3URULi/view?usp=drive_link", locLink:"https://visitfaroeislands.com/en/whatson/hiking/hike/skopun-lirabergshalsur?lang=en", confirmed:true},
   {num:"Film 5", title:"This IS Someones Home", date:"Thursday 25 June 2026", time:"09:30", location:"Tinganes", meetAt:"Katrina Christiansen", actor:"Mariann Hansen", script:"https://drive.google.com/file/d/1sGeXn_YvjMKlTSm2CN2IkJOkz78CcKPV/view?usp=sharing", locLink:null, confirmed:true, completed:true},
   {num:"Film 6", title:"Sheep live here, we dont", date:"Thursday 18 June 2026", time:"16:30", location:"Leynar", meetAt:"Leynar P-plass vid beach", actor:"Anna Hofgaard", stylist:"Ingrid Mortensen", script:"https://drive.google.com/file/d/1YcC6bz-SW3dmJSxmDwgXMMyk90MHRaVh/view?usp=sharing", locLink:null, confirmed:true, completed:true}
 ];
